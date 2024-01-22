@@ -1,0 +1,962 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat"><html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex">  <meta name="built-on" content="2024-01-22T19:31:54.746361"><meta name="build-number" content="${buildNumber}">       <title>Java Language | Language Learning Path</title><script id="virtual-toc-data" type="application/json">[{"id":"what-is-java","level":0,"title":"What is Java?","anchor":"#what-is-java"},{"id":"why-use-java","level":0,"title":"Why Use Java?","anchor":"#why-use-java"},{"id":"1-multithreading-and-concurrency","level":0,"title":"1. Multithreading and Concurrency","anchor":"#1-multithreading-and-concurrency"},{"id":"3-java-virtual-machine-jvm-internals","level":0,"title":"3. Java Virtual Machine (JVM) Internals","anchor":"#3-java-virtual-machine-jvm-internals"},{"id":"4-annotations","level":0,"title":"4. Annotations","anchor":"#4-annotations"},{"id":"5-reflection","level":0,"title":"5. Reflection","anchor":"#5-reflection"},{"id":"6-generics","level":0,"title":"6. Generics","anchor":"#6-generics"},{"id":"7-lambda-expressions","level":0,"title":"7. Lambda Expressions","anchor":"#7-lambda-expressions"},{"id":"8-streams-api","level":0,"title":"8. Streams API","anchor":"#8-streams-api"},{"id":"9-design-patterns","level":0,"title":"9. Design Patterns","anchor":"#9-design-patterns"},{"id":"10-networking-and-sockets","level":0,"title":"10. Networking and Sockets","anchor":"#10-networking-and-sockets"},{"id":"11-java-database-connectivity-jdbc","level":0,"title":"11. Java Database Connectivity (JDBC)","anchor":"#11-java-database-connectivity-jdbc"},{"id":"12-enterprise-javabeans-ejb","level":0,"title":"12. Enterprise JavaBeans (EJB)","anchor":"#12-enterprise-javabeans-ejb"},{"id":"13-spring-framework","level":0,"title":"13. Spring Framework","anchor":"#13-spring-framework"},{"id":"14-microservices-and-spring-cloud","level":0,"title":"14. Microservices and Spring Cloud","anchor":"#14-microservices-and-spring-cloud"},{"id":"15-javafx","level":0,"title":"15. JavaFX","anchor":"#15-javafx"}]</script><script id="topic-shortcuts" type="application/json"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet">   <link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="https://jetbrains.com/site.webmanifest"><link rel="mask-icon" href="https://jetbrains.com/safari-pinned-tab.svg" color="#000000"><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"/><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"/><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"/><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"/><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"/>  <meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Java Language | Language Learning Path"/><meta property="og:description" content=""/><meta property="og:image" content=""/><meta property="og:site_name" content="Language Learning Path Help"/><meta property="og:type" content="website"/><meta property="og:locale" content="en_US"/><meta property="og:url" content="java-language.html"/><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Java Language | Language Learning Path"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json"> { "@context": "http://schema.org", "@type": "WebPage", "@id": "java-language.html#webpage", "url": "java-language.html", "name": "Java Language | Language Learning Path", "description": "", "image": "", "inLanguage":"en-US" }</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json"> { "@type": "WebSite", "@id": "/#website", "url": "/", "name": "Language Learning Path Help" }</script><!-- End Schema.org --></head>      <body data-id="Java-Language" data-main-title="Java Language" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}"  data-template="article"  data-breadcrumbs=""  >   <div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Language Learning Path  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Java-Language"   id="Java-Language.md">Java Language</h1>  <section class="chapter"><h2 id="what-is-java" data-toc="what-is-java"   >What is Java?</h2><p id="fc11de9d_1422">Java is a popular programming language, created in 1995.</p><p id="fc11de9d_1423">It is owned by Oracle, and more than 3 billion devices run Java.</p><p id="fc11de9d_1424">It is used for:</p><ul class="list _ul" id="fc11de9d_1425"><li class="list__item" id="fc11de9d_1426"><p>Mobile applications (specially Android apps)</p></li><li class="list__item" id="fc11de9d_1427"><p>Desktop applications</p></li><li class="list__item" id="fc11de9d_1428"><p>Web applications</p></li><li class="list__item" id="fc11de9d_1429"><p>Web servers and application servers</p></li><li class="list__item" id="fc11de9d_1430"><p>Games</p></li><li class="list__item" id="fc11de9d_1431"><p>Database connection</p></li><li class="list__item" id="fc11de9d_1432"><p>And much, much more!</p></li></ul></section><section class="chapter"><h2 id="why-use-java" data-toc="why-use-java"   >Why Use Java?</h2><ul class="list _ul" id="fc11de9d_1433"><li class="list__item" id="fc11de9d_1434"><p>Java works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc.)</p></li><li class="list__item" id="fc11de9d_1435"><p>It is one of the most popular programming language in the world</p></li><li class="list__item" id="fc11de9d_1436"><p>It has a large demand in the current job market</p></li><li class="list__item" id="fc11de9d_1437"><p>It is easy to learn and simple to use</p></li><li class="list__item" id="fc11de9d_1438"><p>It is open-source and free</p></li><li class="list__item" id="fc11de9d_1439"><p>It is secure, fast and powerful</p></li><li class="list__item" id="fc11de9d_1440"><p>It has a huge community support (tens of millions of developers)</p></li><li class="list__item" id="fc11de9d_1441"><p>Java is an object oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs</p></li><li class="list__item" id="fc11de9d_1442"><p>As Java is close to C++ and C#, it makes it easy for programmers to switch to Java or vice versa</p></li></ul></section><section class="chapter"><h2 id="1-multithreading-and-concurrency" data-toc="1-multithreading-and-concurrency"   >1. Multithreading and Concurrency</h2><p id="fc11de9d_1443">Multithreading and concurrency in Java allow multiple threads of execution to run concurrently, which can improve the performance of certain types of applications. A thread is a lightweight process, and multithreading involves the simultaneous execution of multiple threads. Java provides built-in support for multithreading through the <code class="code" id="fc11de9d_1444">java.lang.Thread</code> class and the <code class="code" id="fc11de9d_1445">java.util.concurrent</code> package. Here's an explanation with examples:</p><section class="chapter"><h3 id="1-creating-threads" data-toc="1-creating-threads"   >1. Creating Threads:</h3><p id="fc11de9d_1446">In Java, there are two main ways to create threads:</p><section class="chapter"><h4 id="a-extending-the-thread-class" data-toc="a-extending-the-thread-class"   >a. Extending the Thread class:</h4><div class="code-block" data-lang="java"         >
+class MyThread extends Thread {
+    public void run() {
+        for (int i = 0; i &lt; 5; i++) {
+            System.out.println(Thread.currentThread().getId() + &quot; Value &quot; + i);
+        }
+    }
+}
+
+public class ThreadExample {
+    public static void main(String args[]) {
+        MyThread t1 = new MyThread();
+        t1.start(); // This invokes the run() method in a new thread
+
+        MyThread t2 = new MyThread();
+        t2.start();
+    }
+}
+</div></section><section class="chapter"><h4 id="b-implementing-the-runnable-interface" data-toc="b-implementing-the-runnable-interface"   >b. Implementing the Runnable interface:</h4><div class="code-block" data-lang="java"         >
+class MyRunnable implements Runnable {
+    public void run() {
+        for (int i = 0; i &lt; 5; i++) {
+            System.out.println(Thread.currentThread().getId() + &quot; Value &quot; + i);
+        }
+    }
+}
+
+public class RunnableExample {
+    public static void main(String args[]) {
+        Thread t1 = new Thread(new MyRunnable());
+        t1.start();
+
+        Thread t2 = new Thread(new MyRunnable());
+        t2.start();
+    }
+}
+</div></section></section><section class="chapter"><h3 id="2-thread-synchronization" data-toc="2-thread-synchronization"   >2. Thread Synchronization:</h3><p id="fc11de9d_1449">When multiple threads access shared resources, it's important to synchronize their access to avoid data inconsistencies. The <code class="code" id="fc11de9d_1450">synchronized</code> keyword can be used for this purpose.</p><div class="code-block" data-lang="java"         >
+class Counter {
+    private int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
+
+    public synchronized int getCount() {
+        return count;
+    }
+}
+
+public class SynchronizationExample {
+    public static void main(String[] args) throws InterruptedException {
+        Counter counter = new Counter();
+
+        Runnable incrementTask = () -&gt; {
+            for (int i = 0; i &lt; 10000; i++) {
+                counter.increment();
+            }
+        };
+
+        Thread t1 = new Thread(incrementTask);
+        Thread t2 = new Thread(incrementTask);
+
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
+
+        System.out.println(&quot;Count: &quot; + counter.getCount());
+    }
+}
+</div></section><section class="chapter"><h3 id="3-executors-and-thread-pools" data-toc="3-executors-and-thread-pools"   >3. Executors and Thread Pools:</h3><p id="fc11de9d_1452">Java's <code class="code" id="fc11de9d_1453">ExecutorService</code> and thread pools provide a more efficient way to manage and reuse threads.</p><div class="code-block" data-lang="java"         >
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ThreadPoolExample {
+    public static void main(String[] args) {
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+
+        Runnable task = () -&gt; {
+            System.out.println(Thread.currentThread().getId() + &quot; executing task&quot;);
+        };
+
+        for (int i = 0; i &lt; 5; i++) {
+            executorService.execute(task);
+        }
+
+        executorService.shutdown();
+    }
+}
+</div><p id="fc11de9d_1455">These examples cover basic multithreading concepts in Java. It's important to note that dealing with concurrency requires careful consideration of synchronization, thread safety, and potential race conditions to ensure the correct behavior of the program.</p></section></section><section class="chapter"><h2 id="3-java-virtual-machine-jvm-internals" data-toc="3-java-virtual-machine-jvm-internals"   >3. Java Virtual Machine (JVM) Internals</h2><p id="fc11de9d_1456">The Java Virtual Machine (JVM) is a crucial component of the Java platform, responsible for executing Java bytecode. Understanding JVM internals is essential for optimizing performance, troubleshooting issues, and gaining insights into how Java applications run. Here, I'll provide an overview of key JVM internals with brief explanations and examples.</p><section class="chapter"><h3 id="1-class-loading" data-toc="1-class-loading"   >1. Class Loading:</h3><ul class="list _ul" id="fc11de9d_1457"><li class="list__item" id="fc11de9d_1458"><p><span class="control" id="fc11de9d_1459">Explanation:</span></p><ul class="list _ul" id="fc11de9d_1460"><li class="list__item" id="fc11de9d_1461"><p>Class loading is the process by which the JVM loads classes into memory. There are three phases: loading, linking, and initialization.</p></li></ul></li><li class="list__item" id="fc11de9d_1462"><p><span class="control" id="fc11de9d_1463">Example:</span></p><ul class="list _ul" id="fc11de9d_1464"><li class="list__item" id="fc11de9d_1465"><div class="code-block" data-lang="java"         >
+ // Loading a class
+ Class&lt;?&gt; myClass = Class.forName(&quot;com.example.MyClass&quot;);
+</div></li></ul></li></ul></section><section class="chapter"><h3 id="2-memory-management" data-toc="2-memory-management"   >2. Memory Management:</h3><ul class="list _ul" id="fc11de9d_1467"><li class="list__item" id="fc11de9d_1468"><p><span class="control" id="fc11de9d_1469">Explanation:</span></p><ul class="list _ul" id="fc11de9d_1470"><li class="list__item" id="fc11de9d_1471"><p>JVM manages memory through areas like the heap (object storage), method area (class metadata), and the stack (local variables and method call information).</p></li></ul></li><li class="list__item" id="fc11de9d_1472"><p><span class="control" id="fc11de9d_1473">Example:</span></p><ul class="list _ul" id="fc11de9d_1474"><li class="list__item" id="fc11de9d_1475"><div class="code-block" data-lang="java"         >
+ // Object creation and memory allocation
+ MyClass obj = new MyClass();
+</div></li></ul></li></ul></section><section class="chapter"><h3 id="3-garbage-collection" data-toc="3-garbage-collection"   >3. Garbage Collection:</h3><ul class="list _ul" id="fc11de9d_1477"><li class="list__item" id="fc11de9d_1478"><p><span class="control" id="fc11de9d_1479">Explanation:</span></p><ul class="list _ul" id="fc11de9d_1480"><li class="list__item" id="fc11de9d_1481"><p>Garbage collection identifies and frees up memory occupied by objects that are no longer in use.</p></li></ul></li><li class="list__item" id="fc11de9d_1482"><p><span class="control" id="fc11de9d_1483">Example:</span></p><ul class="list _ul" id="fc11de9d_1484"><li class="list__item" id="fc11de9d_1485"><p>No direct example, as garbage collection is automatic. Properly managing references helps the garbage collector identify unreferenced objects.</p></li></ul></li></ul></section><section class="chapter"><h3 id="4-just-in-time-jit-compilation" data-toc="4-just-in-time-jit-compilation"   >4. Just-In-Time (JIT) Compilation:</h3><ul class="list _ul" id="fc11de9d_1486"><li class="list__item" id="fc11de9d_1487"><p><span class="control" id="fc11de9d_1488">Explanation:</span></p><ul class="list _ul" id="fc11de9d_1489"><li class="list__item" id="fc11de9d_1490"><p>Bytecode is initially interpreted, but the JVM can dynamically compile frequently used code into native machine code for better performance.</p></li></ul></li><li class="list__item" id="fc11de9d_1491"><p><span class="control" id="fc11de9d_1492">Example:</span></p><ul class="list _ul" id="fc11de9d_1493"><li class="list__item" id="fc11de9d_1494"><p>No explicit example, as JIT compilation is performed by the JVM at runtime.</p></li></ul></li></ul></section><section class="chapter"><h3 id="5-java-native-interface-jni" data-toc="5-java-native-interface-jni"   >5. Java Native Interface (JNI):</h3><ul class="list _ul" id="fc11de9d_1495"><li class="list__item" id="fc11de9d_1496"><p><span class="control" id="fc11de9d_1497">Explanation:</span></p><ul class="list _ul" id="fc11de9d_1498"><li class="list__item" id="fc11de9d_1499"><p>JNI allows Java code to interact with native code written in languages like C and C++.</p></li></ul></li><li class="list__item" id="fc11de9d_1500"><p><span class="control" id="fc11de9d_1501">Example:</span></p><ul class="list _ul" id="fc11de9d_1502"><li class="list__item" id="fc11de9d_1503"><div class="code-block" data-lang="java"         >
+ // Loading a native library
+ System.loadLibrary(&quot;myNativeLibrary&quot;);
+</div></li></ul></li></ul></section><section class="chapter"><h3 id="6-thread-management" data-toc="6-thread-management"   >6. Thread Management:</h3><ul class="list _ul" id="fc11de9d_1505"><li class="list__item" id="fc11de9d_1506"><p><span class="control" id="fc11de9d_1507">Explanation:</span></p><ul class="list _ul" id="fc11de9d_1508"><li class="list__item" id="fc11de9d_1509"><p>The JVM supports multithreading, and the <code class="code" id="fc11de9d_1510">java.lang.Thread</code> class is used for creating and managing threads.</p></li></ul></li><li class="list__item" id="fc11de9d_1511"><p><span class="control" id="fc11de9d_1512">Example:</span></p><ul class="list _ul" id="fc11de9d_1513"><li class="list__item" id="fc11de9d_1514"><div class="code-block" data-lang="java"         >
+ // Creating a thread
+ Thread myThread = new Thread(() -&gt; {
+     // Thread logic
+ });
+ myThread.start();
+</div></li></ul></li></ul></section><section class="chapter"><h3 id="7-bytecode-execution" data-toc="7-bytecode-execution"   >7. Bytecode Execution:</h3><ul class="list _ul" id="fc11de9d_1516"><li class="list__item" id="fc11de9d_1517"><p><span class="control" id="fc11de9d_1518">Explanation:</span></p><ul class="list _ul" id="fc11de9d_1519"><li class="list__item" id="fc11de9d_1520"><p>Bytecode is the intermediate representation of Java code. The JVM interprets or compiles bytecode to machine code for execution.</p></li></ul></li><li class="list__item" id="fc11de9d_1521"><p><span class="control" id="fc11de9d_1522">Example:</span></p><ul class="list _ul" id="fc11de9d_1523"><li class="list__item" id="fc11de9d_1524"><p>No explicit example, as bytecode is generated by the Java compiler.</p></li></ul></li></ul></section><section class="chapter"><h3 id="8-method-area-and-permanent-generation-or-metaspace" data-toc="8-method-area-and-permanent-generation-or-metaspace"   >8. Method Area and Permanent Generation (or Metaspace):</h3><ul class="list _ul" id="fc11de9d_1525"><li class="list__item" id="fc11de9d_1526"><p><span class="control" id="fc11de9d_1527">Explanation:</span></p><ul class="list _ul" id="fc11de9d_1528"><li class="list__item" id="fc11de9d_1529"><p>The method area (PermGen in older versions) stores class metadata, method information, and static variables.</p></li></ul></li><li class="list__item" id="fc11de9d_1530"><p><span class="control" id="fc11de9d_1531">Example:</span></p><ul class="list _ul" id="fc11de9d_1532"><li class="list__item" id="fc11de9d_1533"><div class="code-block" data-lang="java"         >
+ // Static variable
+ public static int myStaticVariable = 42;
+</div></li></ul></li></ul></section><section class="chapter"><h3 id="9-exception-handling" data-toc="9-exception-handling"   >9. Exception Handling:</h3><ul class="list _ul" id="fc11de9d_1535"><li class="list__item" id="fc11de9d_1536"><p><span class="control" id="fc11de9d_1537">Explanation:</span></p><ul class="list _ul" id="fc11de9d_1538"><li class="list__item" id="fc11de9d_1539"><p>The JVM handles exceptions by using the try-catch mechanism.</p></li></ul></li><li class="list__item" id="fc11de9d_1540"><p><span class="control" id="fc11de9d_1541">Example:</span></p><ul class="list _ul" id="fc11de9d_1542"><li class="list__item" id="fc11de9d_1543"><div class="code-block" data-lang="java"         >
+ try {
+     // Code that may throw an exception
+ } catch (Exception e) {
+     // Handle the exception
+ }
+</div></li></ul></li></ul></section><section class="chapter"><h3 id="10-jvm-options-and-tuning" data-toc="10-jvm-options-and-tuning"   >10. JVM Options and Tuning:</h3><ul class="list _ul" id="fc11de9d_1545"><li class="list__item" id="fc11de9d_1546"><p><span class="control" id="fc11de9d_1547">Explanation:</span></p><ul class="list _ul" id="fc11de9d_1548"><li class="list__item" id="fc11de9d_1549"><p>JVM can be tuned using command-line options for memory allocation, garbage collection strategies, and other performance-related settings.</p></li></ul></li><li class="list__item" id="fc11de9d_1550"><p><span class="control" id="fc11de9d_1551">Example:</span></p><ul class="list _ul" id="fc11de9d_1552"><li class="list__item" id="fc11de9d_1553"><div class="code-block" data-lang="bash"         >
+ java -Xmx512m -XX:MaxPermSize=256m -jar myApp.jar
+</div></li></ul></li></ul><p id="fc11de9d_1555">Understanding these JVM internals is crucial for Java developers to write efficient and optimized code. Additionally, tools like VisualVM and JConsole can be used to monitor and analyze JVM performance.</p></section></section><section class="chapter"><h2 id="4-annotations" data-toc="4-annotations"   >4. Annotations</h2><p id="fc11de9d_1556">Annotations in Java are a form of metadata that can be added to Java source code to provide additional information about the code to the compiler, runtime, or other tools. Annotations start with the '@' symbol and are used to convey information to the Java compiler, runtime, or custom tools.</p><p id="fc11de9d_1557">Here are some commonly used annotations in Java, along with examples:</p><ol class="list _decimal" id="fc11de9d_1558" type="1"><li class="list__item" id="fc11de9d_1559"><p><span class="control" id="fc11de9d_1560">@Override:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1561"><li class="list__item" id="fc11de9d_1562"><p>Indicates that a method in a subclass is intended to override a method in its superclass.</p></li></ul><div class="code-block" data-lang="java"         >
+class Parent {
+    public void printMessage() {
+        System.out.println(&quot;Hello from Parent&quot;);
+    }
+}
+
+class Child extends Parent {
+    @Override
+    public void printMessage() {
+        System.out.println(&quot;Hello from Child&quot;);
+    }
+}
+</div><ol class="list _decimal" id="fc11de9d_1564" type="1" start="2"><li class="list__item" id="fc11de9d_1565"><p><span class="control" id="fc11de9d_1566">@Deprecated:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1567"><li class="list__item" id="fc11de9d_1568"><p>Marks a method, class, or field as deprecated, indicating that it is no longer recommended for use.</p></li></ul><div class="code-block" data-lang="java"         >
+class DeprecatedExample {
+    @Deprecated
+    public void oldMethod() {
+        // Deprecated method implementation
+    }
+}
+</div><ol class="list _decimal" id="fc11de9d_1570" type="1" start="3"><li class="list__item" id="fc11de9d_1571"><p><span class="control" id="fc11de9d_1572">@SuppressWarnings:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1573"><li class="list__item" id="fc11de9d_1574"><p>Suppresses compiler warnings for a specific section of code.</p></li></ul><div class="code-block" data-lang="java"         >
+class SuppressWarningExample {
+    @SuppressWarnings(&quot;deprecation&quot;)
+    public void useDeprecatedMethod() {
+        DeprecatedExample example = new DeprecatedExample();
+        example.oldMethod(); // No warning will be shown for using deprecated method
+    }
+}
+</div><ol class="list _decimal" id="fc11de9d_1576" type="1" start="4"><li class="list__item" id="fc11de9d_1577"><p><span class="control" id="fc11de9d_1578">@FunctionalInterface:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1579"><li class="list__item" id="fc11de9d_1580"><p>Indicates that an interface is intended to be a functional interface, i.e., an interface with a single abstract method (SAM).</p></li></ul><div class="code-block" data-lang="java"         >
+@FunctionalInterface
+interface MyFunctionalInterface {
+    void myMethod();
+}
+</div><ol class="list _decimal" id="fc11de9d_1582" type="1" start="5"><li class="list__item" id="fc11de9d_1583"><p><span class="control" id="fc11de9d_1584">@RunWith:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1585"><li class="list__item" id="fc11de9d_1586"><p>Used in JUnit testing to specify a test runner class.</p></li></ul><div class="code-block" data-lang="java"         >
+@RunWith(SpringRunner.class)
+public class MyTest {
+    // Test methods go here
+}
+</div><ol class="list _decimal" id="fc11de9d_1588" type="1" start="6"><li class="list__item" id="fc11de9d_1589"><p><span class="control" id="fc11de9d_1590">@Entity and @Table (JPA):</span></p></li></ol><ul class="list _ul" id="fc11de9d_1591"><li class="list__item" id="fc11de9d_1592"><p>Used in Java Persistence API (JPA) to indicate that a class is an entity and specify the table associated with it.</p></li></ul><div class="code-block" data-lang="java"         >
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = &quot;employees&quot;)
+public class Employee {
+    // Entity class members and methods
+}
+</div><ol class="list _decimal" id="fc11de9d_1594" type="1" start="7"><li class="list__item" id="fc11de9d_1595"><p><span class="control" id="fc11de9d_1596">@Autowired (Spring Framework):</span></p></li></ol><ul class="list _ul" id="fc11de9d_1597"><li class="list__item" id="fc11de9d_1598"><p>Used in the Spring Framework for automatic dependency injection.</p></li></ul><div class="code-block" data-lang="java"         >
+@Component
+public class MyService {
+    private final MyRepository repository;
+
+    @Autowired
+    public MyService(MyRepository repository) {
+        this.repository = repository;
+    }
+}
+</div><ol class="list _decimal" id="fc11de9d_1600" type="1" start="8"><li class="list__item" id="fc11de9d_1601"><p><span class="control" id="fc11de9d_1602">@RequestMapping (Spring MVC):</span></p></li></ol><ul class="list _ul" id="fc11de9d_1603"><li class="list__item" id="fc11de9d_1604"><p>Used in Spring MVC to map HTTP requests to specific methods in a controller.</p></li></ul><div class="code-block" data-lang="java"         >
+@Controller
+@RequestMapping(&quot;/products&quot;)
+public class ProductController {
+    @RequestMapping(&quot;/list&quot;)
+    public String listProducts() {
+        // Method implementation
+        return &quot;productList&quot;;
+    }
+}
+</div><p id="fc11de9d_1606">These are just a few examples of the many annotations available in Java. Annotations play a crucial role in modern Java development, providing a way to convey metadata that can be processed by tools, frameworks, or the Java runtime itself.</p></section><section class="chapter"><h2 id="5-reflection" data-toc="5-reflection"   >5. Reflection</h2><p id="fc11de9d_1607">Reflection is a feature in Java that allows a program to inspect and interact with its own structure, classes, methods, fields, and other aspects at runtime. It provides a way to examine and manipulate class metadata, such as fields, methods, and constructors. Reflection is often used for building generic tools, frameworks, or libraries that need to work with arbitrary classes.</p><p id="fc11de9d_1608">Here's a simple explanation along with some examples:</p><section class="chapter"><h3 id="basic-reflection-concepts" data-toc="basic-reflection-concepts"   >Basic Reflection Concepts:</h3><ol class="list _decimal" id="fc11de9d_1609" type="1"><li class="list__item" id="fc11de9d_1610"><p><span class="control" id="fc11de9d_1611">Class Object:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1612"><li class="list__item" id="fc11de9d_1613"><p id="fc11de9d_1614">The <code class="code" id="fc11de9d_1615">Class</code> class in Java is part of the <code class="code" id="fc11de9d_1616">java.lang</code> package and represents a class at runtime.</p></li><li class="list__item" id="fc11de9d_1617"><p id="fc11de9d_1618">You can obtain a <code class="code" id="fc11de9d_1619">Class</code> object for a particular class by calling the <code class="code" id="fc11de9d_1620">.class</code> on the class literal or by using the <code class="code" id="fc11de9d_1621">getClass()</code> method.</p><div class="code-block" data-lang="java"         >
+Class&lt;?&gt; myClass = MyClass.class;
+// or
+MyClass obj = new MyClass();
+Class&lt;?&gt; anotherClass = obj.getClass();
+</div></li></ul><ol class="list _decimal" id="fc11de9d_1623" type="1" start="2"><li class="list__item" id="fc11de9d_1624"><p><span class="control" id="fc11de9d_1625">Inspecting Class Information:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1626"><li class="list__item" id="fc11de9d_1627"><p id="fc11de9d_1628">Once you have a <code class="code" id="fc11de9d_1629">Class</code> object, you can retrieve information about the class, such as its name, package, superclass, interfaces, constructors, methods, and fields.</p><div class="code-block" data-lang="java"         >
+Class&lt;?&gt; myClass = MyClass.class;
+
+System.out.println(&quot;Class Name: &quot; + myClass.getName());
+System.out.println(&quot;Superclass: &quot; + myClass.getSuperclass().getName());
+
+// Get all declared methods
+Method[] methods = myClass.getDeclaredMethods();
+for (Method method : methods) {
+    System.out.println(&quot;Method: &quot; + method.getName());
+}
+
+// Get all declared fields
+Field[] fields = myClass.getDeclaredFields();
+for (Field field : fields) {
+    System.out.println(&quot;Field: &quot; + field.getName());
+}
+</div></li></ul></section><section class="chapter"><h3 id="example-creating-an-object-dynamically" data-toc="example-creating-an-object-dynamically"   >Example: Creating an Object Dynamically:</h3><p id="fc11de9d_1631">Reflection can be used to create an instance of a class dynamically, even if you don't know the class name until runtime.</p><div class="code-block" data-lang="java"         >
+import java.lang.reflect.Constructor;
+
+public class ReflectionExample {
+    public static void main(String[] args) {
+        try {
+            // Get the Class object
+            Class&lt;?&gt; myClass = Class.forName(&quot;com.example.MyClass&quot;);
+
+            // Get the constructor
+            Constructor&lt;?&gt; constructor = myClass.getConstructor();
+            
+            // Create an instance of the class
+            Object myObject = constructor.newInstance();
+
+            // Now, you can work with the object
+            // ...
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+</div></section><section class="chapter"><h3 id="example-accessing-private-fields" data-toc="example-accessing-private-fields"   >Example: Accessing Private Fields:</h3><p id="fc11de9d_1633">Reflection can be used to access private fields of a class, which is generally not recommended for regular programming but might be necessary in certain situations.</p><div class="code-block" data-lang="java"         >
+import java.lang.reflect.Field;
+
+public class ReflectionExample {
+    public static void main(String[] args) {
+        try {
+            // Get the Class object
+            Class&lt;?&gt; myClass = MyClass.class;
+
+            // Get the private field
+            Field privateField = myClass.getDeclaredField(&quot;myPrivateField&quot;);
+
+            // Make the private field accessible
+            privateField.setAccessible(true);
+
+            // Create an instance of the class
+            MyClass myObject = new MyClass();
+
+            // Access the private field
+            String value = (String) privateField.get(myObject);
+            System.out.println(&quot;Value of private field: &quot; + value);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+</div><p id="fc11de9d_1635">Keep in mind that while reflection is a powerful feature, it should be used judiciously due to its potential impact on performance and security. Additionally, changes in class structures may lead to runtime exceptions, so it's important to handle them appropriately.</p></section></section><section class="chapter"><h2 id="6-generics" data-toc="6-generics"   >6. Generics</h2><p id="fc11de9d_1636">Generics in Java provide a way to create classes, interfaces, and methods that operate with parameters of various types. The use of generics allows for stronger type-checking at compile time and enables the creation of more flexible and reusable code. Here's a brief explanation of generics with examples:</p><section class="chapter"><h3 id="1-generic-classes" data-toc="1-generic-classes"   >1. Generic Classes:</h3><p id="fc11de9d_1637">A generic class in Java is a class that has one or more type parameters. These type parameters can be used to define the types of fields, methods, and constructors within the class.</p><p id="fc11de9d_1638"><span class="control" id="fc11de9d_1639">Example: Generic Box</span></p><div class="code-block" data-lang="java"         >
+public class Box&lt;T&gt; {
+    private T content;
+
+    public Box(T content) {
+        this.content = content;
+    }
+
+    public T getContent() {
+        return content;
+    }
+
+    public void setContent(T content) {
+        this.content = content;
+    }
+}
+
+// Example usage:
+Box&lt;Integer&gt; integerBox = new Box&lt;&gt;(42);
+Box&lt;String&gt; stringBox = new Box&lt;&gt;(&quot;Hello, Generics!&quot;);
+
+Integer intValue = integerBox.getContent();
+String stringValue = stringBox.getContent();
+</div><p id="fc11de9d_1641">In this example, the <code class="code" id="fc11de9d_1642">Box</code> class is generic, and the type parameter <code class="code" id="fc11de9d_1643">T</code> is used to represent the type of the content stored in the box. The type is specified when creating an instance of the <code class="code" id="fc11de9d_1644">Box</code> class (<code class="code" id="fc11de9d_1645">Box&lt;Integer&gt;</code> and <code class="code" id="fc11de9d_1646">Box&lt;String&gt;</code>).</p></section><section class="chapter"><h3 id="2-generic-methods" data-toc="2-generic-methods"   >2. Generic Methods:</h3><p id="fc11de9d_1647">Generic methods are methods that introduce their own type parameters. These type parameters can be used to define the types of arguments and the return type of the method.</p><p id="fc11de9d_1648"><span class="control" id="fc11de9d_1649">Example: Generic Swap Method</span></p><div class="code-block" data-lang="java"         >
+public class GenericMethods {
+
+    public static &lt;T&gt; void swap(T[] array, int i, int j) {
+        T temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+
+    public static void main(String[] args) {
+        String[] stringArray = {&quot;one&quot;, &quot;two&quot;, &quot;three&quot;};
+        System.out.println(&quot;Before swap: &quot; + Arrays.toString(stringArray));
+
+        swap(stringArray, 0, 2);
+
+        System.out.println(&quot;After swap: &quot; + Arrays.toString(stringArray));
+    }
+}
+</div><p id="fc11de9d_1651">In this example, the <code class="code" id="fc11de9d_1652">swap</code> method is generic and can be used to swap elements in an array of any type. The type parameter <code class="code" id="fc11de9d_1653">T</code> is specified before the return type, and it represents the type of elements in the array.</p></section><section class="chapter"><h3 id="3-bounded-type-parameters" data-toc="3-bounded-type-parameters"   >3. Bounded Type Parameters:</h3><p id="fc11de9d_1654">Bounded type parameters restrict the types that can be used as actual parameters in a generic class or method. This can be achieved using the <code class="code" id="fc11de9d_1655">extends</code> or <code class="code" id="fc11de9d_1656">super</code> keywords.</p><p id="fc11de9d_1657"><span class="control" id="fc11de9d_1658">Example: Bounded Type Parameter</span></p><div class="code-block" data-lang="java"         >
+public class NumberBox&lt;T extends Number&gt; {
+    private T value;
+
+    public NumberBox(T value) {
+        this.value = value;
+    }
+
+    public T getValue() {
+        return value;
+    }
+
+    public static void main(String[] args) {
+        NumberBox&lt;Integer&gt; integerBox = new NumberBox&lt;&gt;(42);
+        NumberBox&lt;Double&gt; doubleBox = new NumberBox&lt;&gt;(3.14);
+
+        // Compilation error: String is not a subtype of Number
+        // NumberBox&lt;String&gt; stringBox = new NumberBox&lt;&gt;(&quot;Invalid&quot;);
+    }
+}
+</div><p id="fc11de9d_1660">In this example, the <code class="code" id="fc11de9d_1661">NumberBox</code> class uses a bounded type parameter <code class="code" id="fc11de9d_1662">T extends Number</code>, which means that <code class="code" id="fc11de9d_1663">T</code> must be a subtype of <code class="code" id="fc11de9d_1664">Number</code>. This ensures that only numeric types can be used as the type parameter.</p><p id="fc11de9d_1665">Generics in Java provide a powerful mechanism for creating flexible and type-safe code, making it easier to write reusable classes and methods that work with a variety of data types.</p></section></section><section class="chapter"><h2 id="7-lambda-expressions" data-toc="7-lambda-expressions"   >7. Lambda Expressions</h2><p id="fc11de9d_1666">Lambda expressions were introduced in Java 8 as a way to provide a concise syntax for writing anonymous methods (implementations of functional interfaces). They are particularly useful for expressing instances of single-method interfaces (functional interfaces) without the need for verbose anonymous inner classes. Lambda expressions can be used to write more readable and expressive code, especially in the context of functional programming and the Streams API.</p><p id="fc11de9d_1667">The basic syntax of a lambda expression is as follows:</p><div class="code-block" data-lang="java"         >
+(parameters) -&gt; expression
+</div><p id="fc11de9d_1669">Or for a block of code:</p><div class="code-block" data-lang="java"         >
+(parameters) -&gt; {
+    // code block
+    // multiple statements
+    return something;
+}
+</div><p id="fc11de9d_1671">Let's look at some examples:</p><section class="chapter"><h3 id="example-1-simple-lambda-expression" data-toc="example-1-simple-lambda-expression"   >Example 1: Simple Lambda Expression</h3><p id="fc11de9d_1672">Suppose you have a functional interface <code class="code" id="fc11de9d_1673">MyFunctionalInterface</code> with a single method:</p><div class="code-block" data-lang="java"         >
+@FunctionalInterface
+interface MyFunctionalInterface {
+    void myMethod();
+}
+</div><p id="fc11de9d_1675">You can use a lambda expression to implement this interface concisely:</p><div class="code-block" data-lang="java"         >
+MyFunctionalInterface myFunc = () -&gt; System.out.println(&quot;Hello, Lambda!&quot;);
+myFunc.myMethod();
+</div></section><section class="chapter"><h3 id="example-2-lambda-expression-with-parameters" data-toc="example-2-lambda-expression-with-parameters"   >Example 2: Lambda Expression with Parameters</h3><p id="fc11de9d_1677">If the functional interface has parameters, you can specify them in the lambda expression:</p><div class="code-block" data-lang="java"         >
+@FunctionalInterface
+interface AddInterface {
+    int add(int a, int b);
+}
+
+AddInterface addFunc = (a, b) -&gt; a + b;
+int result = addFunc.add(5, 3);
+System.out.println(&quot;Result: &quot; + result);
+</div></section><section class="chapter"><h3 id="example-3-lambda-expression-with-a-code-block" data-toc="example-3-lambda-expression-with-a-code-block"   >Example 3: Lambda Expression with a Code Block</h3><p id="fc11de9d_1679">For more complex operations, you can use a code block inside the lambda expression:</p><div class="code-block" data-lang="java"         >
+@FunctionalInterface
+interface MathOperation {
+    int operate(int a, int b);
+}
+
+MathOperation addition = (a, b) -&gt; {
+    int sum = a + b;
+    System.out.println(&quot;Adding &quot; + a + &quot; and &quot; + b + &quot;: &quot; + sum);
+    return sum;
+};
+
+int result = addition.operate(10, 5);
+</div></section><section class="chapter"><h3 id="example-4-using-lambda-expressions-with-streams" data-toc="example-4-using-lambda-expressions-with-streams"   >Example 4: Using Lambda Expressions with Streams</h3><p id="fc11de9d_1681">Lambda expressions are commonly used with the Streams API to perform functional-style operations on collections. For instance, consider a list of numbers:</p><div class="code-block" data-lang="java"         >
+List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+// Using a lambda expression with the forEach method
+numbers.forEach(n -&gt; System.out.print(n + &quot; &quot;));
+
+// Using a lambda expression with the filter and map methods
+List&lt;Integer&gt; squaredNumbers = numbers.stream()
+                                     .filter(n -&gt; n % 2 == 0)
+                                     .map(n -&gt; n * n)
+                                     .collect(Collectors.toList());
+</div><p id="fc11de9d_1683">These examples illustrate how lambda expressions provide a concise and expressive way to work with functional interfaces and perform functional programming in Java. They are especially useful in scenarios where anonymous inner classes would have been used in older Java versions.</p></section></section><section class="chapter"><h2 id="8-streams-api" data-toc="8-streams-api"   >8. Streams API</h2><p id="fc11de9d_1684">The Streams API, introduced in Java 8, is a powerful and expressive feature for processing sequences of elements in a functional style. Streams allow you to perform operations on a collection of data in a declarative way, making your code more concise and readable. Here's an explanation of the main components of the Streams API and some examples:</p><section class="chapter"><h3 id="key-components" data-toc="key-components"   >Key Components:</h3><ol class="list _decimal" id="fc11de9d_1685" type="1"><li class="list__item" id="fc11de9d_1686"><p><span class="control" id="fc11de9d_1687">Stream Source:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1688"><li class="list__item" id="fc11de9d_1689"><p>Streams are created from a source, which can be a collection, an array, an I/O channel, etc.</p></li></ul><ol class="list _decimal" id="fc11de9d_1690" type="1" start="2"><li class="list__item" id="fc11de9d_1691"><p><span class="control" id="fc11de9d_1692">Intermediate Operations:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1693"><li class="list__item" id="fc11de9d_1694"><p>These operations are performed on a stream and produce another stream as a result. They are often chained together to form a pipeline.</p></li></ul><ol class="list _decimal" id="fc11de9d_1695" type="1" start="3"><li class="list__item" id="fc11de9d_1696"><p><span class="control" id="fc11de9d_1697">Terminal Operations:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1698"><li class="list__item" id="fc11de9d_1699"><p>These operations consume a stream and produce a result or a side effect. They are typically the final operation in a stream pipeline.</p></li></ul></section><section class="chapter"><h3 id="examples" data-toc="examples"   >Examples:</h3><section class="chapter"><h4 id="creating-a-stream" data-toc="creating-a-stream"   >Creating a Stream:</h4><div class="code-block" data-lang="java"         >
+List&lt;String&gt; names = Arrays.asList(&quot;Alice&quot;, &quot;Bob&quot;, &quot;Charlie&quot;, &quot;David&quot;);
+
+// Create a stream from a list
+Stream&lt;String&gt; stream = names.stream();
+</div></section><section class="chapter"><h4 id="filtering-elements" data-toc="filtering-elements"   >Filtering Elements:</h4><div class="code-block" data-lang="java"         >
+// Filter names that start with 'A'
+List&lt;String&gt; filteredNames = names.stream()
+                                 .filter(name -&gt; name.startsWith(&quot;A&quot;))
+                                 .collect(Collectors.toList());
+// Result: [&quot;Alice&quot;]
+</div></section><section class="chapter"><h4 id="mapping-elements" data-toc="mapping-elements"   >Mapping Elements:</h4><div class="code-block" data-lang="java"         >
+// Convert names to uppercase
+List&lt;String&gt; uppercaseNames = names.stream()
+                                   .map(String::toUpperCase)
+                                   .collect(Collectors.toList());
+// Result: [&quot;ALICE&quot;, &quot;BOB&quot;, &quot;CHARLIE&quot;, &quot;DAVID&quot;]
+</div></section><section class="chapter"><h4 id="sorting-elements" data-toc="sorting-elements"   >Sorting Elements:</h4><div class="code-block" data-lang="java"         >
+// Sort names alphabetically
+List&lt;String&gt; sortedNames = names.stream()
+                               .sorted()
+                               .collect(Collectors.toList());
+// Result: [&quot;Alice&quot;, &quot;Bob&quot;, &quot;Charlie&quot;, &quot;David&quot;]
+</div></section><section class="chapter"><h4 id="reducing-elements" data-toc="reducing-elements"   >Reducing Elements:</h4><div class="code-block" data-lang="java"         >
+// Concatenate all names into a single string
+String concatenatedNames = names.stream()
+                                .reduce(&quot;&quot;, (result, name) -&gt; result + name);
+// Result: &quot;AliceBobCharlieDavid&quot;
+</div></section><section class="chapter"><h4 id="collecting-elements" data-toc="collecting-elements"   >Collecting Elements:</h4><div class="code-block" data-lang="java"         >
+// Collect names into a comma-separated string
+String joinedNames = names.stream()
+                          .collect(Collectors.joining(&quot;, &quot;));
+// Result: &quot;Alice, Bob, Charlie, David&quot;
+</div></section><section class="chapter"><h4 id="counting-elements" data-toc="counting-elements"   >Counting Elements:</h4><div class="code-block" data-lang="java"         >
+// Count the number of names starting with 'A'
+long count = names.stream()
+                  .filter(name -&gt; name.startsWith(&quot;A&quot;))
+                  .count();
+// Result: 1
+</div></section><section class="chapter"><h4 id="stream-of-numbers" data-toc="stream-of-numbers"   >Stream of Numbers:</h4><div class="code-block" data-lang="java"         >
+// Create a stream of numbers from 1 to 5
+List&lt;Integer&gt; numbers = Stream.of(1, 2, 3, 4, 5)
+                             .collect(Collectors.toList());
+// Result: [1, 2, 3, 4, 5]
+</div></section><section class="chapter"><h4 id="stream-from-array" data-toc="stream-from-array"   >Stream from Array:</h4><div class="code-block" data-lang="java"         >
+// Create a stream from an array
+int[] array = {1, 2, 3, 4, 5};
+IntStream intStream = Arrays.stream(array);
+</div><p id="fc11de9d_1709">These examples showcase some of the basic operations you can perform with the Streams API. Streams provide a clean and concise way to express complex data processing logic, making your code more readable and maintainable.</p></section></section></section><section class="chapter"><h2 id="9-design-patterns" data-toc="9-design-patterns"   >9. Design Patterns</h2><p id="fc11de9d_1710">Design patterns are reusable solutions to common problems in software design. They represent best practices and provide a general, reusable template to solve a particular problem. Design patterns can speed up the development process by providing tested, proven development paradigms. Here are a few design patterns explained with examples:</p><ol class="list _decimal" id="fc11de9d_1711" type="1"><li class="list__item" id="fc11de9d_1712"><p><span class="control" id="fc11de9d_1713">Singleton Pattern:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1714"><li class="list__item" id="fc11de9d_1715"><p id="fc11de9d_1716">The Singleton pattern ensures that a class has only one instance and provides a global point of access to it.</p></li><li class="list__item" id="fc11de9d_1717"><p id="fc11de9d_1718">Example: Implementing a configuration manager that provides configuration settings throughout an application.</p><div class="code-block" data-lang="java"         >
+public class ConfigurationManager {
+    private static ConfigurationManager instance;
+
+    private ConfigurationManager() {
+        // private constructor to prevent instantiation
+    }
+
+    public static ConfigurationManager getInstance() {
+        if (instance == null) {
+            instance = new ConfigurationManager();
+        }
+        return instance;
+    }
+
+    // Other methods and properties
+}
+</div></li></ul><ol class="list _decimal" id="fc11de9d_1720" type="1" start="2"><li class="list__item" id="fc11de9d_1721"><p><span class="control" id="fc11de9d_1722">Factory Method Pattern:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1723"><li class="list__item" id="fc11de9d_1724"><p id="fc11de9d_1725">The Factory Method pattern defines an interface for creating an object, but leaves the choice of its type to the subclasses, creating an instance of one of those subclasses.</p></li><li class="list__item" id="fc11de9d_1726"><p id="fc11de9d_1727">Example: Creating a document editor with different types of documents.</p><div class="code-block" data-lang="java"         >
+public interface Document {
+    void open();
+    void save();
+}
+
+public class TextDocument implements Document {
+    // Implementation for text document
+}
+
+public class ImageDocument implements Document {
+    // Implementation for image document
+}
+
+public interface DocumentFactory {
+    Document createDocument();
+}
+
+public class TextDocumentFactory implements DocumentFactory {
+    public Document createDocument() {
+        return new TextDocument();
+    }
+}
+
+public class ImageDocumentFactory implements DocumentFactory {
+    public Document createDocument() {
+        return new ImageDocument();
+    }
+}
+</div></li></ul><ol class="list _decimal" id="fc11de9d_1729" type="1" start="3"><li class="list__item" id="fc11de9d_1730"><p><span class="control" id="fc11de9d_1731">Observer Pattern:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1732"><li class="list__item" id="fc11de9d_1733"><p id="fc11de9d_1734">The Observer pattern defines a one-to-many dependency between objects, so that when one object changes state, all its dependents are notified and updated automatically.</p></li><li class="list__item" id="fc11de9d_1735"><p id="fc11de9d_1736">Example: Implementing an event handling system.</p><div class="code-block" data-lang="java"         >
+import java.util.ArrayList;
+import java.util.List;
+
+interface Observer {
+    void update(String message);
+}
+
+class Subject {
+    private List&lt;Observer&gt; observers = new ArrayList&lt;&gt;();
+
+    void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    void notifyObservers(String message) {
+        for (Observer observer : observers) {
+            observer.update(message);
+        }
+    }
+}
+
+class ConcreteObserver implements Observer {
+    private String name;
+
+    ConcreteObserver(String name) {
+        this.name = name;
+    }
+
+    public void update(String message) {
+        System.out.println(name + &quot; received message: &quot; + message);
+    }
+}
+</div></li></ul><ol class="list _decimal" id="fc11de9d_1738" type="1" start="4"><li class="list__item" id="fc11de9d_1739"><p><span class="control" id="fc11de9d_1740">Strategy Pattern:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1741"><li class="list__item" id="fc11de9d_1742"><p id="fc11de9d_1743">The Strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.</p></li><li class="list__item" id="fc11de9d_1744"><p id="fc11de9d_1745">Example: Implementing various sorting algorithms.</p><div class="code-block" data-lang="java"         >
+interface SortingStrategy {
+    void sort(int[] array);
+}
+
+class BubbleSort implements SortingStrategy {
+    public void sort(int[] array) {
+        // Implementation of bubble sort
+    }
+}
+
+class QuickSort implements SortingStrategy {
+    public void sort(int[] array) {
+        // Implementation of quick sort
+    }
+}
+
+class Sorter {
+    private SortingStrategy strategy;
+
+    void setSortingStrategy(SortingStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    void performSort(int[] array) {
+        strategy.sort(array);
+    }
+}
+</div></li></ul><p id="fc11de9d_1747">These are just a few examples, and there are many more design patterns, each serving different purposes in software design. Understanding and applying design patterns can lead to more maintainable, scalable, and flexible software solutions.</p></section><section class="chapter"><h2 id="10-networking-and-sockets" data-toc="10-networking-and-sockets"   >10. Networking and Sockets</h2><p id="fc11de9d_1748">Networking and sockets are crucial aspects of Java programming when it comes to building applications that communicate over a network. In Java, the <code class="code" id="fc11de9d_1749">java.net</code> package provides classes for working with networking functionality. Sockets, in particular, are used for communication between two endpoints in a network. Here's an explanation with examples:</p><section class="chapter"><h3 id="1-socket-programming-basics" data-toc="1-socket-programming-basics"   >1. Socket Programming Basics:</h3><p id="fc11de9d_1750">Java provides two types of sockets: <code class="code" id="fc11de9d_1751">Socket</code> and <code class="code" id="fc11de9d_1752">ServerSocket</code>.</p><ul class="list _ul" id="fc11de9d_1753"><li class="list__item" id="fc11de9d_1754"><p><code class="code" id="fc11de9d_1755">Socket</code>: Represents an endpoint for sending or receiving data between the client and the server.</p></li><li class="list__item" id="fc11de9d_1756"><p><code class="code" id="fc11de9d_1757">ServerSocket</code>: Listens for incoming client requests and creates a <code class="code" id="fc11de9d_1758">Socket</code> for communication.</p></li></ul><section class="chapter"><h4 id="example-1-simple-client-server-communication" data-toc="example-1-simple-client-server-communication"   >Example 1: Simple Client-Server Communication</h4><p id="fc11de9d_1759"><span class="control" id="fc11de9d_1760">Server:</span></p><div class="code-block" data-lang="java"         >
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.io.*;
+
+public class SimpleServer {
+    public static void main(String[] args) {
+        try {
+            // Create a server socket that listens on port 12345
+            ServerSocket serverSocket = new ServerSocket(12345);
+
+            System.out.println(&quot;Server waiting for client on port 12345...&quot;);
+
+            // Accept client connection
+            Socket clientSocket = serverSocket.accept();
+
+            // Open input stream to read data from the client
+            BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+
+            // Read data from the client
+            String clientData = in.readLine();
+            System.out.println(&quot;Received from client: &quot; + clientData);
+
+            // Close streams and sockets
+            in.close();
+            clientSocket.close();
+            serverSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</div><p id="fc11de9d_1762"><span class="control" id="fc11de9d_1763">Client:</span></p><div class="code-block" data-lang="java"         >
+import java.net.Socket;
+import java.io.*;
+
+public class SimpleClient {
+    public static void main(String[] args) {
+        try {
+            // Create a client socket and connect to the server at localhost:12345
+            Socket clientSocket = new Socket(&quot;localhost&quot;, 12345);
+
+            // Open output stream to send data to the server
+            PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+
+            // Send data to the server
+            out.println(&quot;Hello, Server!&quot;);
+
+            // Close streams and socket
+            out.close();
+            clientSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</div><p id="fc11de9d_1765">In this example, the server listens on port 12345, and the client connects to the server. The client sends a message to the server, and the server prints the received message.</p></section></section><section class="chapter"><h3 id="2-udp-datagramsocket" data-toc="2-udp-datagramsocket"   >2. UDP DatagramSocket:</h3><p id="fc11de9d_1766">Java also supports UDP (User Datagram Protocol) for connectionless communication using <code class="code" id="fc11de9d_1767">DatagramSocket</code> and <code class="code" id="fc11de9d_1768">DatagramPacket</code>.</p><section class="chapter"><h4 id="example-2-udp-client-server-communication" data-toc="example-2-udp-client-server-communication"   >Example 2: UDP Client-Server Communication</h4><p id="fc11de9d_1769"><span class="control" id="fc11de9d_1770">Server:</span></p><div class="code-block" data-lang="java"         >
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+
+public class UDPServer {
+    public static void main(String[] args) {
+        try {
+            // Create a DatagramSocket to listen on port 9876
+            DatagramSocket serverSocket = new DatagramSocket(9876);
+
+            System.out.println(&quot;UDP Server waiting for client on port 9876...&quot;);
+
+            // Create a byte array to store incoming data
+            byte[] receiveData = new byte[1024];
+
+            // Create a DatagramPacket to receive data
+            DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+
+            // Receive data from the client
+            serverSocket.receive(receivePacket);
+
+            // Extract data from the packet
+            String clientData = new String(receivePacket.getData());
+            System.out.println(&quot;Received from client: &quot; + clientData.trim());
+
+            // Close socket
+            serverSocket.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+</div><p id="fc11de9d_1772"><span class="control" id="fc11de9d_1773">Client:</span></p><div class="code-block" data-lang="java"         >
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+
+public class UDPClient {
+    public static void main(String[] args) {
+        try {
+            // Create a DatagramSocket
+            DatagramSocket clientSocket = new DatagramSocket();
+
+            // Server address and port
+            InetAddress serverAddress = InetAddress.getByName(&quot;localhost&quot;);
+            int serverPort = 9876;
+
+            // Message to be sent
+            String message = &quot;Hello, UDP Server!&quot;;
+
+            // Convert the message to bytes
+            byte[] sendData = message.getBytes();
+
+            // Create a DatagramPacket to send data
+            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, serverAddress, serverPort);
+
+            // Send the packet to the server
+            clientSocket.send(sendPacket);
+
+            // Close socket
+            clientSocket.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+</div><p id="fc11de9d_1775">In this example, the UDP server listens on port 9876, and the UDP client sends a message to the server.</p><p id="fc11de9d_1776">These examples provide a basic understanding of socket programming in Java. Depending on your needs, you might explore more advanced concepts like non-blocking I/O, SSL/TLS for secure communication, or frameworks like Netty for building scalable network applications.</p></section></section></section><section class="chapter"><h2 id="11-java-database-connectivity-jdbc" data-toc="11-java-database-connectivity-jdbc"   >11. Java Database Connectivity (JDBC)</h2><p id="fc11de9d_1777">Java Database Connectivity (JDBC) is a Java-based API that provides a standard interface for connecting to relational databases and executing SQL queries. It allows Java applications to interact with databases and perform operations such as querying, updating, and deleting data. Here's an explanation of JDBC with examples:</p><section class="chapter"><h3 id="jdbc-components" data-toc="jdbc-components"   >JDBC Components:</h3><ol class="list _decimal" id="fc11de9d_1778" type="1"><li class="list__item" id="fc11de9d_1779"><p><span class="control" id="fc11de9d_1780">Driver Manager:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1781"><li class="list__item" id="fc11de9d_1782"><p>Manages a list of database drivers. The DriverManager class is used to establish a connection to the database.</p></li></ul><ol class="list _decimal" id="fc11de9d_1783" type="1" start="2"><li class="list__item" id="fc11de9d_1784"><p><span class="control" id="fc11de9d_1785">Driver:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1786"><li class="list__item" id="fc11de9d_1787"><p>A database-specific implementation that communicates with the database. It translates JDBC calls into database-specific calls.</p></li></ul><ol class="list _decimal" id="fc11de9d_1788" type="1" start="3"><li class="list__item" id="fc11de9d_1789"><p><span class="control" id="fc11de9d_1790">Connection:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1791"><li class="list__item" id="fc11de9d_1792"><p>Represents a connection to the database. The Connection interface provides methods for creating statements, committing transactions, and managing connections.</p></li></ul><ol class="list _decimal" id="fc11de9d_1793" type="1" start="4"><li class="list__item" id="fc11de9d_1794"><p><span class="control" id="fc11de9d_1795">Statement:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1796"><li class="list__item" id="fc11de9d_1797"><p>Used for executing SQL queries. The Statement interface includes methods for executing queries, updates, and stored procedures.</p></li></ul><ol class="list _decimal" id="fc11de9d_1798" type="1" start="5"><li class="list__item" id="fc11de9d_1799"><p><span class="control" id="fc11de9d_1800">ResultSet:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1801"><li class="list__item" id="fc11de9d_1802"><p>Represents the result of a query. It provides methods for retrieving data from the query result.</p></li></ul></section><section class="chapter"><h3 id="jdbc-example" data-toc="jdbc-example"   >JDBC Example:</h3><p id="fc11de9d_1803">Let's walk through a simple JDBC example to demonstrate connecting to a database, executing a query, and retrieving results. For this example, I'll use MySQL as the database.</p><p id="fc11de9d_1804">Assuming you have a table called &quot;employees&quot; with columns &quot;id,&quot; &quot;name,&quot; and &quot;salary,&quot; the Java code might look like this:</p><div class="code-block" data-lang="java"         >
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class JdbcExample {
+    public static void main(String[] args) {
+        // JDBC URL, username, and password of MySQL server
+        String url = &quot;jdbc:mysql://localhost:3306/your_database&quot;;
+        String user = &quot;your_username&quot;;
+        String password = &quot;your_password&quot;;
+
+        try {
+            // Load the JDBC driver
+            Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);
+
+            // Establish a connection
+            Connection connection = DriverManager.getConnection(url, user, password);
+
+            // Create a statement
+            Statement statement = connection.createStatement();
+
+            // Execute a query
+            String query = &quot;SELECT id, name, salary FROM employees&quot;;
+            ResultSet resultSet = statement.executeQuery(query);
+
+            // Process the results
+            while (resultSet.next()) {
+                int id = resultSet.getInt(&quot;id&quot;);
+                String name = resultSet.getString(&quot;name&quot;);
+                double salary = resultSet.getDouble(&quot;salary&quot;);
+
+                System.out.println(&quot;ID: &quot; + id + &quot;, Name: &quot; + name + &quot;, Salary: &quot; + salary);
+            }
+
+            // Close the resources
+            resultSet.close();
+            statement.close();
+            connection.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+</div><p id="fc11de9d_1806">Make sure to replace &quot;your_database,&quot; &quot;your_username,&quot; and &quot;your_password&quot; with your actual database information.</p></section><section class="chapter"><h3 id="explanation" data-toc="explanation"   >Explanation:</h3><ol class="list _decimal" id="fc11de9d_1807" type="1"><li class="list__item" id="fc11de9d_1808"><p><span class="control" id="fc11de9d_1809">Load JDBC Driver:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1810"><li class="list__item" id="fc11de9d_1811"><p>Use <code class="code" id="fc11de9d_1812">Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;)</code> to load the MySQL JDBC driver.</p></li></ul><ol class="list _decimal" id="fc11de9d_1813" type="1" start="2"><li class="list__item" id="fc11de9d_1814"><p><span class="control" id="fc11de9d_1815">Establish Connection:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1816"><li class="list__item" id="fc11de9d_1817"><p>Use <code class="code" id="fc11de9d_1818">DriverManager.getConnection(url, user, password)</code> to establish a connection to the database.</p></li></ul><ol class="list _decimal" id="fc11de9d_1819" type="1" start="3"><li class="list__item" id="fc11de9d_1820"><p><span class="control" id="fc11de9d_1821">Create Statement:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1822"><li class="list__item" id="fc11de9d_1823"><p>Use <code class="code" id="fc11de9d_1824">connection.createStatement()</code> to create a Statement object for executing SQL queries.</p></li></ul><ol class="list _decimal" id="fc11de9d_1825" type="1" start="4"><li class="list__item" id="fc11de9d_1826"><p><span class="control" id="fc11de9d_1827">Execute Query:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1828"><li class="list__item" id="fc11de9d_1829"><p>Use <code class="code" id="fc11de9d_1830">statement.executeQuery(query)</code> to execute a SELECT query and obtain a ResultSet.</p></li></ul><ol class="list _decimal" id="fc11de9d_1831" type="1" start="5"><li class="list__item" id="fc11de9d_1832"><p><span class="control" id="fc11de9d_1833">Process Results:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1834"><li class="list__item" id="fc11de9d_1835"><p>Use <code class="code" id="fc11de9d_1836">resultSet.next()</code> to iterate through the result set and retrieve data using column names or indices.</p></li></ul><ol class="list _decimal" id="fc11de9d_1837" type="1" start="6"><li class="list__item" id="fc11de9d_1838"><p><span class="control" id="fc11de9d_1839">Close Resources:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1840"><li class="list__item" id="fc11de9d_1841"><p>Always close the ResultSet, Statement, and Connection objects to release resources.</p></li></ul><p id="fc11de9d_1842">This is a basic example, and in real-world applications, you would handle exceptions more gracefully and may need to deal with prepared statements for better security and performance.</p></section></section><section class="chapter"><h2 id="12-enterprise-javabeans-ejb" data-toc="12-enterprise-javabeans-ejb"   >12. Enterprise JavaBeans (EJB)</h2><p id="fc11de9d_1843">Enterprise JavaBeans (EJB) is a server-side component architecture for building distributed, scalable, and transactional enterprise applications in Java. EJBs provide a framework for developing reusable and modular components that can be deployed across a network and can be accessed by clients, such as web applications or other EJBs. There are three types of EJBs: Session Beans, Entity Beans, and Message-Driven Beans.</p><ol class="list _decimal" id="fc11de9d_1844" type="1"><li class="list__item" id="fc11de9d_1845"><p><span class="control" id="fc11de9d_1846">Session Beans:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1847"><li class="list__item" id="fc11de9d_1848"><p id="fc11de9d_1849"><span class="control" id="fc11de9d_1850">Stateless Session Beans:</span> Stateless session beans are designed to handle stateless, short-lived operations. They do not maintain conversational state between method calls. An example could be a shopping cart session bean in an e-commerce application.</p><div class="code-block" data-lang="java"         >
+@Stateless
+public class ShoppingCartBean implements ShoppingCart {
+    public void addItem(Item item) {
+        // Add item to the shopping cart
+    }
+
+    public List&lt;Item&gt; getItems() {
+        // Retrieve items from the shopping cart
+    }
+}
+</div></li><li class="list__item" id="fc11de9d_1852"><p id="fc11de9d_1853"><span class="control" id="fc11de9d_1854">Stateful Session Beans:</span> Stateful session beans maintain conversational state between method calls, making them suitable for scenarios where a series of method invocations need to be tied together, such as in a multi-step wizard.</p><div class="code-block" data-lang="java"         >
+@Stateful
+public class WizardBean implements Wizard {
+    private int currentStep;
+
+    public void nextStep() {
+        // Move to the next step in the wizard
+        currentStep++;
+    }
+
+    public int getCurrentStep() {
+        return currentStep;
+    }
+}
+</div></li><li class="list__item" id="fc11de9d_1856"><p id="fc11de9d_1857"><span class="control" id="fc11de9d_1858">Singleton Session Beans:</span> Singleton session beans are designed to have a single instance per application and can be used to manage application-wide resources.</p><div class="code-block" data-lang="java"         >
+@Singleton
+public class ConfigurationBean {
+    private String appName;
+
+    @PostConstruct
+    public void initialize() {
+        // Initialization code
+        appName = &quot;MyApp&quot;;
+    }
+
+    public String getAppName() {
+        return appName;
+    }
+}
+</div></li></ul><ol class="list _decimal" id="fc11de9d_1860" type="1" start="2"><li class="list__item" id="fc11de9d_1861"><p><span class="control" id="fc11de9d_1862">Entity Beans:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1863"><li class="list__item" id="fc11de9d_1864"><p id="fc11de9d_1865">Entity beans represent persistent data in a relational database. With the advent of EJB 3.0, the use of annotations made entity beans simpler and more aligned with Java Persistence API (JPA).</p><div class="code-block" data-lang="java"         >
+@Entity
+public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+
+    private double price;
+
+    // Getters and setters
+}
+</div></li></ul><ol class="list _decimal" id="fc11de9d_1867" type="1" start="3"><li class="list__item" id="fc11de9d_1868"><p><span class="control" id="fc11de9d_1869">Message-Driven Beans (MDB):</span></p></li></ol><ul class="list _ul" id="fc11de9d_1870"><li class="list__item" id="fc11de9d_1871"><p id="fc11de9d_1872">Message-Driven Beans are used for processing asynchronous messages, typically in a messaging system like Java Message Service (JMS).</p><div class="code-block" data-lang="java"         >
+@MessageDriven(mappedName = &quot;jms/MyQueue&quot;)
+public class MyMessageBean implements MessageListener {
+    public void onMessage(Message message) {
+        // Process the received message
+    }
+}
+</div></li></ul><p id="fc11de9d_1874">In addition to these bean types, EJB also provides features like declarative transaction management, security, and lifecycle management through annotations. It's important to note that with the release of EJB 3.0 and later versions, many simplifications were introduced, and the use of annotations became prevalent, making EJB development more straightforward and developer-friendly. The examples above are using EJB 3.0-style annotations.</p></section><section class="chapter"><h2 id="13-spring-framework" data-toc="13-spring-framework"   >13. Spring Framework</h2><p id="fc11de9d_1875">The Spring Framework is a comprehensive framework for Java development that provides a wide range of features to simplify the development of enterprise-level applications. It promotes modular and loosely coupled code, making it easier to develop and maintain large-scale projects. Here's an overview of some key concepts within the Spring Framework along with examples:</p><ol class="list _decimal" id="fc11de9d_1876" type="1"><li class="list__item" id="fc11de9d_1877"><p><span class="control" id="fc11de9d_1878">Inversion of Control (IoC):</span></p></li></ol><ul class="list _ul" id="fc11de9d_1879"><li class="list__item" id="fc11de9d_1880"><p>IoC is a design principle where the control flow of a program is inverted. Instead of the application controlling the flow, it is delegated to an external container. In Spring, the IoC container manages the creation and configuration of objects.</p></li></ul><div class="code-block" data-lang="java"         >
+// Example of IoC with Spring
+// Define a simple bean
+public class MyBean {
+    private String message;
+
+    // Constructor
+    public MyBean(String message) {
+        this.message = message;
+    }
+
+    // Getter method
+    public String getMessage() {
+        return message;
+    }
+}
+
+// In the Spring configuration file (XML or Java-based):
+&lt;bean id=&quot;myBean&quot; class=&quot;com.example.MyBean&quot;&gt;
+    &lt;constructor-arg value=&quot;Hello, Spring!&quot; /&gt;
+&lt;/bean&gt;
+
+// In the application code:
+MyBean myBean = (MyBean) context.getBean(&quot;myBean&quot;);
+System.out.println(myBean.getMessage());
+</div><ol class="list _decimal" id="fc11de9d_1882" type="1" start="2"><li class="list__item" id="fc11de9d_1883"><p><span class="control" id="fc11de9d_1884">Dependency Injection (DI):</span></p></li></ol><ul class="list _ul" id="fc11de9d_1885"><li class="list__item" id="fc11de9d_1886"><p>DI is a technique where the dependencies of a class are injected from the outside. Spring facilitates DI through constructor injection, setter injection, or method injection.</p></li></ul><div class="code-block" data-lang="java"         >
+// Example of Dependency Injection with Spring
+public class MyService {
+    private MyRepository repository;
+
+    // Constructor injection
+    public MyService(MyRepository repository) {
+        this.repository = repository;
+    }
+
+    // Business method using the injected repository
+    public void doSomething() {
+        repository.saveData(&quot;Some data&quot;);
+    }
+}
+
+// In the Spring configuration file:
+&lt;bean id=&quot;myService&quot; class=&quot;com.example.MyService&quot;&gt;
+    &lt;constructor-arg ref=&quot;myRepository&quot; /&gt;
+&lt;/bean&gt;
+
+// In the application code:
+MyService myService = (MyService) context.getBean(&quot;myService&quot;);
+myService.doSomething();
+</div><ol class="list _decimal" id="fc11de9d_1888" type="1" start="3"><li class="list__item" id="fc11de9d_1889"><p><span class="control" id="fc11de9d_1890">Aspect-Oriented Programming (AOP):</span></p></li></ol><ul class="list _ul" id="fc11de9d_1891"><li class="list__item" id="fc11de9d_1892"><p>AOP allows you to separate cross-cutting concerns (e.g., logging, security) from the business logic. Spring AOP enables you to define aspects and apply them to different parts of your application.</p></li></ul><div class="code-block" data-lang="java"         >
+// Example of AOP with Spring
+@Aspect
+public class LoggingAspect {
+    @Before(&quot;execution(* com.example.MyService.*(..))&quot;)
+    public void logBefore(JoinPoint joinPoint) {
+        System.out.println(&quot;Before method: &quot; + joinPoint.getSignature().getName());
+    }
+}
+
+// In the Spring configuration file:
+&lt;aop:aspectj-autoproxy /&gt;
+&lt;bean id=&quot;loggingAspect&quot; class=&quot;com.example.LoggingAspect&quot; /&gt;
+
+// In the application code:
+MyService myService = (MyService) context.getBean(&quot;myService&quot;);
+myService.doSomething();
+</div><ol class="list _decimal" id="fc11de9d_1894" type="1" start="4"><li class="list__item" id="fc11de9d_1895"><p><span class="control" id="fc11de9d_1896">Spring MVC:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1897"><li class="list__item" id="fc11de9d_1898"><p>Spring MVC is a web module that simplifies the development of web applications. It follows the Model-View-Controller pattern.</p></li></ul><div class="code-block" data-lang="java"         >
+// Example of Spring MVC controller
+@Controller
+public class MyController {
+    @RequestMapping(&quot;/hello&quot;)
+    public String hello(Model model) {
+        model.addAttribute(&quot;message&quot;, &quot;Hello, Spring MVC!&quot;);
+        return &quot;helloPage&quot;;
+    }
+}
+
+// In the Spring configuration file:
+&lt;mvc:annotation-driven /&gt;
+
+// In the application code:
+// Accessing http://localhost:8080/myapp/hello will invoke the hello method
+</div><ol class="list _decimal" id="fc11de9d_1900" type="1" start="5"><li class="list__item" id="fc11de9d_1901"><p><span class="control" id="fc11de9d_1902">Spring Boot:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1903"><li class="list__item" id="fc11de9d_1904"><p>Spring Boot simplifies the configuration and deployment of Spring applications. It provides convention-over-configuration and defaults to get applications up and running quickly.</p></li></ul><div class="code-block" data-lang="java"         >
+// Example of a simple Spring Boot application
+@SpringBootApplication
+public class MyApp {
+    public static void main(String[] args) {
+        SpringApplication.run(MyApp.class, args);
+    }
+}
+
+// In the application code:
+// This single class defines a complete Spring Boot application with default configurations.
+</div><p id="fc11de9d_1906">These examples provide a glimpse of the Spring Framework's capabilities. Spring offers many other features, including data access with Spring Data, transaction management, security, and integration with various technologies. The choice of features depends on the requirements of your application.</p></section><section class="chapter"><h2 id="14-microservices-and-spring-cloud" data-toc="14-microservices-and-spring-cloud"   >14. Microservices and Spring Cloud</h2><p id="fc11de9d_1907"><span class="control" id="fc11de9d_1908">Microservices:</span></p><p id="fc11de9d_1909">Microservices is an architectural style that structures an application as a collection of small, independent services that communicate with each other through well-defined APIs. Each microservice is designed to perform a specific business function and can be developed, deployed, and scaled independently. This approach provides flexibility, scalability, and ease of maintenance. Here are some key characteristics of microservices:</p><ol class="list _decimal" id="fc11de9d_1910" type="1"><li class="list__item" id="fc11de9d_1911"><p id="fc11de9d_1912"><span class="control" id="fc11de9d_1913">Independence:</span> Microservices are independent units that can be developed, deployed, and scaled independently. Each microservice has its own database and is responsible for a specific business capability.</p></li><li class="list__item" id="fc11de9d_1914"><p id="fc11de9d_1915"><span class="control" id="fc11de9d_1916">Decentralized Data Management:</span> Each microservice manages its own data, and there is no shared database between microservices. Communication between services is done through APIs.</p></li><li class="list__item" id="fc11de9d_1917"><p id="fc11de9d_1918"><span class="control" id="fc11de9d_1919">Resilience:</span> Microservices are designed to be resilient. If one microservice fails, it does not necessarily affect the entire application, as other microservices can continue to function independently.</p></li><li class="list__item" id="fc11de9d_1920"><p id="fc11de9d_1921"><span class="control" id="fc11de9d_1922">Scalability:</span> Microservices can be individually scaled based on the specific needs of each service, allowing for efficient resource utilization.</p></li><li class="list__item" id="fc11de9d_1923"><p id="fc11de9d_1924"><span class="control" id="fc11de9d_1925">Technology Diversity:</span> Different microservices can be developed using different technologies, frameworks, and programming languages, as long as they adhere to the defined APIs for communication.</p></li></ol><p id="fc11de9d_1926"><span class="control" id="fc11de9d_1927">Spring Cloud:</span></p><p id="fc11de9d_1928">Spring Cloud is a set of tools and frameworks provided by the Spring ecosystem to simplify the development of distributed systems, particularly in a microservices architecture. It builds on top of the Spring Boot framework and provides additional features to address common challenges in distributed systems. Here are some key components of Spring Cloud:</p><ol class="list _decimal" id="fc11de9d_1929" type="1"><li class="list__item" id="fc11de9d_1930"><p><span class="control" id="fc11de9d_1931">Service Discovery:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1932"><li class="list__item" id="fc11de9d_1933"><p>Eureka is a service registry that allows microservices to register and discover each other dynamically. It helps services find and communicate with each other without hardcoding service locations.</p></li></ul><p id="fc11de9d_1934">Example:</p><div class="code-block" data-lang="java"         >
+@EnableEurekaServer
+@SpringBootApplication
+public class EurekaServerApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(EurekaServerApplication.class, args);
+    }
+}
+</div><ol class="list _decimal" id="fc11de9d_1936" type="1" start="2"><li class="list__item" id="fc11de9d_1937"><p><span class="control" id="fc11de9d_1938">API Gateway:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1939"><li class="list__item" id="fc11de9d_1940"><p>Zuul is a gateway service that provides dynamic routing, monitoring, resiliency, and security features. It acts as an entry point for requests and routes them to the appropriate microservices.</p></li></ul><p id="fc11de9d_1941">Example:</p><div class="code-block" data-lang="java"         >
+@EnableZuulProxy
+@SpringBootApplication
+public class ZuulGatewayApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(ZuulGatewayApplication.class, args);
+    }
+}
+</div><ol class="list _decimal" id="fc11de9d_1943" type="1" start="3"><li class="list__item" id="fc11de9d_1944"><p><span class="control" id="fc11de9d_1945">Load Balancing:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1946"><li class="list__item" id="fc11de9d_1947"><p>Ribbon is a client-side load balancing library that works in conjunction with Eureka to distribute the load among instances of a service.</p></li></ul><p id="fc11de9d_1948">Example:</p><div class="code-block" data-lang="java"         >
+@RibbonClient(name = &quot;microservice-name&quot;)
+public class RibbonConfig {
+    // Configuration for load balancing
+}
+</div><ol class="list _decimal" id="fc11de9d_1950" type="1" start="4"><li class="list__item" id="fc11de9d_1951"><p><span class="control" id="fc11de9d_1952">Distributed Configuration:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1953"><li class="list__item" id="fc11de9d_1954"><p>Spring Cloud Config allows you to externalize configuration properties and manage them centrally. Microservices can dynamically fetch their configurations from a centralized configuration server.</p></li></ul><p id="fc11de9d_1955">Example:</p><div class="code-block" data-lang="yaml"         >
+# Config Server Properties (application.yml)
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/your-repo/config-repo
+</div><ol class="list _decimal" id="fc11de9d_1957" type="1" start="5"><li class="list__item" id="fc11de9d_1958"><p><span class="control" id="fc11de9d_1959">Circuit Breaker:</span></p></li></ol><ul class="list _ul" id="fc11de9d_1960"><li class="list__item" id="fc11de9d_1961"><p>Hystrix provides circuit breaker patterns to prevent the failure of a single service from affecting the entire system. It can isolate failing services and provide fallback mechanisms.</p></li></ul><p id="fc11de9d_1962">Example:</p><div class="code-block" data-lang="java"         >
+@EnableHystrix
+@SpringBootApplication
+public class MicroserviceApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(MicroserviceApplication.class, args);
+    }
+}
+</div><p id="fc11de9d_1964">These examples demonstrate how to use Spring Cloud components to build a resilient, scalable, and easily manageable microservices architecture. Keep in mind that the examples provided are simplified, and in a real-world scenario, you would typically have multiple microservices interacting with each other.</p></section><section class="chapter"><h2 id="15-javafx" data-toc="15-javafx"   >15. JavaFX</h2><p id="fc11de9d_1965">JavaFX is a framework for building rich client applications using Java. It provides a set of graphics and media packages to create interactive and visually appealing user interfaces. Here's a brief explanation of JavaFX concepts along with examples:</p><ol class="list _decimal" id="fc11de9d_1966" type="1"><li class="list__item" id="fc11de9d_1967"><p id="fc11de9d_1968"><span class="control" id="fc11de9d_1969">JavaFX Basics:</span></p><ul class="list _ul" id="fc11de9d_1970"><li class="list__item" id="fc11de9d_1971"><p>JavaFX applications are typically structured as a stage (window) containing scenes. A scene graph represents the visual elements in the scene. Here's a simple example of a JavaFX application:</p></li></ul><div class="code-block" data-lang="java"         >
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
+public class JavaFXExample extends Application {
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle(&quot;JavaFX Example&quot;);
+
+        Button btn = new Button(&quot;Click me!&quot;);
+        btn.setOnAction(e -&gt; System.out.println(&quot;Hello, JavaFX!&quot;));
+
+        StackPane root = new StackPane();
+        root.getChildren().add(btn);
+
+        Scene scene = new Scene(root, 300, 250);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+}
+</div><p id="fc11de9d_1973">This example creates a simple window with a button. When the button is clicked, it prints a message to the console.</p></li><li class="list__item" id="fc11de9d_1974"><p id="fc11de9d_1975"><span class="control" id="fc11de9d_1976">FXML:</span></p><ul class="list _ul" id="fc11de9d_1977"><li class="list__item" id="fc11de9d_1978"><p>FXML (FXML Markup Language) is an XML-based language for building JavaFX user interfaces. It allows you to separate the layout and presentation from the application logic. Here's a simple FXML example:</p></li></ul><div class="code-block" data-lang="none"         >
+&lt;!-- Example.fxml --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;?import javafx.scene.control.Button?&gt;
+&lt;?import javafx.scene.layout.StackPane?&gt;
+
+&lt;StackPane xmlns:fx=&quot;http://javafx.com/fxml&quot;&gt;
+    &lt;Button text=&quot;Click me!&quot; onAction=&quot;#handleButtonClick&quot;/&gt;
+&lt;/StackPane&gt;
+</div><div class="code-block" data-lang="java"         >
+// ExampleController.java
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+
+public class ExampleController {
+    @FXML
+    private Button button;
+
+    @FXML
+    private void handleButtonClick() {
+        System.out.println(&quot;FXML Button Clicked!&quot;);
+    }
+}
+</div><p id="fc11de9d_1981">You can load this FXML file and connect it to the controller using:</p><div class="code-block" data-lang="java"         >
+FXMLLoader loader = new FXMLLoader(getClass().getResource(&quot;Example.fxml&quot;));
+loader.setController(new ExampleController());
+Parent root = loader.load();
+</div></li><li class="list__item" id="fc11de9d_1983"><p id="fc11de9d_1984"><span class="control" id="fc11de9d_1985">Event Handling:</span></p><ul class="list _ul" id="fc11de9d_1986"><li class="list__item" id="fc11de9d_1987"><p>JavaFX supports event-driven programming. You can handle events like button clicks, key presses, and mouse actions. Here's an example of handling a button click:</p></li></ul><div class="code-block" data-lang="java"         >
+Button btn = new Button(&quot;Click me!&quot;);
+btn.setOnAction(e -&gt; {
+    System.out.println(&quot;Button Clicked!&quot;);
+});
+</div></li><li class="list__item" id="fc11de9d_1989"><p id="fc11de9d_1990"><span class="control" id="fc11de9d_1991">CSS Styling:</span></p><ul class="list _ul" id="fc11de9d_1992"><li class="list__item" id="fc11de9d_1993"><p>JavaFX supports styling using CSS. You can apply styles to your UI components for a better visual appeal. Here's a simple styling example:</p></li></ul><div class="code-block" data-lang="css"         >
+/* style.css */
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+</div><p id="fc11de9d_1995">Apply the style to a button:</p><div class="code-block" data-lang="java"         >
+Button styledButton = new Button(&quot;Styled Button&quot;);
+styledButton.getStyleClass().add(&quot;button&quot;);
+</div></li><li class="list__item" id="fc11de9d_1997"><p id="fc11de9d_1998"><span class="control" id="fc11de9d_1999">Charts and Graphs:</span></p><ul class="list _ul" id="fc11de9d_2000"><li class="list__item" id="fc11de9d_2001"><p>JavaFX provides chart components for creating various types of charts. Here's an example of a bar chart:</p></li></ul><div class="code-block" data-lang="java"         >
+CategoryAxis xAxis = new CategoryAxis();
+NumberAxis yAxis = new NumberAxis();
+BarChart&lt;String, Number&gt; barChart = new BarChart&lt;&gt;(xAxis, yAxis);
+
+XYChart.Series&lt;String, Number&gt; series = new XYChart.Series&lt;&gt;();
+series.getData().add(new XYChart.Data&lt;&gt;(&quot;Category 1&quot;, 20));
+series.getData().add(new XYChart.Data&lt;&gt;(&quot;Category 2&quot;, 40));
+series.getData().add(new XYChart.Data&lt;&gt;(&quot;Category 3&quot;, 15));
+
+barChart.getData().add(series);
+</div></li></ol><p id="fc11de9d_2003">These examples cover some of the fundamental aspects of JavaFX, including basic application structure, FXML, event handling, styling, and charts. JavaFX is a versatile framework, and you can explore more features based on your application requirements.</p></section><div class="last-modified"> Last modified: 22 January 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom">  <a class="navigation-links__prev" href="cpp-language.html">Cpp Language</a>   <a class="navigation-links__next" href="python-language.html">Python Language</a>  </div></article><div id="disqus_thread"></div></div></section></main></div>  <script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>
