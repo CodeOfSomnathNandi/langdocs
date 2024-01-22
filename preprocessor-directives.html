@@ -1,0 +1,216 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat"><html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex">  <meta name="built-on" content="2024-01-23T01:31:58.5509352"><meta name="build-number" content="${buildNumber}">       <title>Preprocessor directives | Language Learning Path</title><script id="virtual-toc-data" type="application/json">[{"id":"1-introduction","level":0,"title":"1. Introduction","anchor":"#1-introduction"},{"id":"2-file-inclusion-directives","level":0,"title":"2. File Inclusion Directives","anchor":"#2-file-inclusion-directives"},{"id":"3-macro-directives","level":0,"title":"3. Macro Directives","anchor":"#3-macro-directives"},{"id":"4-conditional-compilation-directives","level":0,"title":"4. Conditional Compilation Directives","anchor":"#4-conditional-compilation-directives"},{"id":"5-error-control-directives","level":0,"title":"5. Error Control Directives","anchor":"#5-error-control-directives"},{"id":"6-source-code-line-control-directives","level":0,"title":"6. Source Code Line Control Directives","anchor":"#6-source-code-line-control-directives"},{"id":"7-other-directives","level":0,"title":"7. Other Directives","anchor":"#7-other-directives"}]</script><script id="topic-shortcuts" type="application/json"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet">   <link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="https://jetbrains.com/site.webmanifest"><link rel="mask-icon" href="https://jetbrains.com/safari-pinned-tab.svg" color="#000000"><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"/><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"/><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"/><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"/><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"/>  <meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Preprocessor directives | Language Learning Path"/><meta property="og:description" content=""/><meta property="og:image" content=""/><meta property="og:site_name" content="Language Learning Path Help"/><meta property="og:type" content="website"/><meta property="og:locale" content="en_US"/><meta property="og:url" content="preprocessor-directives.html"/><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Preprocessor directives | Language Learning Path"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json"> { "@context": "http://schema.org", "@type": "WebPage", "@id": "preprocessor-directives.html#webpage", "url": "preprocessor-directives.html", "name": "Preprocessor directives | Language Learning Path", "description": "", "image": "", "inLanguage":"en-US" }</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json"> { "@type": "WebSite", "@id": "/#website", "url": "/", "name": "Language Learning Path Help" }</script><!-- End Schema.org --></head>      <body data-id="Preprocessor-directives" data-main-title="Preprocessor directives" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}"  data-template="article"  data-breadcrumbs="C-language.md|C language"  >   <div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Language Learning Path  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Preprocessor-directives"   id="Preprocessor-directives.md">Preprocessor directives</h1>  <section class="chapter"><h2 id="1-introduction" data-toc="1-introduction"   >1. Introduction</h2><p id="cd6fb75e_526">In C programming, preprocessor directives are commands that are processed by the preprocessor before the actual compilation of the code. They start with a hash (#) symbol and are not terminated by a semicolon. There are several types of preprocessor directives in C:</p><ol class="list _decimal" id="cd6fb75e_527" type="1"><li class="list__item" id="cd6fb75e_528"><p id="cd6fb75e_529"><span class="control" id="cd6fb75e_530">File Inclusion Directives:</span></p><ul class="list _ul" id="cd6fb75e_531"><li class="list__item" id="cd6fb75e_532"><p><code class="code" id="cd6fb75e_533">#include</code>: Used to include the contents of another file in the current source code file. It allows you to use functions or declarations from other files.</p></li></ul></li><li class="list__item" id="cd6fb75e_534"><p id="cd6fb75e_535"><span class="control" id="cd6fb75e_536">Macro Directives:</span></p><ul class="list _ul" id="cd6fb75e_537"><li class="list__item" id="cd6fb75e_538"><p><code class="code" id="cd6fb75e_539">#define</code>: Defines a macro, which is a way to represent a sequence of characters or values by a name.</p></li><li class="list__item" id="cd6fb75e_540"><p><code class="code" id="cd6fb75e_541">#undef</code>: Undefines a macro that was previously defined using <code class="code" id="cd6fb75e_542">#define</code>.</p></li></ul></li><li class="list__item" id="cd6fb75e_543"><p id="cd6fb75e_544"><span class="control" id="cd6fb75e_545">Conditional Compilation Directives:</span></p><ul class="list _ul" id="cd6fb75e_546"><li class="list__item" id="cd6fb75e_547"><p><code class="code" id="cd6fb75e_548">#if</code>, <code class="code" id="cd6fb75e_549">#elif</code>, <code class="code" id="cd6fb75e_550">#else</code>, <code class="code" id="cd6fb75e_551">#endif</code>: Allows conditional compilation of code based on certain conditions.</p></li><li class="list__item" id="cd6fb75e_552"><p><code class="code" id="cd6fb75e_553">#ifdef</code>, <code class="code" id="cd6fb75e_554">#ifndef</code>: Checks whether a macro is defined or not.</p></li><li class="list__item" id="cd6fb75e_555"><p><code class="code" id="cd6fb75e_556">#defined</code>: Checks if a particular macro is defined.</p></li></ul></li><li class="list__item" id="cd6fb75e_557"><p id="cd6fb75e_558"><span class="control" id="cd6fb75e_559">Error Control Directives:</span></p><ul class="list _ul" id="cd6fb75e_560"><li class="list__item" id="cd6fb75e_561"><p><code class="code" id="cd6fb75e_562">#error</code>: Generates a compilation error with a specified error message.</p></li><li class="list__item" id="cd6fb75e_563"><p><code class="code" id="cd6fb75e_564">#pragma</code>: Provides machine- or compiler-specific directives. Although <code class="code" id="cd6fb75e_565">#pragma</code> is not strictly a preprocessor directive, it is often used in conjunction with preprocessor directives.</p></li></ul></li><li class="list__item" id="cd6fb75e_566"><p id="cd6fb75e_567"><span class="control" id="cd6fb75e_568">Source Code Line Control Directives:</span></p><ul class="list _ul" id="cd6fb75e_569"><li class="list__item" id="cd6fb75e_570"><p><code class="code" id="cd6fb75e_571">#line</code>: Allows you to control the line number and file name reported by the compiler.</p></li></ul></li><li class="list__item" id="cd6fb75e_572"><p id="cd6fb75e_573"><span class="control" id="cd6fb75e_574">Other Directives:</span></p><ul class="list _ul" id="cd6fb75e_575"><li class="list__item" id="cd6fb75e_576"><p><code class="code" id="cd6fb75e_577">#warning</code>: Generates a compilation warning with a specified warning message.</p></li><li class="list__item" id="cd6fb75e_578"><p><code class="code" id="cd6fb75e_579">#include_next</code>: Used in some compilers to include the next file of the same name in the search path.</p></li></ul></li></ol><p id="cd6fb75e_580">These directives are processed by the preprocessor before the actual compilation of the code, allowing you to control the compilation process, include external files, define macros, and more.</p></section><section class="chapter"><h2 id="2-file-inclusion-directives" data-toc="2-file-inclusion-directives"   >2. File Inclusion Directives</h2><p id="cd6fb75e_581">File Inclusion Directives in C are used to include the contents of another file in the current source code file. This is useful for modularizing code, reusing functions or declarations, and organizing large projects. The most common file inclusion directive is <code class="code" id="cd6fb75e_582">#include</code>. There are two main types of inclusion:</p><ol class="list _decimal" id="cd6fb75e_583" type="1"><li class="list__item" id="cd6fb75e_584"><p id="cd6fb75e_585"><span class="control" id="cd6fb75e_586">Standard Library Header Files:</span> Standard library header files provide declarations for functions and macros that are part of the C standard library. They are included using angle brackets <code class="code" id="cd6fb75e_587">&lt; &gt;</code>.</p><div class="code-block" data-lang="c"         >
+#include &lt;stdio.h&gt; // Includes the standard input/output functions
+#include &lt;stdlib.h&gt; // Includes functions involving memory allocation, rand, etc.
+</div></li><li class="list__item" id="cd6fb75e_589"><p id="cd6fb75e_590"><span class="control" id="cd6fb75e_591">User-Defined Header Files:</span> User-defined header files are files created by the programmer to store declarations, macros, or other reusable code. They are included using double quotation marks <code class="code" id="cd6fb75e_592">&quot; &quot;</code>.</p><div class="code-block" data-lang="c"         >
+#include &quot;myheader.h&quot; // Includes a user-defined header file named &quot;myheader.h&quot;
+</div><p id="cd6fb75e_594">Here's an example to illustrate file inclusion with a user-defined header file:</p><p id="cd6fb75e_595"><span class="control" id="cd6fb75e_596">main.c:</span></p><div class="code-block" data-lang="c"         >
+#include &lt;stdio.h&gt;
+#include &quot;myfunctions.h&quot; // Including a user-defined header file
+
+int main() {
+    printf(&quot;Sum of 5 and 3 is: %d\n&quot;, add(5, 3));
+    return 0;
+}
+</div><p id="cd6fb75e_598"><span class="control" id="cd6fb75e_599">myfunctions.h:</span></p><div class="code-block" data-lang="c"         >
+// Declaration of the add function
+int add(int a, int b);
+</div><p id="cd6fb75e_601"><span class="control" id="cd6fb75e_602">myfunctions.c:</span></p><div class="code-block" data-lang="c"         >
+// Definition of the add function
+int add(int a, int b) {
+    return a + b;
+}
+</div></li></ol><p id="cd6fb75e_604">In this example, <code class="code" id="cd6fb75e_605">main.c</code> includes the user-defined header file <code class="code" id="cd6fb75e_606">myfunctions.h</code>, which declares the <code class="code" id="cd6fb75e_607">add</code> function. The actual implementation of the <code class="code" id="cd6fb75e_608">add</code> function is provided in the separate source file <code class="code" id="cd6fb75e_609">myfunctions.c</code>. During compilation, all these files are brought together to create the final executable. This modular approach helps in organizing code and promoting code reuse.</p></section><section class="chapter"><h2 id="3-macro-directives" data-toc="3-macro-directives"   >3. Macro Directives</h2><p id="cd6fb75e_610">Macro directives in C are used to define and work with macros. Macros are a way to create symbolic names or constants, making code more readable and maintainable. The two main macro directives are <code class="code" id="cd6fb75e_611">#define</code> and <code class="code" id="cd6fb75e_612">#undef</code>. Here's an explanation of each with examples:</p><ol class="list _decimal" id="cd6fb75e_613" type="1"><li class="list__item" id="cd6fb75e_614"><p id="cd6fb75e_615"><span class="control" id="cd6fb75e_616">#define:</span></p><ul class="list _ul" id="cd6fb75e_617"><li class="list__item" id="cd6fb75e_618"><p><code class="code" id="cd6fb75e_619">#define</code> is used to create macros, which are symbolic names representing expressions, values, or code snippets.</p></li></ul><p id="cd6fb75e_620">Syntax:</p><div class="code-block" data-lang="c"         >
+#define identifier replacement
+</div><p id="cd6fb75e_622">Example:</p><div class="code-block" data-lang="c"         >
+#include &lt;stdio.h&gt;
+
+#define PI 3.14159
+#define SQUARE(x) (x * x)
+
+int main() {
+    printf(&quot;The value of PI: %f\n&quot;, PI);
+
+    int side = 5;
+    printf(&quot;The area of a square with side %d: %d\n&quot;, side, SQUARE(side));
+
+    return 0;
+}
+</div><p id="cd6fb75e_624">Explanation:</p><ul class="list _ul" id="cd6fb75e_625"><li class="list__item" id="cd6fb75e_626"><p>In this example, <code class="code" id="cd6fb75e_627">PI</code> is a macro representing the value of pi, and <code class="code" id="cd6fb75e_628">SQUARE(x)</code> is a macro representing the square of a given value <code class="code" id="cd6fb75e_629">x</code>.</p></li><li class="list__item" id="cd6fb75e_630"><p>During preprocessing, every occurrence of <code class="code" id="cd6fb75e_631">PI</code> is replaced with <code class="code" id="cd6fb75e_632">3.14159</code>, and every occurrence of <code class="code" id="cd6fb75e_633">SQUARE(side)</code> is replaced with <code class="code" id="cd6fb75e_634">(side * side)</code>.</p></li></ul></li><li class="list__item" id="cd6fb75e_635"><p id="cd6fb75e_636"><span class="control" id="cd6fb75e_637">#undef:</span></p><ul class="list _ul" id="cd6fb75e_638"><li class="list__item" id="cd6fb75e_639"><p><code class="code" id="cd6fb75e_640">#undef</code> is used to undefine (remove) a macro that was previously defined using <code class="code" id="cd6fb75e_641">#define</code>.</p></li></ul><p id="cd6fb75e_642">Syntax:</p><div class="code-block" data-lang="c"         >
+#undef identifier
+</div><p id="cd6fb75e_644">Example:</p><div class="code-block" data-lang="c"         >
+#include &lt;stdio.h&gt;
+
+#define DEBUG_MODE
+
+int main() {
+#ifdef DEBUG_MODE
+    printf(&quot;Debugging is enabled.\n&quot;);
+#else
+    printf(&quot;Debugging is disabled.\n&quot;);
+#endif
+
+#undef DEBUG_MODE
+
+#ifdef DEBUG_MODE
+    printf(&quot;This should not be printed.\n&quot;);
+#else
+    printf(&quot;Debugging is now disabled.\n&quot;);
+#endif
+
+    return 0;
+}
+</div><p id="cd6fb75e_646">Explanation:</p><ul class="list _ul" id="cd6fb75e_647"><li class="list__item" id="cd6fb75e_648"><p>In this example, <code class="code" id="cd6fb75e_649">DEBUG_MODE</code> is initially defined, so the first block of code is compiled.</p></li><li class="list__item" id="cd6fb75e_650"><p>After <code class="code" id="cd6fb75e_651">#undef DEBUG_MODE</code>, the macro <code class="code" id="cd6fb75e_652">DEBUG_MODE</code> is undefined, so the second block of code is compiled. The <code class="code" id="cd6fb75e_653">#ifdef</code> preprocessor directive checks if a macro is defined.</p></li></ul></li></ol><p id="cd6fb75e_654">These macro directives provide a powerful way to create reusable and flexible code in C. However, it's important to use them judiciously and with caution to avoid unintended side effects.</p></section><section class="chapter"><h2 id="4-conditional-compilation-directives" data-toc="4-conditional-compilation-directives"   >4. Conditional Compilation Directives</h2><p id="cd6fb75e_655">Conditional compilation directives in C are used to include or exclude portions of code during compilation based on certain conditions. These directives allow you to control which parts of the code are compiled and which are ignored. The main conditional compilation directives include <code class="code" id="cd6fb75e_656">#if</code>, <code class="code" id="cd6fb75e_657">#elif</code> (else if), <code class="code" id="cd6fb75e_658">#else</code>, and <code class="code" id="cd6fb75e_659">#endif</code>. Here are some examples:</p><ol class="list _decimal" id="cd6fb75e_660" type="1"><li class="list__item" id="cd6fb75e_661"><p id="cd6fb75e_662"><span class="control" id="cd6fb75e_663">Simple <code class="code" id="cd6fb75e_664">#if</code> and <code class="code" id="cd6fb75e_665">#else</code> Example:</span></p><div class="code-block" data-lang="c"         >
+#include &lt;stdio.h&gt;
+
+#define DEBUG 1
+
+int main() {
+#if DEBUG
+    printf(&quot;Debug mode is enabled.\n&quot;);
+#else
+    printf(&quot;Debug mode is disabled.\n&quot;);
+#endif
+
+    // Rest of the code...
+
+    return 0;
+}
+</div><p id="cd6fb75e_667">In this example, the code within the <code class="code" id="cd6fb75e_668">#if DEBUG</code> block will be included during compilation because the <code class="code" id="cd6fb75e_669">DEBUG</code> macro is defined. If <code class="code" id="cd6fb75e_670">DEBUG</code> were not defined or set to 0, the code within the <code class="code" id="cd6fb75e_671">#else</code> block would be included.</p></li><li class="list__item" id="cd6fb75e_672"><p id="cd6fb75e_673"><span class="control" id="cd6fb75e_674">Using <code class="code" id="cd6fb75e_675">#ifdef</code> and <code class="code" id="cd6fb75e_676">#ifndef</code>:</span></p><div class="code-block" data-lang="c"         >
+#include &lt;stdio.h&gt;
+
+#define FEATURE_A
+
+int main() {
+#ifdef FEATURE_A
+    printf(&quot;Feature A is enabled.\n&quot;);
+#else
+    printf(&quot;Feature A is disabled.\n&quot;);
+#endif
+
+#ifndef FEATURE_B
+    printf(&quot;Feature B is not defined.\n&quot;);
+#endif
+
+    // Rest of the code...
+
+    return 0;
+}
+</div><p id="cd6fb75e_678">Here, <code class="code" id="cd6fb75e_679">#ifdef</code> checks if the macro <code class="code" id="cd6fb75e_680">FEATURE_A</code> is defined, and <code class="code" id="cd6fb75e_681">#ifndef</code> checks if <code class="code" id="cd6fb75e_682">FEATURE_B</code> is not defined. Depending on these conditions, the corresponding blocks of code are included or excluded during compilation.</p></li><li class="list__item" id="cd6fb75e_683"><p id="cd6fb75e_684"><span class="control" id="cd6fb75e_685">Combining Conditions with <code class="code" id="cd6fb75e_686">#elif</code>:</span></p><div class="code-block" data-lang="c"         >
+#include &lt;stdio.h&gt;
+
+#define PLATFORM_WINDOWS
+// #define PLATFORM_LINUX
+
+int main() {
+#if defined(PLATFORM_WINDOWS)
+    printf(&quot;Running on Windows.\n&quot;);
+#elif defined(PLATFORM_LINUX)
+    printf(&quot;Running on Linux.\n&quot;);
+#else
+    printf(&quot;Unknown platform.\n&quot;);
+#endif
+
+    // Rest of the code...
+
+    return 0;
+}
+</div><p id="cd6fb75e_688">In this example, the code checks the defined platform using <code class="code" id="cd6fb75e_689">#if</code>, <code class="code" id="cd6fb75e_690">#elif</code>, and <code class="code" id="cd6fb75e_691">#else</code>. Only one of the platform-specific blocks will be included based on the defined macro.</p></li></ol><p id="cd6fb75e_692">Conditional compilation directives are powerful tools for creating flexible and portable code. They allow developers to customize the compilation process based on different criteria, such as platform-specific features, debug modes, or other configuration options.</p></section><section class="chapter"><h2 id="5-error-control-directives" data-toc="5-error-control-directives"   >5. Error Control Directives</h2><p id="cd6fb75e_693">Error control directives in C are used to generate compilation errors or warnings based on certain conditions specified in the code. The primary directive for error control is <code class="code" id="cd6fb75e_694">#error</code>. Here's an explanation along with an example:</p><ol class="list _decimal" id="cd6fb75e_695" type="1"><li class="list__item" id="cd6fb75e_696"><p id="cd6fb75e_697"><span class="control" id="cd6fb75e_698">#error Directive:</span></p><ul class="list _ul" id="cd6fb75e_699"><li class="list__item" id="cd6fb75e_700"><p>The <code class="code" id="cd6fb75e_701">#error</code> directive is used to generate a compilation error with a specified error message. It is typically employed when certain conditions that should not occur are detected during the preprocessing phase.</p></li></ul><div class="code-block" data-lang="c"         >
+#include &lt;stdio.h&gt;
+
+#define DEBUG
+
+#ifdef DEBUG
+#error Debug mode is not allowed in the release build.
+#endif
+
+int main() {
+    // Main code goes here
+    return 0;
+}
+</div><p id="cd6fb75e_703">In this example, the <code class="code" id="cd6fb75e_704">#ifdef DEBUG</code> checks if the <code class="code" id="cd6fb75e_705">DEBUG</code> macro is defined. If it is defined, the <code class="code" id="cd6fb75e_706">#error</code> directive is encountered, and the compilation process stops with an error message. This is useful for enforcing certain coding standards or preventing specific configurations in the code.</p><p id="cd6fb75e_707">If you attempt to compile this code with the <code class="code" id="cd6fb75e_708">DEBUG</code> macro defined, you will get an error message like:</p><div class="code-block" data-lang="none"         >
+main.c:5:2: error: #error Debug mode is not allowed in the release build.
+ #error Debug mode is not allowed in the release build.
+ ^~~~~
+</div><p id="cd6fb75e_710">The compilation process halts, and you need to address the issue before successfully compiling the code.</p></li><li class="list__item" id="cd6fb75e_711"><p id="cd6fb75e_712"><span class="control" id="cd6fb75e_713">#warning Directive:</span></p><ul class="list _ul" id="cd6fb75e_714"><li class="list__item" id="cd6fb75e_715"><p>The <code class="code" id="cd6fb75e_716">#warning</code> directive is similar to <code class="code" id="cd6fb75e_717">#error</code>, but it generates a compilation warning instead of an error. This can be useful for drawing attention to certain conditions without preventing the code from compiling.</p></li></ul><div class="code-block" data-lang="c"         >
+#include &lt;stdio.h&gt;
+
+#define DEPRECATED_FUNCTION
+
+#ifdef DEPRECATED_FUNCTION
+#warning The function is deprecated and will be removed in the future.
+#endif
+
+int main() {
+    // Main code goes here
+    return 0;
+}
+</div><p id="cd6fb75e_719">In this example, if the <code class="code" id="cd6fb75e_720">DEPRECATED_FUNCTION</code> macro is defined, a compilation warning is generated. This allows developers to be aware of deprecated features or code and plan for necessary updates.</p><p id="cd6fb75e_721">When compiling this code with the <code class="code" id="cd6fb75e_722">DEPRECATED_FUNCTION</code> macro defined, you will get a warning message like:</p><div class="code-block" data-lang="none"         >
+main.c:5:2: warning: The function is deprecated and will be removed in the future.
+ #warning The function is deprecated and will be removed in the future.
+ ^~~~~~~
+</div><p id="cd6fb75e_724">The compilation process continues, but developers are informed about the deprecated functionality.</p></li></ol><p id="cd6fb75e_725">These error control directives provide a way to communicate important information, enforce coding standards, or prevent undesirable configurations during the preprocessing phase of compilation.</p></section><section class="chapter"><h2 id="6-source-code-line-control-directives" data-toc="6-source-code-line-control-directives"   >6. Source Code Line Control Directives</h2><p id="cd6fb75e_726">Source Code Line Control Directives in C, specifically <code class="code" id="cd6fb75e_727">#line</code>, allow you to control the line number and file name information that the compiler uses during compilation. This can be useful for various reasons, such as generating more informative error messages or managing code that is generated by other tools. The <code class="code" id="cd6fb75e_728">#line</code> directive has two primary forms:</p><ol class="list _decimal" id="cd6fb75e_729" type="1"><li class="list__item" id="cd6fb75e_730"><p id="cd6fb75e_731"><span class="control" id="cd6fb75e_732">Basic Form:</span></p><div class="code-block" data-lang="c"         >
+#line linenumber
+</div><p id="cd6fb75e_734">This form sets the current line number to the specified <code class="code" id="cd6fb75e_735">linenumber</code> and retains the current file name.</p></li><li class="list__item" id="cd6fb75e_736"><p id="cd6fb75e_737"><span class="control" id="cd6fb75e_738">Extended Form:</span></p><div class="code-block" data-lang="c"         >
+#line linenumber &quot;filename&quot;
+</div><p id="cd6fb75e_740">This form sets both the current line number and the current file name to the specified values.</p></li></ol><p id="cd6fb75e_741">Here are examples of both forms:</p><p id="cd6fb75e_742"><span class="control" id="cd6fb75e_743">Example 1: Basic Form</span></p><div class="code-block" data-lang="c"         >
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf(&quot;This is line %d.\n&quot;, __LINE__);  // Display current line number
+
+    #line 10  // Change the line number to 10
+
+    printf(&quot;Now we're on line %d.\n&quot;, __LINE__);  // Display the updated line number
+
+    return 0;
+}
+</div><p id="cd6fb75e_745">In this example, the <code class="code" id="cd6fb75e_746">#line 10</code> directive changes the current line number to 10. As a result, the <code class="code" id="cd6fb75e_747">__LINE__</code> macro, which is a predefined macro that represents the current line number, reflects this change.</p><p id="cd6fb75e_748"><span class="control" id="cd6fb75e_749">Example 2: Extended Form</span></p><div class="code-block" data-lang="c"         >
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf(&quot;This is line %d of file %s.\n&quot;, __LINE__, __FILE__);  // Display current line and file
+
+    #line 20 &quot;customfile.c&quot;  // Change the line number to 20 and set the file name to &quot;customfile.c&quot;
+
+    printf(&quot;Now we're on line %d of file %s.\n&quot;, __LINE__, __FILE__);  // Display the updated line and file
+
+    return 0;
+}
+</div><p id="cd6fb75e_751">In this example, the <code class="code" id="cd6fb75e_752">#line 20 &quot;customfile.c&quot;</code> directive changes both the line number and the file name. The <code class="code" id="cd6fb75e_753">__LINE__</code> and <code class="code" id="cd6fb75e_754">__FILE__</code> macros then reflect the updated information.</p><p id="cd6fb75e_755">Keep in mind that while the <code class="code" id="cd6fb75e_756">#line</code> directive can be powerful, it should be used judiciously, as it can make the code less readable and harder to maintain if overused.</p></section><section class="chapter"><h2 id="7-other-directives" data-toc="7-other-directives"   >7. Other Directives</h2><p id="cd6fb75e_757">Certainly! Let's go over the &quot;Other Directives&quot; category, focusing on <code class="code" id="cd6fb75e_758">#warning</code> and <code class="code" id="cd6fb75e_759">#include_next</code>.</p><ol class="list _decimal" id="cd6fb75e_760" type="1"><li class="list__item" id="cd6fb75e_761"><p id="cd6fb75e_762"><span class="control" id="cd6fb75e_763">#warning:</span> The <code class="code" id="cd6fb75e_764">#warning</code> directive is used to generate a warning message during compilation. It allows developers to include custom warning messages in their code.</p><p id="cd6fb75e_765">Example:</p><div class="code-block" data-lang="c"         >
+#define DEBUG_LEVEL 2
+
+#if DEBUG_LEVEL &gt; 3
+   #warning &quot;High debug level may impact performance.&quot;
+#endif
+
+int main() {
+    // Your code here
+    return 0;
+}
+</div><p id="cd6fb75e_767">In this example, if the <code class="code" id="cd6fb75e_768">DEBUG_LEVEL</code> is set to a value greater than 3, a warning message will be generated during compilation. This is a way to provide informational messages to developers based on certain conditions.</p></li><li class="list__item" id="cd6fb75e_769"><p id="cd6fb75e_770"><span class="control" id="cd6fb75e_771">#include_next:</span> The <code class="code" id="cd6fb75e_772">#include_next</code> directive is used in some compilers to include the next file of the same name in the search path. This is often used in complex build systems where multiple include directories are involved.</p><p id="cd6fb75e_773">Example:</p><div class="code-block" data-lang="c"         >
+// File: myheader.h
+#ifndef MYHEADER_H
+#define MYHEADER_H
+
+// Your header content here
+
+#endif
+</div><div class="code-block" data-lang="c"         >
+// File: main.c
+#include &quot;myheader.h&quot;
+
+// Your code here
+</div><p id="cd6fb75e_776">Now, if you have another header file with the same name in a different directory, you can include it using <code class="code" id="cd6fb75e_777">#include_next</code>:</p><div class="code-block" data-lang="c"         >
+// File: another_directory/myheader.h
+#ifndef MYHEADER_H
+#define MYHEADER_H
+
+// Another version of your header content here
+
+#endif
+</div><div class="code-block" data-lang="c"         >
+// File: main.c
+#include_next &quot;myheader.h&quot;
+
+// This includes the myheader.h from another_directory
+</div><p id="cd6fb75e_780">This allows you to include the next available header file with the specified name in the include search path.</p></li></ol><p id="cd6fb75e_781">These &quot;Other Directives&quot; provide additional flexibility and control during the compilation process, allowing developers to issue warnings or manage complex inclusion scenarios.</p></section><div class="last-modified"> Last modified: 22 January 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom">  <a class="navigation-links__prev" href="function-pointers.html">Function Pointers</a>   <a class="navigation-links__next" href="threads.html">Threads</a>  </div></article><div id="disqus_thread"></div></div></section></main></div>  <script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>
