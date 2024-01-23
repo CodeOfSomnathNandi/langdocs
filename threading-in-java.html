@@ -1,0 +1,404 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat"><html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex">  <meta name="built-on" content="2024-01-23T13:33:11.8440668"><meta name="build-number" content="${buildNumber}">       <title>Threading in Java | Language Learning Path</title><script id="virtual-toc-data" type="application/json">[{"id":"1-introduction","level":0,"title":"1. Introduction","anchor":"#1-introduction"},{"id":"2-extending-thread-class","level":0,"title":"2. Extending Thread Class","anchor":"#2-extending-thread-class"},{"id":"3-implementing-runnable-interface","level":0,"title":"3. Implementing Runnable Interface","anchor":"#3-implementing-runnable-interface"},{"id":"4-synchronization","level":0,"title":"4. Synchronization","anchor":"#4-synchronization"},{"id":"5-locks","level":0,"title":"5. Locks","anchor":"#5-locks"},{"id":"6-executor-framework","level":0,"title":"6. Executor Framework","anchor":"#6-executor-framework"},{"id":"7-fork-join-framework","level":0,"title":"7. Fork-Join Framework","anchor":"#7-fork-join-framework"}]</script><script id="topic-shortcuts" type="application/json"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet">   <link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="https://jetbrains.com/site.webmanifest"><link rel="mask-icon" href="https://jetbrains.com/safari-pinned-tab.svg" color="#000000"><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"/><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"/><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"/><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"/><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"/>  <meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Threading in Java | Language Learning Path"/><meta property="og:description" content=""/><meta property="og:image" content=""/><meta property="og:site_name" content="Language Learning Path Help"/><meta property="og:type" content="website"/><meta property="og:locale" content="en_US"/><meta property="og:url" content="threading-in-java.html"/><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Threading in Java | Language Learning Path"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json"> { "@context": "http://schema.org", "@type": "WebPage", "@id": "threading-in-java.html#webpage", "url": "threading-in-java.html", "name": "Threading in Java | Language Learning Path", "description": "", "image": "", "inLanguage":"en-US" }</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json"> { "@type": "WebSite", "@id": "/#website", "url": "/", "name": "Language Learning Path Help" }</script><!-- End Schema.org --></head>      <body data-id="Threading-in-Java" data-main-title="Threading in Java" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}"  data-template="article"  data-breadcrumbs="Java-Language.md|Java Language"  >   <div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Language Learning Path  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Threading-in-Java"   id="Threading-in-Java.md">Threading in Java</h1>  <section class="chapter"><h2 id="1-introduction" data-toc="1-introduction"   >1. Introduction</h2><p id="8ed4d20f_1424">In Java, multithreading and concurrency are concepts that allow programs to execute multiple threads or tasks concurrently, leading to better utilization of resources and improved performance. Let's delve into these concepts and explore different approaches to achieve multithreading and concurrency in Java.</p><section class="chapter"><h3 id="multithreading-in-java" data-toc="multithreading-in-java"   >Multithreading in Java:</h3><ol class="list _decimal" id="8ed4d20f_1425" type="1"><li class="list__item" id="8ed4d20f_1426"><p id="8ed4d20f_1427"><span class="control" id="8ed4d20f_1428">Extending Thread Class:</span></p><ul class="list _ul" id="8ed4d20f_1429"><li class="list__item" id="8ed4d20f_1430"><p id="8ed4d20f_1431">The simplest way to create a thread is by extending the <code class="code" id="8ed4d20f_1432">Thread</code> class and overriding its <code class="code" id="8ed4d20f_1433">run()</code> method.</p></li><li class="list__item" id="8ed4d20f_1434"><p id="8ed4d20f_1435">Example:</p><div class="code-block" data-lang="java"         >
+class MyThread extends Thread {
+    public void run() {
+        // Code to be executed in the thread
+    }
+}
+
+// Creating and starting the thread
+MyThread myThread = new MyThread();
+myThread.start();
+</div></li></ul></li><li class="list__item" id="8ed4d20f_1437"><p id="8ed4d20f_1438"><span class="control" id="8ed4d20f_1439">Implementing Runnable Interface:</span></p><ul class="list _ul" id="8ed4d20f_1440"><li class="list__item" id="8ed4d20f_1441"><p id="8ed4d20f_1442">Another approach is to implement the <code class="code" id="8ed4d20f_1443">Runnable</code> interface. This allows a class to be executed by a thread without the need to subclass <code class="code" id="8ed4d20f_1444">Thread</code>.</p></li><li class="list__item" id="8ed4d20f_1445"><p id="8ed4d20f_1446">Example:</p><div class="code-block" data-lang="java"         >
+class MyRunnable implements Runnable {
+    public void run() {
+        // Code to be executed in the thread
+    }
+}
+
+// Creating and starting the thread using a Runnable
+Thread myThread = new Thread(new MyRunnable());
+myThread.start();
+</div></li></ul></li></ol></section><section class="chapter"><h3 id="concurrency-in-java" data-toc="concurrency-in-java"   >Concurrency in Java:</h3><p id="8ed4d20f_1448">Concurrency in Java involves managing multiple tasks at the same time, and there are several approaches to achieve this:</p><ol class="list _decimal" id="8ed4d20f_1449" type="1"><li class="list__item" id="8ed4d20f_1450"><p id="8ed4d20f_1451"><span class="control" id="8ed4d20f_1452">Synchronization:</span></p><ul class="list _ul" id="8ed4d20f_1453"><li class="list__item" id="8ed4d20f_1454"><p id="8ed4d20f_1455">To avoid data inconsistencies in multithreaded environments, Java provides the <code class="code" id="8ed4d20f_1456">synchronized</code> keyword. It ensures that only one thread can access a block of code at a time.</p></li><li class="list__item" id="8ed4d20f_1457"><p id="8ed4d20f_1458">Example:</p><div class="code-block" data-lang="java"         >
+class Counter {
+    private int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
+}
+</div></li></ul></li><li class="list__item" id="8ed4d20f_1460"><p id="8ed4d20f_1461"><span class="control" id="8ed4d20f_1462">Locks:</span></p><ul class="list _ul" id="8ed4d20f_1463"><li class="list__item" id="8ed4d20f_1464"><p id="8ed4d20f_1465">Java also provides the <code class="code" id="8ed4d20f_1466">java.util.concurrent.locks</code> package, which includes more flexible locking mechanisms. The <code class="code" id="8ed4d20f_1467">ReentrantLock</code> is an example.</p></li><li class="list__item" id="8ed4d20f_1468"><p id="8ed4d20f_1469">Example:</p><div class="code-block" data-lang="java"         >
+import java.util.concurrent.locks.ReentrantLock;
+
+class Counter {
+    private int count = 0;
+    private ReentrantLock lock = new ReentrantLock();
+
+    public void increment() {
+        lock.lock();
+        try {
+            count++;
+        } finally {
+            lock.unlock();
+        }
+    }
+}
+</div></li></ul></li><li class="list__item" id="8ed4d20f_1471"><p id="8ed4d20f_1472"><span class="control" id="8ed4d20f_1473">Executor Framework:</span></p><ul class="list _ul" id="8ed4d20f_1474"><li class="list__item" id="8ed4d20f_1475"><p id="8ed4d20f_1476">The <code class="code" id="8ed4d20f_1477">Executor</code> framework simplifies the management of thread execution. The <code class="code" id="8ed4d20f_1478">ExecutorService</code> interface allows you to submit tasks for execution and manage thread pools.</p></li><li class="list__item" id="8ed4d20f_1479"><p id="8ed4d20f_1480">Example:</p><div class="code-block" data-lang="java"         >
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+class MyTask implements Runnable {
+    public void run() {
+        // Code to be executed in the task
+    }
+}
+
+// Creating and using an ExecutorService
+ExecutorService executorService = Executors.newFixedThreadPool(5);
+executorService.submit(new MyTask());
+</div></li></ul></li><li class="list__item" id="8ed4d20f_1482"><p id="8ed4d20f_1483"><span class="control" id="8ed4d20f_1484">Fork-Join Framework:</span></p><ul class="list _ul" id="8ed4d20f_1485"><li class="list__item" id="8ed4d20f_1486"><p id="8ed4d20f_1487">Introduced in Java 7, the <code class="code" id="8ed4d20f_1488">ForkJoinPool</code> is suitable for parallel programming where tasks can be divided into smaller subtasks.</p></li><li class="list__item" id="8ed4d20f_1489"><p id="8ed4d20f_1490">Example:</p><div class="code-block" data-lang="java"         >
+import java.util.concurrent.RecursiveTask;
+import java.util.concurrent.ForkJoinPool;
+
+class MyTask extends RecursiveTask&lt;Integer&gt; {
+    protected Integer compute() {
+        // Code to be executed in the task
+    }
+}
+
+// Creating and using a ForkJoinPool
+ForkJoinPool forkJoinPool = new ForkJoinPool();
+MyTask myTask = new MyTask();
+int result = forkJoinPool.invoke(myTask);
+</div></li></ul></li></ol><p id="8ed4d20f_1492">These are just a few approaches to achieve multithreading and concurrency in Java. The choice of approach depends on the specific requirements of your application and the level of control you need over thread management and synchronization.</p></section></section><section class="chapter"><h2 id="2-extending-thread-class" data-toc="2-extending-thread-class"   >2. Extending Thread Class</h2><p id="8ed4d20f_1493">Extending the <code class="code" id="8ed4d20f_1494">Thread</code> class in Java is one way to create a new thread. When you extend the <code class="code" id="8ed4d20f_1495">Thread</code> class, you need to override the <code class="code" id="8ed4d20f_1496">run()</code> method, which contains the code that will be executed in the new thread. Here's an example:</p><div class="code-block" data-lang="java"         >
+// Define a class that extends Thread
+class MyThread extends Thread {
+    // Override the run() method with the code to be executed in the thread
+    public void run() {
+        for (int i = 1; i &lt;= 5; i++) {
+            System.out.println(Thread.currentThread().getId() + &quot; Value &quot; + i);
+        }
+    }
+}
+
+public class ThreadExample {
+    public static void main(String args[]) {
+        // Create instances of the custom thread class
+        MyThread thread1 = new MyThread();
+        MyThread thread2 = new MyThread();
+
+        // Start the threads
+        thread1.start();
+        thread2.start();
+    }
+}
+</div><p id="8ed4d20f_1498">In this example:</p><ul class="list _ul" id="8ed4d20f_1499"><li class="list__item" id="8ed4d20f_1500"><p>We've created a class <code class="code" id="8ed4d20f_1501">MyThread</code> that extends the <code class="code" id="8ed4d20f_1502">Thread</code> class.</p></li><li class="list__item" id="8ed4d20f_1503"><p>The <code class="code" id="8ed4d20f_1504">run()</code> method is overridden with the code that will be executed when the thread is started.</p></li><li class="list__item" id="8ed4d20f_1505"><p>In the <code class="code" id="8ed4d20f_1506">main</code> method, we create two instances of <code class="code" id="8ed4d20f_1507">MyThread</code> and start them using the <code class="code" id="8ed4d20f_1508">start()</code> method.</p></li><li class="list__item" id="8ed4d20f_1509"><p>The <code class="code" id="8ed4d20f_1510">start()</code> method internally calls the <code class="code" id="8ed4d20f_1511">run()</code> method, and each thread executes its <code class="code" id="8ed4d20f_1512">run()</code> method independently.</p></li></ul><p id="8ed4d20f_1513">The output might not be in a strict order because the threads run concurrently, and their execution depends on the thread scheduler.</p><p id="8ed4d20f_1514">It's important to note that extending the <code class="code" id="8ed4d20f_1515">Thread</code> class has some limitations, such as not being able to extend any other class if you use this approach. This is because Java supports single inheritance only. If you need more flexibility, consider implementing the <code class="code" id="8ed4d20f_1516">Runnable</code> interface, which allows you to extend another class and share the same instance of a runnable object between multiple threads.</p><div class="code-block" data-lang="java"         >
+class MyRunnable implements Runnable {
+    public void run() {
+        for (int i = 1; i &lt;= 5; i++) {
+            System.out.println(Thread.currentThread().getId() + &quot; Value &quot; + i);
+        }
+    }
+}
+
+public class RunnableExample {
+    public static void main(String args[]) {
+        // Create an instance of the class that implements Runnable
+        MyRunnable myRunnable = new MyRunnable();
+
+        // Create instances of Thread, passing the Runnable object
+        Thread thread1 = new Thread(myRunnable);
+        Thread thread2 = new Thread(myRunnable);
+
+        // Start the threads
+        thread1.start();
+        thread2.start();
+    }
+}
+</div><p id="8ed4d20f_1518">This way, you can achieve the benefits of multithreading while maintaining the flexibility provided by implementing the <code class="code" id="8ed4d20f_1519">Runnable</code> interface.</p></section><section class="chapter"><h2 id="3-implementing-runnable-interface" data-toc="3-implementing-runnable-interface"   >3. Implementing Runnable Interface</h2><p id="8ed4d20f_1520">Implementing the <code class="code" id="8ed4d20f_1521">Runnable</code> interface is a common approach to creating threads in Java. By implementing the <code class="code" id="8ed4d20f_1522">Runnable</code> interface, you separate the thread's behavior from the thread's definition, making it a more flexible and object-oriented way to work with threads. Here's an example of implementing the <code class="code" id="8ed4d20f_1523">Runnable</code> interface in Java:</p><div class="code-block" data-lang="java"         >
+public class MyRunnable implements Runnable {
+
+    @Override
+    public void run() {
+        // Code to be executed in the thread
+        for (int i = 1; i &lt;= 5; i++) {
+            System.out.println(Thread.currentThread().getName() + &quot;: &quot; + i);
+
+            try {
+                // Adding a small delay for demonstration purposes
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        // Creating an instance of the class that implements Runnable
+        MyRunnable myRunnable = new MyRunnable();
+
+        // Creating threads using the same Runnable instance
+        Thread thread1 = new Thread(myRunnable, &quot;Thread-1&quot;);
+        Thread thread2 = new Thread(myRunnable, &quot;Thread-2&quot;);
+
+        // Starting the threads
+        thread1.start();
+        thread2.start();
+    }
+}
+</div><p id="8ed4d20f_1525">Explanation of the code:</p><ol class="list _decimal" id="8ed4d20f_1526" type="1"><li class="list__item" id="8ed4d20f_1527"><p id="8ed4d20f_1528">The <code class="code" id="8ed4d20f_1529">MyRunnable</code> class implements the <code class="code" id="8ed4d20f_1530">Runnable</code> interface and overrides its <code class="code" id="8ed4d20f_1531">run()</code> method. This method contains the code that will be executed when the thread is started.</p></li><li class="list__item" id="8ed4d20f_1532"><p id="8ed4d20f_1533">The <code class="code" id="8ed4d20f_1534">main</code> method creates an instance of <code class="code" id="8ed4d20f_1535">MyRunnable</code>. This instance is then used to create two separate <code class="code" id="8ed4d20f_1536">Thread</code> objects (<code class="code" id="8ed4d20f_1537">thread1</code> and <code class="code" id="8ed4d20f_1538">thread2</code>).</p></li><li class="list__item" id="8ed4d20f_1539"><p id="8ed4d20f_1540">Each thread is associated with the same <code class="code" id="8ed4d20f_1541">MyRunnable</code> instance, so when the threads are started, they both execute the <code class="code" id="8ed4d20f_1542">run()</code> method of that instance.</p></li><li class="list__item" id="8ed4d20f_1543"><p id="8ed4d20f_1544">The <code class="code" id="8ed4d20f_1545">Thread.sleep(500)</code> is used to introduce a small delay between each iteration of the loop, simulating some processing within the thread.</p></li><li class="list__item" id="8ed4d20f_1546"><p id="8ed4d20f_1547">The output will vary as the two threads may interleave their execution, showing that they are running concurrently.</p></li></ol><p id="8ed4d20f_1548">When you run this program, you might see output like:</p><div class="code-block" data-lang="none"         >
+Thread-1: 1
+Thread-2: 1
+Thread-1: 2
+Thread-2: 2
+Thread-1: 3
+Thread-2: 3
+Thread-1: 4
+Thread-2: 4
+Thread-1: 5
+Thread-2: 5
+</div><p id="8ed4d20f_1550">This demonstrates how two threads created from the same <code class="code" id="8ed4d20f_1551">Runnable</code> instance can execute concurrently, and the <code class="code" id="8ed4d20f_1552">Runnable</code> interface provides a clean and reusable way to define the behavior of a thread.</p></section><section class="chapter"><h2 id="4-synchronization" data-toc="4-synchronization"   >4. Synchronization</h2><p id="8ed4d20f_1553">In Java, synchronization is a mechanism that helps control access to shared resources in a multithreaded environment to prevent data corruption and maintain consistency. When multiple threads are working on the same data, synchronization ensures that only one thread can access the shared resource at a time. Java provides two ways to synchronize code blocks or methods: using the <code class="code" id="8ed4d20f_1554">synchronized</code> keyword and using explicit locks.</p><section class="chapter"><h3 id="1-synchronized-methods" data-toc="1-synchronized-methods"   >1. Synchronized Methods:</h3><p id="8ed4d20f_1555">In this approach, you can use the <code class="code" id="8ed4d20f_1556">synchronized</code> keyword to specify that only one thread can execute the method at a time.</p><div class="code-block" data-lang="java"         >
+class Counter {
+    private int count = 0;
+
+    // Synchronized method
+    public synchronized void increment() {
+        count++;
+    }
+}
+</div><p id="8ed4d20f_1558">In the above example, the <code class="code" id="8ed4d20f_1559">increment</code> method is synchronized, ensuring that only one thread can execute it at any given time. This helps prevent race conditions where multiple threads might attempt to increment the count simultaneously, leading to unpredictable results.</p></section><section class="chapter"><h3 id="2-synchronized-blocks" data-toc="2-synchronized-blocks"   >2. Synchronized Blocks:</h3><p id="8ed4d20f_1560">Instead of synchronizing entire methods, you can use synchronized blocks to encapsulate the critical section of code.</p><div class="code-block" data-lang="java"         >
+class Counter {
+    private int count = 0;
+    private Object lock = new Object();
+
+    public void increment() {
+        synchronized (lock) {
+            count++;
+        }
+    }
+}
+</div><p id="8ed4d20f_1562">In this example, the <code class="code" id="8ed4d20f_1563">synchronized</code> block ensures that only one thread can execute the code inside the block at a time. The <code class="code" id="8ed4d20f_1564">lock</code> object is used as a monitor to coordinate the threads.</p></section><section class="chapter"><h3 id="example-with-thread" data-toc="example-with-thread"   >Example with Thread:</h3><div class="code-block" data-lang="java"         >
+class Counter {
+    private int count = 0;
+
+    // Synchronized method
+    public synchronized void increment() {
+        for (int i = 0; i &lt; 5; i++) {
+            System.out.println(Thread.currentThread().getName() + &quot;: &quot; + count++);
+        }
+    }
+}
+
+public class SynchronizationExample {
+    public static void main(String[] args) {
+        Counter counter = new Counter();
+
+        // Creating two threads that share the same Counter instance
+        Thread thread1 = new Thread(() -&gt; counter.increment());
+        Thread thread2 = new Thread(() -&gt; counter.increment());
+
+        // Starting the threads
+        thread1.start();
+        thread2.start();
+    }
+}
+</div><p id="8ed4d20f_1566">In this example, the <code class="code" id="8ed4d20f_1567">Counter</code> class has a synchronized method <code class="code" id="8ed4d20f_1568">increment()</code>. When two threads (<code class="code" id="8ed4d20f_1569">thread1</code> and <code class="code" id="8ed4d20f_1570">thread2</code>) are started, they share the same <code class="code" id="8ed4d20f_1571">Counter</code> instance. Due to synchronization, only one thread can execute the <code class="code" id="8ed4d20f_1572">increment()</code> method at a time, ensuring that the output is consistent and avoids race conditions.</p><p id="8ed4d20f_1573">Synchronization is essential in scenarios where multiple threads access shared resources to maintain data integrity and avoid issues like data corruption or inconsistent state. However, it's crucial to use synchronization judiciously to avoid performance bottlenecks and deadlocks.</p></section></section><section class="chapter"><h2 id="5-locks" data-toc="5-locks"   >5. Locks</h2><p id="8ed4d20f_1574">In Java, locks are a mechanism used to control access to shared resources in a multithreaded environment. They help prevent data inconsistencies and race conditions by allowing only one thread to access a critical section of code at a time. Java provides various lock implementations, and one commonly used class is <code class="code" id="8ed4d20f_1575">ReentrantLock</code> from the <code class="code" id="8ed4d20f_1576">java.util.concurrent.locks</code> package. Let's explore locks with an example using <code class="code" id="8ed4d20f_1577">ReentrantLock</code>.</p><section class="chapter"><h3 id="example-using-reentrantlock" data-toc="example-using-reentrantlock"   >Example using ReentrantLock:</h3><div class="code-block" data-lang="java"         >
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+class SharedResource {
+    private int counter = 0;
+    private Lock lock = new ReentrantLock();
+
+    public void increment() {
+        lock.lock(); // Acquiring the lock
+        try {
+            counter++;
+            System.out.println(&quot;Counter: &quot; + counter + &quot; - Thread ID: &quot; + Thread.currentThread().getId());
+        } finally {
+            lock.unlock(); // Releasing the lock in a finally block to ensure it's always released
+        }
+    }
+}
+
+class MyThread implements Runnable {
+    private SharedResource sharedResource;
+
+    public MyThread(SharedResource sharedResource) {
+        this.sharedResource = sharedResource;
+    }
+
+    public void run() {
+        for (int i = 0; i &lt; 5; i++) {
+            sharedResource.increment();
+        }
+    }
+}
+
+public class LockExample {
+    public static void main(String[] args) {
+        SharedResource sharedResource = new SharedResource();
+        
+        // Creating two threads that share the same resource
+        Thread thread1 = new Thread(new MyThread(sharedResource));
+        Thread thread2 = new Thread(new MyThread(sharedResource));
+
+        // Starting the threads
+        thread1.start();
+        thread2.start();
+
+        try {
+            // Waiting for both threads to finish
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</div><p id="8ed4d20f_1579">In this example, the <code class="code" id="8ed4d20f_1580">SharedResource</code> class has a counter that is incremented by the <code class="code" id="8ed4d20f_1581">increment</code> method. The <code class="code" id="8ed4d20f_1582">ReentrantLock</code> is used to ensure that only one thread at a time can execute the critical section of the <code class="code" id="8ed4d20f_1583">increment</code> method.</p><p id="8ed4d20f_1584">Key points in the example:</p><ol class="list _decimal" id="8ed4d20f_1585" type="1"><li class="list__item" id="8ed4d20f_1586"><p>The <code class="code" id="8ed4d20f_1587">lock()</code> method is called to acquire the lock before entering the critical section.</p></li><li class="list__item" id="8ed4d20f_1588"><p>The critical section is the code within the <code class="code" id="8ed4d20f_1589">try</code> block.</p></li><li class="list__item" id="8ed4d20f_1590"><p>The <code class="code" id="8ed4d20f_1591">unlock()</code> method is called in a <code class="code" id="8ed4d20f_1592">finally</code> block to ensure that the lock is released even if an exception occurs.</p></li></ol><p id="8ed4d20f_1593">This ensures that the increment operation is atomic, and the output is predictable, avoiding race conditions.</p><p id="8ed4d20f_1594">Using locks like <code class="code" id="8ed4d20f_1595">ReentrantLock</code> provides more flexibility than traditional synchronized blocks, allowing for features such as interruptible locks, fair locks, and lock timeouts. It's essential to use locks judiciously to avoid deadlock situations and ensure proper synchronization in multithreaded applications.</p></section></section><section class="chapter"><h2 id="6-executor-framework" data-toc="6-executor-framework"   >6. Executor Framework</h2><p id="8ed4d20f_1596">The Executor Framework in Java provides a higher-level replacement for managing threads compared to the traditional way of creating and managing threads directly. It simplifies the process of executing tasks asynchronously, and it also manages thread pools for efficient reuse of threads. The key interface in the Executor Framework is <code class="code" id="8ed4d20f_1597">Executor</code>, and the more feature-rich <code class="code" id="8ed4d20f_1598">ExecutorService</code> extends it.</p><p id="8ed4d20f_1599">Here is an overview of the Executor Framework components:</p><ol class="list _decimal" id="8ed4d20f_1600" type="1"><li class="list__item" id="8ed4d20f_1601"><p id="8ed4d20f_1602"><span class="control" id="8ed4d20f_1603">Executor Interface:</span></p><ul class="list _ul" id="8ed4d20f_1604"><li class="list__item" id="8ed4d20f_1605"><p>The <code class="code" id="8ed4d20f_1606">Executor</code> interface represents a simple interface for executing tasks. It has a single method, <code class="code" id="8ed4d20f_1607">execute(Runnable command)</code>, which takes a <code class="code" id="8ed4d20f_1608">Runnable</code> object and executes it in the background.</p></li></ul><div class="code-block" data-lang="java"         >
+public interface Executor {
+    void execute(Runnable command);
+}
+</div></li><li class="list__item" id="8ed4d20f_1610"><p id="8ed4d20f_1611"><span class="control" id="8ed4d20f_1612">ExecutorService Interface:</span></p><ul class="list _ul" id="8ed4d20f_1613"><li class="list__item" id="8ed4d20f_1614"><p>The <code class="code" id="8ed4d20f_1615">ExecutorService</code> interface extends <code class="code" id="8ed4d20f_1616">Executor</code> and provides additional methods for managing the lifecycle of tasks and the executor itself. It allows submitting tasks for execution and provides mechanisms for task completion and shutdown.</p></li></ul><div class="code-block" data-lang="java"         >
+public interface ExecutorService extends Executor {
+    void shutdown();
+    List&lt;Runnable&gt; shutdownNow();
+    // Other methods for task submission and management
+}
+</div></li></ol><section class="chapter"><h3 id="examples" data-toc="examples"   >Examples:</h3><section class="chapter"><h4 id="1-creating-and-using-a-fixed-thread-pool" data-toc="1-creating-and-using-a-fixed-thread-pool"   >1. Creating and Using a Fixed Thread Pool:</h4><div class="code-block" data-lang="java"         >
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ThreadPoolExample {
+    public static void main(String[] args) {
+        // Creating a fixed-size thread pool with 5 threads
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+
+        // Submitting tasks for execution
+        for (int i = 0; i &lt; 10; i++) {
+            final int taskId = i;
+            executorService.submit(() -&gt; {
+                System.out.println(&quot;Task &quot; + taskId + &quot; executed by thread &quot; + Thread.currentThread().getName());
+            });
+        }
+
+        // Shutting down the executor
+        executorService.shutdown();
+    }
+}
+</div><p id="8ed4d20f_1619">In this example, we create a fixed-size thread pool using <code class="code" id="8ed4d20f_1620">Executors.newFixedThreadPool(5)</code>. We then submit 10 tasks for execution, and the thread pool manages the execution of these tasks using its underlying threads.</p></section><section class="chapter"><h4 id="2-creating-and-using-a-cached-thread-pool" data-toc="2-creating-and-using-a-cached-thread-pool"   >2. Creating and Using a Cached Thread Pool:</h4><div class="code-block" data-lang="java"         >
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class CachedThreadPoolExample {
+    public static void main(String[] args) {
+        // Creating a cached thread pool
+        ExecutorService executorService = Executors.newCachedThreadPool();
+
+        // Submitting tasks for execution
+        for (int i = 0; i &lt; 10; i++) {
+            final int taskId = i;
+            executorService.submit(() -&gt; {
+                System.out.println(&quot;Task &quot; + taskId + &quot; executed by thread &quot; + Thread.currentThread().getName());
+            });
+        }
+
+        // Shutting down the executor
+        executorService.shutdown();
+    }
+}
+</div><p id="8ed4d20f_1622">In this example, we create a cached thread pool using <code class="code" id="8ed4d20f_1623">Executors.newCachedThreadPool()</code>. This pool dynamically adjusts the number of threads based on the workload. If a thread is not used for a certain period, it may be terminated.</p><p id="8ed4d20f_1624">These examples demonstrate the basic usage of the Executor Framework for managing thread pools and executing tasks concurrently. The framework provides various other implementations and features for handling more complex scenarios, such as scheduled execution, task futures, and customizing thread creation.</p></section></section></section><section class="chapter"><h2 id="7-fork-join-framework" data-toc="7-fork-join-framework"   >7. Fork-Join Framework</h2><p id="8ed4d20f_1625">The Fork-Join Framework in Java is a feature introduced in Java 7 to simplify parallel programming by providing a way to divide a task into smaller subtasks, execute them concurrently, and then combine the results. It is particularly useful for tasks that can be divided into independent, smaller units of work. The framework is based on the &quot;work-stealing&quot; algorithm, where idle threads steal tasks from other busy threads, ensuring efficient utilization of resources.</p><section class="chapter"><h3 id="components-of-fork-join-framework" data-toc="components-of-fork-join-framework"   >Components of Fork-Join Framework:</h3><ol class="list _decimal" id="8ed4d20f_1626" type="1"><li class="list__item" id="8ed4d20f_1627"><p id="8ed4d20f_1628"><span class="control" id="8ed4d20f_1629">ForkJoinPool:</span></p><ul class="list _ul" id="8ed4d20f_1630"><li class="list__item" id="8ed4d20f_1631"><p id="8ed4d20f_1632">The main component of the Fork-Join Framework is <code class="code" id="8ed4d20f_1633">ForkJoinPool</code>, which manages and distributes tasks across worker threads.</p></li><li class="list__item" id="8ed4d20f_1634"><p id="8ed4d20f_1635">Example:</p><div class="code-block" data-lang="java"         >
+ForkJoinPool forkJoinPool = new ForkJoinPool();
+</div></li></ul></li><li class="list__item" id="8ed4d20f_1637"><p id="8ed4d20f_1638"><span class="control" id="8ed4d20f_1639">RecursiveTask:</span></p><ul class="list _ul" id="8ed4d20f_1640"><li class="list__item" id="8ed4d20f_1641"><p id="8ed4d20f_1642">For tasks that return a result, you can extend the <code class="code" id="8ed4d20f_1643">RecursiveTask</code> class and implement the <code class="code" id="8ed4d20f_1644">compute()</code> method.</p></li><li class="list__item" id="8ed4d20f_1645"><p id="8ed4d20f_1646">Example:</p><div class="code-block" data-lang="java"         >
+import java.util.concurrent.RecursiveTask;
+
+class MyTask extends RecursiveTask&lt;Integer&gt; {
+    private final int threshold = 10;
+    private int[] data;
+    private int start;
+    private int end;
+
+    public MyTask(int[] data, int start, int end) {
+        this.data = data;
+        this.start = start;
+        this.end = end;
+    }
+
+    protected Integer compute() {
+        if (end - start &lt;= threshold) {
+            // Perform the computation directly for small tasks
+            int sum = 0;
+            for (int i = start; i &lt; end; i++) {
+                sum += data[i];
+            }
+            return sum;
+        } else {
+            // Divide the task into subtasks
+            int mid = (start + end) / 2;
+            MyTask leftTask = new MyTask(data, start, mid);
+            MyTask rightTask = new MyTask(data, mid, end);
+
+            // Fork the subtasks
+            leftTask.fork();
+            rightTask.fork();
+
+            // Combine the results
+            return leftTask.join() + rightTask.join();
+        }
+    }
+}
+</div></li></ul></li><li class="list__item" id="8ed4d20f_1648"><p id="8ed4d20f_1649"><span class="control" id="8ed4d20f_1650">RecursiveAction:</span></p><ul class="list _ul" id="8ed4d20f_1651"><li class="list__item" id="8ed4d20f_1652"><p id="8ed4d20f_1653">For tasks that do not return a result, you can extend the <code class="code" id="8ed4d20f_1654">RecursiveAction</code> class and implement the <code class="code" id="8ed4d20f_1655">compute()</code> method.</p></li><li class="list__item" id="8ed4d20f_1656"><p id="8ed4d20f_1657">Example:</p><div class="code-block" data-lang="java"         >
+import java.util.concurrent.RecursiveAction;
+
+class MyTask extends RecursiveAction {
+    private final int threshold = 10;
+    private int[] data;
+    private int start;
+    private int end;
+
+    public MyTask(int[] data, int start, int end) {
+        this.data = data;
+        this.start = start;
+        this.end = end;
+    }
+
+    protected void compute() {
+        if (end - start &lt;= threshold) {
+            // Perform the computation directly for small tasks
+            for (int i = start; i &lt; end; i++) {
+                data[i] = data[i] * 2;
+            }
+        } else {
+            // Divide the task into subtasks
+            int mid = (start + end) / 2;
+            MyTask leftTask = new MyTask(data, start, mid);
+            MyTask rightTask = new MyTask(data, mid, end);
+
+            // Fork the subtasks
+            leftTask.fork();
+            rightTask.fork();
+
+            // Wait for subtasks to complete
+            leftTask.join();
+            rightTask.join();
+        }
+    }
+}
+</div></li></ul></li></ol></section><section class="chapter"><h3 id="using-fork-join-framework" data-toc="using-fork-join-framework"   >Using Fork-Join Framework:</h3><div class="code-block" data-lang="java"         >
+public class ForkJoinExample {
+    public static void main(String[] args) {
+        int[] data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        // Create a ForkJoinPool
+        ForkJoinPool forkJoinPool = new ForkJoinPool();
+
+        // Create a task
+        MyTask myTask = new MyTask(data, 0, data.length);
+
+        // Invoke the task and get the result
+        int result = forkJoinPool.invoke(myTask);
+
+        System.out.println(&quot;Result: &quot; + result);
+    }
+}
+</div><p id="8ed4d20f_1660">In this example, the <code class="code" id="8ed4d20f_1661">MyTask</code> class represents a task that calculates the sum of an array. If the array size exceeds a threshold, the task is divided into subtasks using recursion. The <code class="code" id="8ed4d20f_1662">ForkJoinPool</code> manages the execution of these tasks, and the <code class="code" id="8ed4d20f_1663">invoke</code> method is used to start the computation.</p><p id="8ed4d20f_1664">It's important to choose an appropriate threshold for dividing tasks, considering factors such as the size of the problem and the number of available processors. The Fork-Join Framework is well-suited for parallelizing computationally intensive tasks.</p></section></section><div class="last-modified"> Last modified: 23 January 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom">  <a class="navigation-links__prev" href="java-language.html">Java Language</a>   <a class="navigation-links__next" href="streams-api.html">Streams API</a>  </div></article><div id="disqus_thread"></div></div></section></main></div>  <script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>

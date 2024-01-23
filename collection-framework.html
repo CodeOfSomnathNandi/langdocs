@@ -1,0 +1,632 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat"><html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex">  <meta name="built-on" content="2024-01-23T13:33:11.8440668"><meta name="build-number" content="${buildNumber}">       <title>Java Collection Framework | Language Learning Path</title><script id="virtual-toc-data" type="application/json">[{"id":"1-introduction","level":0,"title":"1. Introduction","anchor":"#1-introduction"},{"id":"2-understanding-arraylist-in-java","level":0,"title":"2. Understanding ArrayList in Java","anchor":"#2-understanding-arraylist-in-java"},{"id":"3-understanding-linkedlist-in-java","level":0,"title":"3. Understanding LinkedList in Java","anchor":"#3-understanding-linkedlist-in-java"},{"id":"4-understanding-the-java-list-interface","level":0,"title":"4. Understanding the Java List Interface","anchor":"#4-understanding-the-java-list-interface"},{"id":"5-understanding-vectors-in-java","level":0,"title":"5. Understanding Vectors in Java","anchor":"#5-understanding-vectors-in-java"},{"id":"6-understanding-the-java-stack","level":0,"title":"6. Understanding the Java Stack","anchor":"#6-understanding-the-java-stack"},{"id":"7-understanding-collections-in-java","level":0,"title":"7. Understanding Collections in Java","anchor":"#7-understanding-collections-in-java"},{"id":"8-understanding-java-s-deque-interface","level":0,"title":"8. Understanding Java\u0027s Deque Interface","anchor":"#8-understanding-java-s-deque-interface"},{"id":"9-understanding-the-java-map-interface","level":0,"title":"9. Understanding the Java Map Interface","anchor":"#9-understanding-the-java-map-interface"},{"id":"10-understanding-hashmap-in-java","level":0,"title":"10. Understanding HashMap in Java","anchor":"#10-understanding-hashmap-in-java"},{"id":"11-understanding-hashset-in-java","level":0,"title":"11. Understanding HashSet in Java","anchor":"#11-understanding-hashset-in-java"},{"id":"12-understanding-sets-in-java","level":0,"title":"12. Understanding Sets in Java","anchor":"#12-understanding-sets-in-java"},{"id":"13-understanding-java-s-queue-interface","level":0,"title":"13. Understanding Java\u0027s Queue Interface","anchor":"#13-understanding-java-s-queue-interface"},{"id":"14-java-dictionary-k-v","level":0,"title":"14. Java Dictionary\u003cK, V\u003e","anchor":"#14-java-dictionary-k-v"},{"id":"15-understanding-hashtable-in-java","level":0,"title":"15. Understanding Hashtable in Java","anchor":"#15-understanding-hashtable-in-java"}]</script><script id="topic-shortcuts" type="application/json"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet">   <link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="https://jetbrains.com/site.webmanifest"><link rel="mask-icon" href="https://jetbrains.com/safari-pinned-tab.svg" color="#000000"><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"/><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"/><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"/><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"/><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"/>  <meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Java Collection Framework | Language Learning Path"/><meta property="og:description" content=""/><meta property="og:image" content=""/><meta property="og:site_name" content="Language Learning Path Help"/><meta property="og:type" content="website"/><meta property="og:locale" content="en_US"/><meta property="og:url" content="collection-framework.html"/><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Java Collection Framework | Language Learning Path"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json"> { "@context": "http://schema.org", "@type": "WebPage", "@id": "collection-framework.html#webpage", "url": "collection-framework.html", "name": "Java Collection Framework | Language Learning Path", "description": "", "image": "", "inLanguage":"en-US" }</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json"> { "@type": "WebSite", "@id": "/#website", "url": "/", "name": "Language Learning Path Help" }</script><!-- End Schema.org --></head>      <body data-id="Collection-Framework" data-main-title="Java Collection Framework" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}"  data-template="article"  data-breadcrumbs="Java-Language.md|Java Language"  >   <div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Language Learning Path  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Collection-Framework"   id="Collection-Framework.md">Java Collection Framework</h1>  <section class="chapter"><h2 id="1-introduction" data-toc="1-introduction"   >1. Introduction</h2><p id="f3142c92_1941">The Java Collection Framework provides a comprehensive architecture for representing and manipulating collections of objects. It includes interfaces, implementations, and algorithms for managing data structures such as lists, sets, queues, and maps. Here's a brief overview of some key components:</p><ol class="list _decimal" id="f3142c92_1942" type="1"><li class="list__item" id="f3142c92_1943"><p id="f3142c92_1944"><span class="control" id="f3142c92_1945">Interfaces:</span></p><ul class="list _ul" id="f3142c92_1946"><li class="list__item" id="f3142c92_1947"><p><span class="control" id="f3142c92_1948">List:</span> Ordered collection (e.g., ArrayList, LinkedList).</p></li><li class="list__item" id="f3142c92_1949"><p><span class="control" id="f3142c92_1950">Set:</span> Unordered collection with no duplicate elements (e.g., HashSet, TreeSet).</p></li><li class="list__item" id="f3142c92_1951"><p><span class="control" id="f3142c92_1952">Queue:</span> Ordered collection for holding elements to be processed (e.g., LinkedList, PriorityQueue).</p></li><li class="list__item" id="f3142c92_1953"><p><span class="control" id="f3142c92_1954">Map:</span> Key-value pairs (e.g., HashMap, TreeMap).</p></li></ul></li><li class="list__item" id="f3142c92_1955"><p id="f3142c92_1956"><span class="control" id="f3142c92_1957">Classes (Implementations):</span></p><ul class="list _ul" id="f3142c92_1958"><li class="list__item" id="f3142c92_1959"><p><span class="control" id="f3142c92_1960">ArrayList:</span> Dynamic array implementation of List.</p></li><li class="list__item" id="f3142c92_1961"><p><span class="control" id="f3142c92_1962">LinkedList:</span> Doubly linked list implementation of List.</p></li><li class="list__item" id="f3142c92_1963"><p><span class="control" id="f3142c92_1964">HashSet:</span> Unordered, non-duplicate elements implementation of Set.</p></li><li class="list__item" id="f3142c92_1965"><p><span class="control" id="f3142c92_1966">TreeSet:</span> Sorted set implemented using a tree.</p></li><li class="list__item" id="f3142c92_1967"><p><span class="control" id="f3142c92_1968">HashMap:</span> Unordered, key-value pairs implementation of Map.</p></li><li class="list__item" id="f3142c92_1969"><p><span class="control" id="f3142c92_1970">TreeMap:</span> Sorted map implemented using a tree.</p></li></ul></li><li class="list__item" id="f3142c92_1971"><p id="f3142c92_1972"><span class="control" id="f3142c92_1973">Example Usage:</span></p><div class="code-block" data-lang="java"         >
+// Creating a List
+List&lt;String&gt; names = new ArrayList&lt;&gt;();
+names.add(&quot;Alice&quot;);
+names.add(&quot;Bob&quot;);
+names.add(&quot;Charlie&quot;);
+
+// Creating a Set
+Set&lt;Integer&gt; numbers = new HashSet&lt;&gt;();
+numbers.add(1);
+numbers.add(2);
+numbers.add(3);
+
+// Creating a Map
+Map&lt;String, Integer&gt; ageMap = new HashMap&lt;&gt;();
+ageMap.put(&quot;Alice&quot;, 25);
+ageMap.put(&quot;Bob&quot;, 30);
+ageMap.put(&quot;Charlie&quot;, 22);
+
+// Iterating through a List
+for (String name : names) {
+    System.out.println(name);
+}
+
+// Iterating through a Set
+for (Integer number : numbers) {
+    System.out.println(number);
+}
+
+// Iterating through a Map
+for (Map.Entry&lt;String, Integer&gt; entry : ageMap.entrySet()) {
+    System.out.println(entry.getKey() + &quot; - &quot; + entry.getValue());
+}
+</div><p id="f3142c92_1975">This code snippet demonstrates the creation and usage of a List, Set, and Map in Java.</p></li></ol><p id="f3142c92_1976">The Java Collection Framework simplifies data manipulation and fosters code reusability by providing a unified architecture for handling collections of various types.</p><figure  id="f3142c92_1977"><img alt="Java Collection image" src="images/Collection_Hirearchy.png" title="Java Collection image"  width="706" height="706"></figure></section><section class="chapter"><h2 id="2-understanding-arraylist-in-java" data-toc="2-understanding-arraylist-in-java"   >2. Understanding ArrayList in Java</h2><p id="f3142c92_1978"><span class="control" id="f3142c92_1979">Introduction:</span> In Java, the <code class="code" id="f3142c92_1980">ArrayList</code> class is a part of the <code class="code" id="f3142c92_1981">java.util</code> package and is a dynamic array implementation. It provides a resizable array, allowing the addition and removal of elements at runtime. Unlike regular arrays, <code class="code" id="f3142c92_1982">ArrayList</code> can grow or shrink as needed, making it a versatile data structure in Java.</p><p id="f3142c92_1983"><span class="control" id="f3142c92_1984">Key Features of ArrayList:</span></p><ol class="list _decimal" id="f3142c92_1985" type="1"><li class="list__item" id="f3142c92_1986"><p><span class="control" id="f3142c92_1987">Dynamic Sizing:</span> Automatically adjusts its size based on the number of elements.</p></li><li class="list__item" id="f3142c92_1988"><p><span class="control" id="f3142c92_1989">Random Access:</span> Provides constant-time access to any element using its index.</p></li><li class="list__item" id="f3142c92_1990"><p><span class="control" id="f3142c92_1991">Generic Type:</span> Supports storing elements of any data type through the use of generics.</p></li></ol><p id="f3142c92_1992"><span class="control" id="f3142c92_1993">Syntax:</span></p><div class="code-block" data-lang="java"         >
+import java.util.ArrayList;
+
+// Declaration
+ArrayList&lt;DataType&gt; list = new ArrayList&lt;&gt;();
+
+// Initialization
+list.add(element);
+</div><p id="f3142c92_1995"><span class="control" id="f3142c92_1996">Example: Using ArrayList in Java:</span></p><div class="code-block" data-lang="java"         >
+import java.util.ArrayList;
+
+public class ArrayListExample {
+    public static void main(String[] args) {
+        // Creating an ArrayList of Strings
+        ArrayList&lt;String&gt; fruits = new ArrayList&lt;&gt;();
+
+        // Adding elements
+        fruits.add(&quot;Apple&quot;);
+        fruits.add(&quot;Banana&quot;);
+        fruits.add(&quot;Orange&quot;);
+
+        // Accessing elements
+        System.out.println(&quot;Fruits: &quot; + fruits);
+
+        // Getting the size of the ArrayList
+        int size = fruits.size();
+        System.out.println(&quot;Number of fruits: &quot; + size);
+
+        // Removing an element
+        fruits.remove(&quot;Banana&quot;);
+        System.out.println(&quot;Fruits after removing Banana: &quot; + fruits);
+
+        // Checking if an element exists
+        boolean containsApple = fruits.contains(&quot;Apple&quot;);
+        System.out.println(&quot;Does it contain Apple? &quot; + containsApple);
+    }
+}
+</div><p id="f3142c92_1998"><span class="control" id="f3142c92_1999">Output:</span></p><div class="code-block" data-lang="none"         >
+Fruits: [Apple, Banana, Orange]
+Number of fruits: 3
+Fruits after removing Banana: [Apple, Orange]
+Does it contain Apple? true
+</div><p id="f3142c92_2001">In this example, we create an <code class="code" id="f3142c92_2002">ArrayList</code> to store strings representing fruit names. We perform common operations such as adding, accessing, removing, and checking for the existence of elements.</p><p id="f3142c92_2003"><span class="control" id="f3142c92_2004">Conclusion:</span> Understanding the <code class="code" id="f3142c92_2005">ArrayList</code> class in Java is essential for working with dynamic collections of data. Its flexibility and ease of use make it a popular choice for developers when dealing with variable-sized datasets.</p></section><section class="chapter"><h2 id="3-understanding-linkedlist-in-java" data-toc="3-understanding-linkedlist-in-java"   >3. Understanding LinkedList in Java</h2><p id="f3142c92_2006">A linked list is a data structure in Java that consists of a sequence of elements, where each element points to the next element in the sequence. Unlike arrays, linked lists do not have a fixed size, and elements can be easily inserted or removed. The basic building block of a linked list is a node, which contains both data and a reference (or link) to the next node in the sequence.</p><p id="f3142c92_2007">Here's a simple example of implementing a LinkedList in Java:</p><div class="code-block" data-lang="java"         >
+class Node {
+    int data;
+    Node next;
+
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    Node head;
+
+    public LinkedList() {
+        this.head = null;
+    }
+
+    // Method to insert a new node at the end of the linked list
+    public void append(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node last = head;
+        while (last.next != null) {
+            last = last.next;
+        }
+
+        last.next = newNode;
+    }
+
+    // Method to display the linked list
+    public void display() {
+        Node current = head;
+
+        while (current != null) {
+            System.out.print(current.data + &quot; &quot;);
+            current = current.next;
+        }
+
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedList linkedList = new LinkedList();
+
+        // Appending elements to the linked list
+        linkedList.append(1);
+        linkedList.append(2);
+        linkedList.append(3);
+
+        // Displaying the linked list
+        System.out.println(&quot;Linked List elements:&quot;);
+        linkedList.display();
+    }
+}
+</div><p id="f3142c92_2009">In this example, the <code class="code" id="f3142c92_2010">LinkedList</code> class has a <code class="code" id="f3142c92_2011">head</code> attribute, which points to the first node in the list. The <code class="code" id="f3142c92_2012">Node</code> class represents each element in the list. The <code class="code" id="f3142c92_2013">append</code> method is used to add a new node to the end of the list, and the <code class="code" id="f3142c92_2014">display</code> method is used to print the elements of the linked list.</p><p id="f3142c92_2015">This is a basic implementation, and there are more advanced features that can be added, such as inserting at a specific position, deleting nodes, and more. Linked lists are fundamental in understanding data structures and are widely used in various applications.</p></section><section class="chapter"><h2 id="4-understanding-the-java-list-interface" data-toc="4-understanding-the-java-list-interface"   >4. Understanding the Java List Interface</h2><p id="f3142c92_2016">In Java, the <code class="code" id="f3142c92_2017">List</code> interface is a part of the Java Collections Framework and extends the <code class="code" id="f3142c92_2018">Collection</code> interface. It represents an ordered collection of elements, where each element can be accessed by its index. The <code class="code" id="f3142c92_2019">List</code> interface provides methods for adding, removing, and accessing elements based on their position in the list.</p><section class="chapter"><h3 id="example-usage" data-toc="example-usage"   >Example Usage:</h3><div class="code-block" data-lang="java"         >
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListExample {
+    public static void main(String[] args) {
+        // Creating a list using ArrayList
+        List&lt;String&gt; fruits = new ArrayList&lt;&gt;();
+
+        // Adding elements to the list
+        fruits.add(&quot;Apple&quot;);
+        fruits.add(&quot;Banana&quot;);
+        fruits.add(&quot;Orange&quot;);
+
+        // Accessing elements by index
+        System.out.println(&quot;First fruit: &quot; + fruits.get(0));
+        System.out.println(&quot;Second fruit: &quot; + fruits.get(1));
+
+        // Iterating through the list
+        System.out.println(&quot;List of fruits:&quot;);
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+
+        // Checking if the list contains a specific element
+        boolean containsBanana = fruits.contains(&quot;Banana&quot;);
+        System.out.println(&quot;Contains Banana: &quot; + containsBanana);
+
+        // Removing an element by index
+        fruits.remove(1);
+        System.out.println(&quot;List after removing the second fruit:&quot;);
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+
+        // Getting the size of the list
+        int size = fruits.size();
+        System.out.println(&quot;Size of the list: &quot; + size);
+    }
+}
+</div><p id="f3142c92_2021">In this example, we create a <code class="code" id="f3142c92_2022">List</code> of strings using the <code class="code" id="f3142c92_2023">ArrayList</code> implementation. We demonstrate adding elements, accessing elements by index, iterating through the list, checking for the presence of an element, removing an element by index, and getting the size of the list. The <code class="code" id="f3142c92_2024">List</code> interface provides a flexible and powerful way to work with ordered collections in Java.</p></section></section><section class="chapter"><h2 id="5-understanding-vectors-in-java" data-toc="5-understanding-vectors-in-java"   >5. Understanding Vectors in Java</h2><p id="f3142c92_2025">In Java, a <code class="code" id="f3142c92_2026">Vector</code> is a dynamic, synchronized collection class provided by the Java Collections Framework. It extends the AbstractList class and implements the List interface, making it a versatile choice for handling dynamic arrays.</p><section class="chapter"><h3 id="example" data-toc="example"   >Example:</h3><div class="code-block" data-lang="java"         >
+import java.util.Vector;
+import java.util.Iterator;
+
+public class VectorExample {
+    public static void main(String[] args) {
+        // Creating a Vector
+        Vector&lt;String&gt; fruits = new Vector&lt;&gt;();
+
+        // Adding elements
+        fruits.add(&quot;Apple&quot;);
+        fruits.add(&quot;Banana&quot;);
+        fruits.add(&quot;Orange&quot;);
+
+        // Accessing elements
+        System.out.println(&quot;Fruits: &quot; + fruits);
+
+        // Iterating through elements using Iterator
+        Iterator&lt;String&gt; iterator = fruits.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+        // Updating an element
+        fruits.set(1, &quot;Mango&quot;);
+        System.out.println(&quot;Updated Fruits: &quot; + fruits);
+
+        // Removing an element
+        fruits.remove(&quot;Apple&quot;);
+        System.out.println(&quot;Fruits after removal: &quot; + fruits);
+
+        // Checking if a specific element exists
+        if (fruits.contains(&quot;Orange&quot;)) {
+            System.out.println(&quot;Orange is present in the list.&quot;);
+        }
+
+        // Getting the size of the vector
+        System.out.println(&quot;Size of the vector: &quot; + fruits.size());
+    }
+}
+</div></section><section class="chapter"><h3 id="explanation" data-toc="explanation"   >Explanation:</h3><ul class="list _ul" id="f3142c92_2028"><li class="list__item" id="f3142c92_2029"><p id="f3142c92_2030"><span class="control" id="f3142c92_2031">Creation:</span> Use the <code class="code" id="f3142c92_2032">Vector</code> class to create a dynamic array capable of resizing itself.</p></li><li class="list__item" id="f3142c92_2033"><p id="f3142c92_2034"><span class="control" id="f3142c92_2035">Adding Elements:</span> Employ the <code class="code" id="f3142c92_2036">add()</code> method to insert elements into the vector.</p></li><li class="list__item" id="f3142c92_2037"><p id="f3142c92_2038"><span class="control" id="f3142c92_2039">Accessing Elements:</span> Directly access elements using their index or utilize an iterator for sequential access.</p></li><li class="list__item" id="f3142c92_2040"><p id="f3142c92_2041"><span class="control" id="f3142c92_2042">Updating Elements:</span> Modify elements at a specific index with the <code class="code" id="f3142c92_2043">set()</code> method.</p></li><li class="list__item" id="f3142c92_2044"><p id="f3142c92_2045"><span class="control" id="f3142c92_2046">Removing Elements:</span> Remove elements using <code class="code" id="f3142c92_2047">remove()</code> based on either the index or the object itself.</p></li><li class="list__item" id="f3142c92_2048"><p id="f3142c92_2049"><span class="control" id="f3142c92_2050">Checking Existence:</span> Verify if a specific element exists with the <code class="code" id="f3142c92_2051">contains()</code> method.</p></li><li class="list__item" id="f3142c92_2052"><p id="f3142c92_2053"><span class="control" id="f3142c92_2054">Size of Vector:</span> Retrieve the size of the vector using the <code class="code" id="f3142c92_2055">size()</code> method.</p></li></ul><p id="f3142c92_2056">Note: While Vectors provide synchronization, if thread safety is not a concern, consider using ArrayList for better performance.</p></section></section><section class="chapter"><h2 id="6-understanding-the-java-stack" data-toc="6-understanding-the-java-stack"   >6. Understanding the Java Stack</h2><p id="f3142c92_2057">In Java, a stack is a data structure that follows the Last In, First Out (LIFO) principle. It means that the last element added to the stack is the first one to be removed. Java provides a built-in class called <code class="code" id="f3142c92_2058">Stack</code> that implements this data structure. Let's explore the concept of a stack in Java with some examples.</p><section class="chapter"><h3 id="example-1-basic-stack-operations" data-toc="example-1-basic-stack-operations"   >Example 1: Basic Stack Operations</h3><div class="code-block" data-lang="java"         >
+import java.util.Stack;
+
+public class StackExample {
+
+    public static void main(String[] args) {
+        // Creating a stack
+        Stack&lt;String&gt; stack = new Stack&lt;&gt;();
+
+        // Pushing elements onto the stack
+        stack.push(&quot;Java&quot;);
+        stack.push(&quot;Python&quot;);
+        stack.push(&quot;C++&quot;);
+
+        // Pop an element from the stack
+        String poppedElement = stack.pop();
+        System.out.println(&quot;Popped Element: &quot; + poppedElement);
+
+        // Peek at the top element without removing it
+        String topElement = stack.peek();
+        System.out.println(&quot;Top Element: &quot; + topElement);
+
+        // Check if the stack is empty
+        boolean isEmpty = stack.isEmpty();
+        System.out.println(&quot;Is Stack Empty? &quot; + isEmpty);
+    }
+}
+</div></section><section class="chapter"><h3 id="example-2-using-stack-for-expression-evaluation" data-toc="example-2-using-stack-for-expression-evaluation"   >Example 2: Using Stack for Expression Evaluation</h3><div class="code-block" data-lang="java"         >
+import java.util.Stack;
+
+public class ExpressionEvaluation {
+
+    public static int evaluateExpression(String expression) {
+        Stack&lt;Integer&gt; operandStack = new Stack&lt;&gt;();
+
+        for (char ch : expression.toCharArray()) {
+            if (Character.isDigit(ch)) {
+                operandStack.push(Character.getNumericValue(ch));
+            } else {
+                int operand2 = operandStack.pop();
+                int operand1 = operandStack.pop();
+                int result = performOperation(operand1, operand2, ch);
+                operandStack.push(result);
+            }
+        }
+
+        return operandStack.pop();
+    }
+
+    private static int performOperation(int operand1, int operand2, char operator) {
+        switch (operator) {
+            case '+':
+                return operand1 + operand2;
+            case '-':
+                return operand1 - operand2;
+            case '*':
+                return operand1 * operand2;
+            case '/':
+                return operand1 / operand2;
+            default:
+                throw new IllegalArgumentException(&quot;Invalid operator: &quot; + operator);
+        }
+    }
+
+    public static void main(String[] args) {
+        String expression = &quot;52*3+&quot;;
+        int result = evaluateExpression(expression);
+        System.out.println(&quot;Result of the expression &quot; + expression + &quot;: &quot; + result);
+    }
+}
+</div><p id="f3142c92_2061">These examples illustrate the basic usage of the <code class="code" id="f3142c92_2062">Stack</code> class in Java, including pushing and popping elements, peeking at the top element, and implementing a simple expression evaluation algorithm using a stack. Understanding and leveraging stacks can be valuable in various scenarios, such as parsing expressions, managing function calls, and solving certain algorithmic problems.</p></section></section><section class="chapter"><h2 id="7-understanding-collections-in-java" data-toc="7-understanding-collections-in-java"   >7. Understanding Collections in Java</h2><p id="f3142c92_2063">Java Collections Framework provides a set of interfaces and classes to manipulate and store groups of objects. It simplifies the task of managing collections of objects, offering a wide range of data structures like lists, sets, queues, and maps. Collections play a crucial role in Java programming, enhancing the efficiency and flexibility of handling data.</p><p id="f3142c92_2064"><span class="control" id="f3142c92_2065">Examples:</span></p><ol class="list _decimal" id="f3142c92_2066" type="1"><li class="list__item" id="f3142c92_2067"><p id="f3142c92_2068"><span class="control" id="f3142c92_2069">List Interface:</span></p><ul class="list _ul" id="f3142c92_2070"><li class="list__item" id="f3142c92_2071"><p>The <code class="code" id="f3142c92_2072">List</code> interface represents an ordered collection and allows duplicate elements. Example implementations include <code class="code" id="f3142c92_2073">ArrayList</code> and <code class="code" id="f3142c92_2074">LinkedList</code>.</p></li></ul><div class="code-block" data-lang="java"         >
+List&lt;String&gt; names = new ArrayList&lt;&gt;();
+names.add(&quot;Alice&quot;);
+names.add(&quot;Bob&quot;);
+names.add(&quot;Charlie&quot;);
+
+System.out.println(&quot;Names: &quot; + names);
+</div></li><li class="list__item" id="f3142c92_2076"><p id="f3142c92_2077"><span class="control" id="f3142c92_2078">Set Interface:</span></p><ul class="list _ul" id="f3142c92_2079"><li class="list__item" id="f3142c92_2080"><p>The <code class="code" id="f3142c92_2081">Set</code> interface represents an unordered collection that doesn't allow duplicate elements. Example implementations include <code class="code" id="f3142c92_2082">HashSet</code> and <code class="code" id="f3142c92_2083">TreeSet</code>.</p></li></ul><div class="code-block" data-lang="java"         >
+Set&lt;Integer&gt; numbers = new HashSet&lt;&gt;();
+numbers.add(1);
+numbers.add(2);
+numbers.add(3);
+numbers.add(2); // Duplicate, won't be added
+
+System.out.println(&quot;Numbers: &quot; + numbers);
+</div></li><li class="list__item" id="f3142c92_2085"><p id="f3142c92_2086"><span class="control" id="f3142c92_2087">Map Interface:</span></p><ul class="list _ul" id="f3142c92_2088"><li class="list__item" id="f3142c92_2089"><p>The <code class="code" id="f3142c92_2090">Map</code> interface represents a collection of key-value pairs. Example implementations include <code class="code" id="f3142c92_2091">HashMap</code> and <code class="code" id="f3142c92_2092">TreeMap</code>.</p></li></ul><div class="code-block" data-lang="java"         >
+Map&lt;String, Integer&gt; ages = new HashMap&lt;&gt;();
+ages.put(&quot;Alice&quot;, 25);
+ages.put(&quot;Bob&quot;, 30);
+ages.put(&quot;Charlie&quot;, 22);
+
+System.out.println(&quot;Ages: &quot; + ages);
+</div></li><li class="list__item" id="f3142c92_2094"><p id="f3142c92_2095"><span class="control" id="f3142c92_2096">Queue Interface:</span></p><ul class="list _ul" id="f3142c92_2097"><li class="list__item" id="f3142c92_2098"><p>The <code class="code" id="f3142c92_2099">Queue</code> interface represents a collection designed for holding elements before processing. Example implementations include <code class="code" id="f3142c92_2100">LinkedList</code> and <code class="code" id="f3142c92_2101">PriorityQueue</code>.</p></li></ul><div class="code-block" data-lang="java"         >
+Queue&lt;String&gt; tasks = new LinkedList&lt;&gt;();
+tasks.add(&quot;Task 1&quot;);
+tasks.add(&quot;Task 2&quot;);
+tasks.add(&quot;Task 3&quot;);
+
+System.out.println(&quot;Tasks: &quot; + tasks);
+</div></li><li class="list__item" id="f3142c92_2103"><p id="f3142c92_2104"><span class="control" id="f3142c92_2105">Collections Utility Class:</span></p><ul class="list _ul" id="f3142c92_2106"><li class="list__item" id="f3142c92_2107"><p>The <code class="code" id="f3142c92_2108">Collections</code> class provides various utility methods for manipulating collections, like sorting, shuffling, and finding the maximum element.</p></li></ul><div class="code-block" data-lang="java"         >
+List&lt;Integer&gt; numbers = Arrays.asList(5, 2, 8, 1, 3);
+Collections.sort(numbers);
+
+System.out.println(&quot;Sorted Numbers: &quot; + numbers);
+</div></li></ol><p id="f3142c92_2110">Understanding and effectively using the Java Collections Framework is crucial for developing robust and efficient applications. It allows developers to choose the right data structure for their needs and enhances code readability and maintainability.</p></section><section class="chapter"><h2 id="8-understanding-java-s-deque-interface" data-toc="8-understanding-java-s-deque-interface"   >8. Understanding Java's Deque Interface</h2><p id="f3142c92_2111">Java's <code class="code" id="f3142c92_2112">Deque</code> (Double Ended Queue) interface is a part of the Java Collections Framework and extends the <code class="code" id="f3142c92_2113">Queue</code> interface. It represents a double-ended queue, meaning that you can insert and remove elements from both ends of the queue. The <code class="code" id="f3142c92_2114">Deque</code> interface provides methods for operations such as adding, removing, and inspecting elements, allowing for versatile use cases.</p><p id="f3142c92_2115">Here is a brief explanation of some key methods in the <code class="code" id="f3142c92_2116">Deque</code> interface along with examples:</p><section class="chapter"><h3 id="1-adding-elements" data-toc="1-adding-elements"   >1. Adding Elements:</h3><ul class="list _ul" id="f3142c92_2117"><li class="list__item" id="f3142c92_2118"><p id="f3142c92_2119"><code class="code" id="f3142c92_2120">addFirst(E e)</code> and <code class="code" id="f3142c92_2121">addLast(E e)</code>: These methods add elements to the front and rear of the deque, respectively.</p><div class="code-block" data-lang="java"         >
+Deque&lt;String&gt; deque = new LinkedList&lt;&gt;();
+deque.addFirst(&quot;First&quot;);
+deque.addLast(&quot;Last&quot;);
+</div></li></ul></section><section class="chapter"><h3 id="2-removing-elements" data-toc="2-removing-elements"   >2. Removing Elements:</h3><ul class="list _ul" id="f3142c92_2123"><li class="list__item" id="f3142c92_2124"><p id="f3142c92_2125"><code class="code" id="f3142c92_2126">removeFirst()</code> and <code class="code" id="f3142c92_2127">removeLast()</code>: These methods remove and return the first and last elements of the deque.</p><div class="code-block" data-lang="java"         >
+String firstElement = deque.removeFirst();
+String lastElement = deque.removeLast();
+</div></li></ul></section><section class="chapter"><h3 id="3-retrieving-elements" data-toc="3-retrieving-elements"   >3. Retrieving Elements:</h3><ul class="list _ul" id="f3142c92_2129"><li class="list__item" id="f3142c92_2130"><p id="f3142c92_2131"><code class="code" id="f3142c92_2132">getFirst()</code> and <code class="code" id="f3142c92_2133">getLast()</code>: These methods retrieve, but do not remove, the first and last elements of the deque.</p><div class="code-block" data-lang="java"         >
+String firstElement = deque.getFirst();
+String lastElement = deque.getLast();
+</div></li></ul></section><section class="chapter"><h3 id="4-checking-size-and-empty-status" data-toc="4-checking-size-and-empty-status"   >4. Checking Size and Empty Status:</h3><ul class="list _ul" id="f3142c92_2135"><li class="list__item" id="f3142c92_2136"><p id="f3142c92_2137"><code class="code" id="f3142c92_2138">size()</code>: Returns the number of elements in the deque.</p></li><li class="list__item" id="f3142c92_2139"><p id="f3142c92_2140"><code class="code" id="f3142c92_2141">isEmpty()</code>: Returns true if the deque is empty.</p><div class="code-block" data-lang="java"         >
+int dequeSize = deque.size();
+boolean isEmpty = deque.isEmpty();
+</div></li></ul></section><section class="chapter"><h3 id="example_1" data-toc="example_1"   >Example:</h3><div class="code-block" data-lang="java"         >
+import java.util.Deque;
+import java.util.LinkedList;
+
+public class DequeExample {
+    public static void main(String[] args) {
+        // Creating a Deque
+        Deque&lt;String&gt; deque = new LinkedList&lt;&gt;();
+
+        // Adding elements
+        deque.addFirst(&quot;First&quot;);
+        deque.addLast(&quot;Last&quot;);
+
+        // Removing elements
+        String firstElement = deque.removeFirst();
+        String lastElement = deque.removeLast();
+
+        // Retrieving elements
+        String peekFirst = deque.getFirst();
+        String peekLast = deque.getLast();
+
+        // Checking size and emptiness
+        int dequeSize = deque.size();
+        boolean isEmpty = deque.isEmpty();
+    }
+}
+</div><p id="f3142c92_2144">This example demonstrates basic operations with a <code class="code" id="f3142c92_2145">Deque</code>, showcasing how to add, remove, retrieve elements, and check the size and emptiness of the deque. The actual implementation of the <code class="code" id="f3142c92_2146">Deque</code> interface can be done using classes like <code class="code" id="f3142c92_2147">LinkedList</code> or <code class="code" id="f3142c92_2148">ArrayDeque</code> in Java.</p></section></section><section class="chapter"><h2 id="9-understanding-the-java-map-interface" data-toc="9-understanding-the-java-map-interface"   >9. Understanding the Java Map Interface</h2><p id="f3142c92_2149">Java Map Interface: The Map interface in Java is a part of the Java Collections Framework and is designed to store key-value pairs. It represents a collection of elements where each element is a pair of keys and values. Unlike a List, which is indexed by integers, a Map is indexed by keys. It does not allow duplicate keys and each key is associated with exactly one value.</p><p id="f3142c92_2150">Commonly used classes that implement the Map interface in Java are HashMap, TreeMap, and LinkedHashMap.</p><p id="f3142c92_2151">Example 1: HashMap</p><div class="code-block" data-lang="java"         >
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        // Creating a HashMap
+        Map&lt;String, Integer&gt; studentScores = new HashMap&lt;&gt;();
+
+        // Adding key-value pairs
+        studentScores.put(&quot;Alice&quot;, 85);
+        studentScores.put(&quot;Bob&quot;, 92);
+        studentScores.put(&quot;Charlie&quot;, 78);
+
+        // Accessing values by key
+        System.out.println(&quot;Bob's score: &quot; + studentScores.get(&quot;Bob&quot;));
+
+        // Iterating through the map
+        for (Map.Entry&lt;String, Integer&gt; entry : studentScores.entrySet()) {
+            System.out.println(entry.getKey() + &quot;: &quot; + entry.getValue());
+        }
+    }
+}
+</div><p id="f3142c92_2153">Example 2: TreeMap</p><div class="code-block" data-lang="java"         >
+import java.util.Map;
+import java.util.TreeMap;
+
+public class TreeMapExample {
+    public static void main(String[] args) {
+        // Creating a TreeMap
+        Map&lt;String, Integer&gt; monthDays = new TreeMap&lt;&gt;();
+
+        // Adding key-value pairs
+        monthDays.put(&quot;January&quot;, 31);
+        monthDays.put(&quot;February&quot;, 28);
+        monthDays.put(&quot;March&quot;, 31);
+
+        // Accessing values by key
+        System.out.println(&quot;Days in February: &quot; + monthDays.get(&quot;February&quot;));
+
+        // Iterating through the map
+        for (Map.Entry&lt;String, Integer&gt; entry : monthDays.entrySet()) {
+            System.out.println(entry.getKey() + &quot;: &quot; + entry.getValue() + &quot; days&quot;);
+        }
+    }
+}
+</div><p id="f3142c92_2155">In these examples, HashMap is used for general-purpose key-value storage, while TreeMap is used when a sorted order of keys is required. The Map interface provides a powerful and flexible way to work with key-value pairs in Java.</p></section><section class="chapter"><h2 id="10-understanding-hashmap-in-java" data-toc="10-understanding-hashmap-in-java"   >10. Understanding HashMap in Java</h2><p id="f3142c92_2156">HashMap is a crucial data structure in Java that provides a way to store and retrieve key-value pairs. It belongs to the Java Collections Framework and is part of the <code class="code" id="f3142c92_2157">java.util</code> package. HashMap uses a hashing mechanism to efficiently store and retrieve elements based on their keys.</p><section class="chapter"><h3 id="basic-structure" data-toc="basic-structure"   >Basic Structure:</h3><div class="code-block" data-lang="java"         >
+import java.util.HashMap;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        // Creating a HashMap
+        HashMap&lt;String, Integer&gt; studentScores = new HashMap&lt;&gt;();
+
+        // Adding key-value pairs
+        studentScores.put(&quot;Alice&quot;, 90);
+        studentScores.put(&quot;Bob&quot;, 85);
+        studentScores.put(&quot;Charlie&quot;, 95);
+
+        // Accessing values
+        int bobScore = studentScores.get(&quot;Bob&quot;);
+        System.out.println(&quot;Bob's Score: &quot; + bobScore);
+
+        // Iterating through the HashMap
+        for (String name : studentScores.keySet()) {
+            int score = studentScores.get(name);
+            System.out.println(name + &quot;: &quot; + score);
+        }
+    }
+}
+</div></section><section class="chapter"><h3 id="explanation_1" data-toc="explanation_1"   >Explanation:</h3><ol class="list _decimal" id="f3142c92_2159" type="1"><li class="list__item" id="f3142c92_2160"><p id="f3142c92_2161"><span class="control" id="f3142c92_2162">Creating a HashMap:</span></p><ul class="list _ul" id="f3142c92_2163"><li class="list__item" id="f3142c92_2164"><p>You create a HashMap using the <code class="code" id="f3142c92_2165">HashMap</code> class. In the example, <code class="code" id="f3142c92_2166">HashMap&lt;String, Integer&gt;</code> means keys are of type String, and values are of type Integer.</p></li></ul></li><li class="list__item" id="f3142c92_2167"><p id="f3142c92_2168"><span class="control" id="f3142c92_2169">Adding Key-Value Pairs:</span></p><ul class="list _ul" id="f3142c92_2170"><li class="list__item" id="f3142c92_2171"><p>The <code class="code" id="f3142c92_2172">put(key, value)</code> method is used to add key-value pairs to the HashMap.</p></li></ul></li><li class="list__item" id="f3142c92_2173"><p id="f3142c92_2174"><span class="control" id="f3142c92_2175">Accessing Values:</span></p><ul class="list _ul" id="f3142c92_2176"><li class="list__item" id="f3142c92_2177"><p>The <code class="code" id="f3142c92_2178">get(key)</code> method allows you to retrieve the value associated with a specific key.</p></li></ul></li><li class="list__item" id="f3142c92_2179"><p id="f3142c92_2180"><span class="control" id="f3142c92_2181">Iterating through the HashMap:</span></p><ul class="list _ul" id="f3142c92_2182"><li class="list__item" id="f3142c92_2183"><p>You can use <code class="code" id="f3142c92_2184">keySet()</code> to obtain a set of keys, and then iterate through the keys to access corresponding values.</p></li></ul></li></ol></section><section class="chapter"><h3 id="key-features" data-toc="key-features"   >Key Features:</h3><ul class="list _ul" id="f3142c92_2185"><li class="list__item" id="f3142c92_2186"><p id="f3142c92_2187"><span class="control" id="f3142c92_2188">Uniqueness of Keys:</span></p><ul class="list _ul" id="f3142c92_2189"><li class="list__item" id="f3142c92_2190"><p>Each key in a HashMap must be unique. If you try to add a duplicate key with a different value, it will overwrite the existing value.</p></li></ul></li><li class="list__item" id="f3142c92_2191"><p id="f3142c92_2192"><span class="control" id="f3142c92_2193">Null Values:</span></p><ul class="list _ul" id="f3142c92_2194"><li class="list__item" id="f3142c92_2195"><p>HashMap allows null values and one null key.</p></li></ul></li><li class="list__item" id="f3142c92_2196"><p id="f3142c92_2197"><span class="control" id="f3142c92_2198">Performance:</span></p><ul class="list _ul" id="f3142c92_2199"><li class="list__item" id="f3142c92_2200"><p>HashMap provides constant-time performance for basic operations like <code class="code" id="f3142c92_2201">get()</code> and <code class="code" id="f3142c92_2202">put()</code>.</p></li></ul></li><li class="list__item" id="f3142c92_2203"><p id="f3142c92_2204"><span class="control" id="f3142c92_2205">Ordering:</span></p><ul class="list _ul" id="f3142c92_2206"><li class="list__item" id="f3142c92_2207"><p>The order of key-value pairs in a HashMap is not guaranteed. If you need ordered key-value pairs, consider using <code class="code" id="f3142c92_2208">LinkedHashMap</code>.</p></li></ul></li></ul><p id="f3142c92_2209">Understanding HashMaps is essential for efficient data storage and retrieval in Java, especially when dealing with large datasets.</p></section></section><section class="chapter"><h2 id="11-understanding-hashset-in-java" data-toc="11-understanding-hashset-in-java"   >11. Understanding HashSet in Java</h2><p id="f3142c92_2210">HashSet in Java is a part of the Java Collections Framework and is an implementation of the Set interface. It is used to store a collection of unique elements. HashSet does not guarantee the order of elements and allows for efficient retrieval and storage of elements.</p><section class="chapter"><h3 id="examples" data-toc="examples"   >Examples:</h3><section class="chapter"><h4 id="1-creating-a-hashset" data-toc="1-creating-a-hashset"   >1. Creating a HashSet:</h4><div class="code-block" data-lang="java"         >
+import java.util.HashSet;
+
+public class HashSetExample {
+    public static void main(String[] args) {
+        // Creating a HashSet
+        HashSet&lt;String&gt; hashSet = new HashSet&lt;&gt;();
+
+        // Adding elements to the HashSet
+        hashSet.add(&quot;Apple&quot;);
+        hashSet.add(&quot;Banana&quot;);
+        hashSet.add(&quot;Orange&quot;);
+        hashSet.add(&quot;Apple&quot;);  // Duplicate element, will not be added
+
+        System.out.println(&quot;HashSet: &quot; + hashSet);
+    }
+}
+</div><p id="f3142c92_2212">Output:</p><div class="code-block" data-lang="none"         >
+HashSet: [Orange, Banana, Apple]
+</div></section><section class="chapter"><h4 id="2-hashset-operations" data-toc="2-hashset-operations"   >2. HashSet Operations:</h4><div class="code-block" data-lang="java"         >
+import java.util.HashSet;
+
+public class HashSetOperations {
+    public static void main(String[] args) {
+        // Creating HashSet1
+        HashSet&lt;String&gt; set1 = new HashSet&lt;&gt;();
+        set1.add(&quot;Java&quot;);
+        set1.add(&quot;Python&quot;);
+        set1.add(&quot;C++&quot;);
+
+        // Creating HashSet2
+        HashSet&lt;String&gt; set2 = new HashSet&lt;&gt;();
+        set2.add(&quot;Python&quot;);
+        set2.add(&quot;JavaScript&quot;);
+        set2.add(&quot;Java&quot;);
+
+        // Union of two HashSets
+        HashSet&lt;String&gt; union = new HashSet&lt;&gt;(set1);
+        union.addAll(set2);
+        System.out.println(&quot;Union: &quot; + union);
+
+        // Intersection of two HashSets
+        HashSet&lt;String&gt; intersection = new HashSet&lt;&gt;(set1);
+        intersection.retainAll(set2);
+        System.out.println(&quot;Intersection: &quot; + intersection);
+
+        // Difference of two HashSets
+        HashSet&lt;String&gt; difference = new HashSet&lt;&gt;(set1);
+        difference.removeAll(set2);
+        System.out.println(&quot;Difference: &quot; + difference);
+    }
+}
+</div><p id="f3142c92_2215">Output:</p><div class="code-block" data-lang="none"         >
+Union: [Python, JavaScript, C++, Java]
+Intersection: [Java, Python]
+Difference: [C++]
+</div><p id="f3142c92_2217">In the examples above, we demonstrate creating a HashSet, adding elements to it (where duplicate elements are automatically removed), and performing set operations like union, intersection, and difference on two HashSet instances. These operations showcase the flexibility and usefulness of HashSet in Java.</p></section></section></section><section class="chapter"><h2 id="12-understanding-sets-in-java" data-toc="12-understanding-sets-in-java"   >12. Understanding Sets in Java</h2><p id="f3142c92_2218">Introduction: In Java, a Set is a collection that does not allow duplicate elements. It models the mathematical set abstraction and is part of the Java Collections Framework. Sets provide methods for basic set operations, such as union, intersection, and difference. The key implementations of the Set interface in Java are HashSet, TreeSet, and LinkedHashSet.</p><p id="f3142c92_2219">Example 1: HashSet</p><div class="code-block" data-lang="java"         >
+import java.util.HashSet;
+import java.util.Set;
+
+public class HashSetExample {
+    public static void main(String[] args) {
+        // Creating a HashSet
+        Set&lt;String&gt; set = new HashSet&lt;&gt;();
+
+        // Adding elements to the set
+        set.add(&quot;Apple&quot;);
+        set.add(&quot;Banana&quot;);
+        set.add(&quot;Orange&quot;);
+        set.add(&quot;Apple&quot;); // Duplicate element, not added
+
+        // Displaying the elements of the set
+        System.out.println(&quot;HashSet: &quot; + set);
+    }
+}
+</div><p id="f3142c92_2221">Example 2: TreeSet</p><div class="code-block" data-lang="java"         >
+import java.util.Set;
+import java.util.TreeSet;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        // Creating a TreeSet
+        Set&lt;String&gt; set = new TreeSet&lt;&gt;();
+
+        // Adding elements to the set
+        set.add(&quot;Orange&quot;);
+        set.add(&quot;Banana&quot;);
+        set.add(&quot;Apple&quot;);
+
+        // Displaying the elements of the set (naturally ordered)
+        System.out.println(&quot;TreeSet: &quot; + set);
+    }
+}
+</div><p id="f3142c92_2223">Example 3: LinkedHashSet</p><div class="code-block" data-lang="java"         >
+import java.util.Set;
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetExample {
+    public static void main(String[] args) {
+        // Creating a LinkedHashSet
+        Set&lt;String&gt; set = new LinkedHashSet&lt;&gt;();
+
+        // Adding elements to the set
+        set.add(&quot;Orange&quot;);
+        set.add(&quot;Banana&quot;);
+        set.add(&quot;Apple&quot;);
+
+        // Displaying the elements of the set (insertion order)
+        System.out.println(&quot;LinkedHashSet: &quot; + set);
+    }
+}
+</div><p id="f3142c92_2225">Conclusion: Sets in Java provide a versatile way to store unique elements efficiently. Depending on the use case, you can choose between HashSet for fast access, TreeSet for natural ordering, or LinkedHashSet for maintaining insertion order. Incorporating set operations into your code can lead to cleaner and more efficient implementations.</p></section><section class="chapter"><h2 id="13-understanding-java-s-queue-interface" data-toc="13-understanding-java-s-queue-interface"   >13. Understanding Java's Queue Interface</h2><p id="f3142c92_2226">Java's <code class="code" id="f3142c92_2227">Queue&lt;E&gt;</code> interface is a part of the Java Collections Framework and represents a collection of elements arranged in a specific order. The Queue interface extends the Collection interface and adds methods for insertion, extraction, and inspection of elements in a first-in, first-out (FIFO) manner.</p><p id="f3142c92_2228">Here is a brief explanation of the key methods provided by the <code class="code" id="f3142c92_2229">Queue&lt;E&gt;</code> interface:</p><ol class="list _decimal" id="f3142c92_2230" type="1"><li class="list__item" id="f3142c92_2231"><p><span class="control" id="f3142c92_2232"><code class="code" id="f3142c92_2233">offer(E e)</code></span>: Adds the specified element to the end of the queue if space allows.</p></li><li class="list__item" id="f3142c92_2234"><p><span class="control" id="f3142c92_2235"><code class="code" id="f3142c92_2236">poll()</code></span>: Retrieves and removes the head of the queue, returning null if the queue is empty.</p></li><li class="list__item" id="f3142c92_2237"><p><span class="control" id="f3142c92_2238"><code class="code" id="f3142c92_2239">peek()</code></span>: Retrieves the head of the queue without removing it, returning null if the queue is empty.</p></li></ol><p id="f3142c92_2240">Now, let's see an example of using <code class="code" id="f3142c92_2241">Queue&lt;E&gt;</code> in Java:</p><div class="code-block" data-lang="java"         >
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueExample {
+    public static void main(String[] args) {
+        // Creating a Queue using LinkedList
+        Queue&lt;String&gt; queue = new LinkedList&lt;&gt;();
+
+        // Adding elements to the queue
+        queue.offer(&quot;Element 1&quot;);
+        queue.offer(&quot;Element 2&quot;);
+        queue.offer(&quot;Element 3&quot;);
+
+        System.out.println(&quot;Queue: &quot; + queue);
+
+        // Removing and displaying the head of the queue
+        String head = queue.poll();
+        System.out.println(&quot;Removed Element: &quot; + head);
+        System.out.println(&quot;Updated Queue: &quot; + queue);
+
+        // Peeking at the head without removing it
+        String peekedElement = queue.peek();
+        System.out.println(&quot;Peeked Element: &quot; + peekedElement);
+        System.out.println(&quot;Queue after Peek: &quot; + queue);
+    }
+}
+</div><p id="f3142c92_2243">In this example, a <code class="code" id="f3142c92_2244">LinkedList</code> is used to implement the <code class="code" id="f3142c92_2245">Queue</code> interface. Elements are added to the queue using the <code class="code" id="f3142c92_2246">offer()</code> method, and the <code class="code" id="f3142c92_2247">poll()</code> and <code class="code" id="f3142c92_2248">peek()</code> methods are used to retrieve and inspect elements, respectively. The output demonstrates the FIFO behavior of the queue.</p><p id="f3142c92_2249">The <code class="code" id="f3142c92_2250">Queue&lt;E&gt;</code> interface is particularly useful in scenarios where you need to process elements in the order they were added, such as task scheduling, breadth-first search, or any situation where the order of processing is crucial.</p></section><section class="chapter"><h2 id="14-java-dictionary-k-v" data-toc="14-java-dictionary-k-v"   >14. Java Dictionary&lt;K, V&gt;</h2><p id="f3142c92_2251">In Java, the <code class="code" id="f3142c92_2252">Dictionary&lt;K, V&gt;</code> interface is a part of the <code class="code" id="f3142c92_2253">java.util</code> package and represents a collection of key-value pairs where keys and values are both objects. It is an abstract class and is the superclass of any class that implements a mapping of keys to values.</p><p id="f3142c92_2254">Here's a breakdown of its key components:</p><ul class="list _ul" id="f3142c92_2255"><li class="list__item" id="f3142c92_2256"><p><span class="control" id="f3142c92_2257">K</span>: Represents the type of keys.</p></li><li class="list__item" id="f3142c92_2258"><p><span class="control" id="f3142c92_2259">V</span>: Represents the type of values.</p></li></ul><section class="chapter"><h3 id="example-usage_1" data-toc="example-usage_1"   >Example Usage:</h3><p id="f3142c92_2260">Let's create a simple example using <code class="code" id="f3142c92_2261">Hashtable</code>, a concrete implementation of <code class="code" id="f3142c92_2262">Dictionary</code>.</p><div class="code-block" data-lang="java"         >
+import java.util.Dictionary;
+import java.util.Hashtable;
+
+public class DictionaryExample {
+    public static void main(String[] args) {
+        // Creating a Dictionary with String keys and Integer values
+        Dictionary&lt;String, Integer&gt; studentScores = new Hashtable&lt;&gt;();
+
+        // Adding key-value pairs
+        studentScores.put(&quot;Alice&quot;, 95);
+        studentScores.put(&quot;Bob&quot;, 87);
+        studentScores.put(&quot;Charlie&quot;, 92);
+
+        // Accessing values by key
+        int bobScore = studentScores.get(&quot;Bob&quot;);
+        System.out.println(&quot;Bob's Score: &quot; + bobScore);
+
+        // Checking if a key exists
+        if (studentScores.containsKey(&quot;Alice&quot;)) {
+            System.out.println(&quot;Alice's Score: &quot; + studentScores.get(&quot;Alice&quot;));
+        }
+
+        // Displaying all keys and values
+        System.out.println(&quot;All Student Scores:&quot;);
+        for (String student : studentScores.keys()) {
+            System.out.println(student + &quot;: &quot; + studentScores.get(student));
+        }
+    }
+}
+</div><p id="f3142c92_2264">In this example, we use a <code class="code" id="f3142c92_2265">Hashtable</code> to implement the <code class="code" id="f3142c92_2266">Dictionary</code> interface. We create a dictionary (<code class="code" id="f3142c92_2267">studentScores</code>) with keys of type <code class="code" id="f3142c92_2268">String</code> and values of type <code class="code" id="f3142c92_2269">Integer</code>. We then add key-value pairs, retrieve values by keys, check for key existence, and iterate through all key-value pairs.</p><p id="f3142c92_2270">Using <code class="code" id="f3142c92_2271">Dictionary</code> provides a generic way to handle key-value mappings, and different concrete implementations can be used based on specific requirements.</p><p id="f3142c92_2272">Remember that <code class="code" id="f3142c92_2273">Hashtable</code> is synchronized, but if you don't need thread-safety, you might prefer to use <code class="code" id="f3142c92_2274">HashMap</code> instead for better performance in a non-threaded environment.</p></section></section><section class="chapter"><h2 id="15-understanding-hashtable-in-java" data-toc="15-understanding-hashtable-in-java"   >15. Understanding Hashtable in Java</h2><p id="f3142c92_2275">A Hashtable in Java is a data structure that stores key-value pairs, where each key is mapped to a specific value. It is part of the Java Collections Framework and provides efficient retrieval and storage of data. The underlying mechanism involves using a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.</p><p id="f3142c92_2276">Here's a simple example to illustrate how to use Hashtable in Java:</p><div class="code-block" data-lang="java"         >
+import java.util.Hashtable;
+
+public class HashtableExample {
+
+    public static void main(String[] args) {
+        // Creating a Hashtable instance
+        Hashtable&lt;String, Integer&gt; studentScores = new Hashtable&lt;&gt;();
+
+        // Adding key-value pairs to the Hashtable
+        studentScores.put(&quot;Alice&quot;, 90);
+        studentScores.put(&quot;Bob&quot;, 85);
+        studentScores.put(&quot;Charlie&quot;, 95);
+        studentScores.put(&quot;David&quot;, 88);
+
+        // Retrieving values using keys
+        int scoreBob = studentScores.get(&quot;Bob&quot;);
+        System.out.println(&quot;Bob's score: &quot; + scoreBob);
+
+        // Updating a value
+        studentScores.put(&quot;Charlie&quot;, 97);
+
+        // Removing a key-value pair
+        studentScores.remove(&quot;David&quot;);
+
+        // Displaying all key-value pairs
+        System.out.println(&quot;Student Scores:&quot;);
+        for (String name : studentScores.keySet()) {
+            int score = studentScores.get(name);
+            System.out.println(name + &quot;: &quot; + score);
+        }
+    }
+}
+</div><p id="f3142c92_2278">In this example, a Hashtable named <code class="code" id="f3142c92_2279">studentScores</code> is created to store scores for different students. Key-value pairs are added using the <code class="code" id="f3142c92_2280">put</code> method, and values are retrieved using the <code class="code" id="f3142c92_2281">get</code> method. The code also demonstrates updating a value, removing a key-value pair, and iterating through all key-value pairs.</p><p id="f3142c92_2282">Hashtable provide constant-time average complexity for basic operations like get, put, and remove, making them suitable for applications that require fast access to data based on keys. However, it's important to handle collisions ( situations where different keys hash to the same index) to ensure the proper functioning of the Hashtable.</p></section><div class="last-modified"> Last modified: 23 January 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom">  <a class="navigation-links__prev" href="streams-api.html">Streams API</a>   <a class="navigation-links__next" href="python-language.html">Python Language</a>  </div></article><div id="disqus_thread"></div></div></section></main></div>  <script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat"><html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex">  <meta name="built-on" content="2024-01-23T13:33:11.9164779"><meta name="build-number" content="${buildNumber}">       <title>Streams API | Language Learning Path</title><script id="virtual-toc-data" type="application/json">[{"id":"1-introduction","level":0,"title":"1. Introduction","anchor":"#1-introduction"},{"id":"2-creating-a-stream","level":0,"title":"2. Creating a Stream","anchor":"#2-creating-a-stream"},{"id":"3-filtering-elements","level":0,"title":"3. Filtering Elements","anchor":"#3-filtering-elements"},{"id":"4-mapping-elements","level":0,"title":"4. Mapping Elements","anchor":"#4-mapping-elements"},{"id":"5-sorting-elements","level":0,"title":"5. Sorting Elements","anchor":"#5-sorting-elements"},{"id":"6-collecting-elements","level":0,"title":"6. Collecting Elements","anchor":"#6-collecting-elements"},{"id":"7-reducing-elements","level":0,"title":"7. Reducing Elements","anchor":"#7-reducing-elements"},{"id":"8-foreach","level":0,"title":"8. forEach","anchor":"#8-foreach"},{"id":"9-parallel-streams","level":0,"title":"9. Parallel Streams","anchor":"#9-parallel-streams"}]</script><script id="topic-shortcuts" type="application/json"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet">   <link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="https://jetbrains.com/site.webmanifest"><link rel="mask-icon" href="https://jetbrains.com/safari-pinned-tab.svg" color="#000000"><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"/><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"/><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"/><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"/><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"/>  <meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Streams API | Language Learning Path"/><meta property="og:description" content=""/><meta property="og:image" content=""/><meta property="og:site_name" content="Language Learning Path Help"/><meta property="og:type" content="website"/><meta property="og:locale" content="en_US"/><meta property="og:url" content="streams-api.html"/><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Streams API | Language Learning Path"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json"> { "@context": "http://schema.org", "@type": "WebPage", "@id": "streams-api.html#webpage", "url": "streams-api.html", "name": "Streams API | Language Learning Path", "description": "", "image": "", "inLanguage":"en-US" }</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json"> { "@type": "WebSite", "@id": "/#website", "url": "/", "name": "Language Learning Path Help" }</script><!-- End Schema.org --></head>      <body data-id="Streams-API" data-main-title="Streams API" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}"  data-template="article"  data-breadcrumbs="Java-Language.md|Java Language"  >   <div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Language Learning Path  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Streams-API"   id="Streams-API.md">Streams API</h1>  <section class="chapter"><h2 id="1-introduction" data-toc="1-introduction"   >1. Introduction</h2><p id="acd78e21_980">In Java, the Streams API was introduced in Java 8 as part of the java.util.stream package. It provides a functional programming approach to process collections of data, allowing developers to express complex data manipulations in a concise and declarative manner. Streams are particularly useful for working with large datasets and parallel processing.</p><p id="acd78e21_981">Here's an overview of key concepts and examples to help you understand the Streams API:</p><section class="chapter"><h3 id="key-concepts" data-toc="key-concepts"   >Key Concepts:</h3><ol class="list _decimal" id="acd78e21_982" type="1"><li class="list__item" id="acd78e21_983"><p id="acd78e21_984"><span class="control" id="acd78e21_985">Stream:</span> A stream is a sequence of elements that can be processed in parallel or sequentially. It doesn't store data; instead, it allows you to process data on-the-fly.</p></li><li class="list__item" id="acd78e21_986"><p id="acd78e21_987"><span class="control" id="acd78e21_988">Intermediate Operations:</span> These operations are performed on a stream and produce another stream as a result. Examples include <code class="code" id="acd78e21_989">filter</code>, <code class="code" id="acd78e21_990">map</code>, and <code class="code" id="acd78e21_991">sorted</code>.</p></li><li class="list__item" id="acd78e21_992"><p id="acd78e21_993"><span class="control" id="acd78e21_994">Terminal Operations:</span> These operations consume a stream and produce a result or a side-effect. Examples include <code class="code" id="acd78e21_995">forEach</code>, <code class="code" id="acd78e21_996">collect</code>, and <code class="code" id="acd78e21_997">reduce</code>.</p></li></ol></section><section class="chapter"><h3 id="examples" data-toc="examples"   >Examples:</h3><section class="chapter"><h4 id="1-creating-a-stream" data-toc="1-creating-a-stream"   >1. Creating a Stream:</h4><div class="code-block" data-lang="java"         >
+List&lt;String&gt; strings = Arrays.asList(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;);
+
+// Creating a stream from a collection
+Stream&lt;String&gt; streamFromList = strings.stream();
+
+// Creating a stream directly
+Stream&lt;String&gt; streamDirectly = Stream.of(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;);
+
+// Creating an empty stream
+Stream&lt;String&gt; emptyStream = Stream.empty();
+</div></section><section class="chapter"><h4 id="2-filtering-elements" data-toc="2-filtering-elements"   >2. Filtering Elements:</h4><div class="code-block" data-lang="java"         >
+List&lt;String&gt; filteredList = strings.stream()
+                                   .filter(s -&gt; s.startsWith(&quot;S&quot;))
+                                   .collect(Collectors.toList());
+// Result: [&quot;Stream&quot;]
+</div></section><section class="chapter"><h4 id="3-mapping-elements" data-toc="3-mapping-elements"   >3. Mapping Elements:</h4><div class="code-block" data-lang="java"         >
+List&lt;Integer&gt; lengths = strings.stream()
+                               .map(String::length)
+                               .collect(Collectors.toList());
+// Result: [4, 6, 3, 7]
+</div></section><section class="chapter"><h4 id="4-sorting-elements" data-toc="4-sorting-elements"   >4. Sorting Elements:</h4><div class="code-block" data-lang="java"         >
+List&lt;String&gt; sortedList = strings.stream()
+                                .sorted()
+                                .collect(Collectors.toList());
+// Result: [&quot;API&quot;, &quot;Example&quot;, &quot;Java&quot;, &quot;Stream&quot;]
+</div></section><section class="chapter"><h4 id="5-collecting-elements" data-toc="5-collecting-elements"   >5. Collecting Elements:</h4><div class="code-block" data-lang="java"         >
+String concatenated = strings.stream()
+                            .collect(Collectors.joining(&quot;, &quot;));
+// Result: &quot;Java, Stream, API, Example&quot;
+</div></section><section class="chapter"><h4 id="6-reducing-elements" data-toc="6-reducing-elements"   >6. Reducing Elements:</h4><div class="code-block" data-lang="java"         >
+Optional&lt;String&gt; concatenated = strings.stream()
+                                      .reduce((s1, s2) -&gt; s1 + &quot;, &quot; + s2);
+// Result: Optional[&quot;Java, Stream, API, Example&quot;]
+</div></section><section class="chapter"><h4 id="7-foreach" data-toc="7-foreach"   >7. forEach:</h4><div class="code-block" data-lang="java"         >
+strings.stream()
+       .forEach(System.out::println);
+// Prints each element of the stream
+</div></section><section class="chapter"><h4 id="8-parallel-streams" data-toc="8-parallel-streams"   >8. Parallel Streams:</h4><div class="code-block" data-lang="java"         >
+List&lt;String&gt; parallelList = strings.parallelStream()
+                                  .filter(s -&gt; s.length() &gt; 3)
+                                  .collect(Collectors.toList());
+// Result: [&quot;Java&quot;, &quot;Stream&quot;, &quot;Example&quot;]
+</div><p id="acd78e21_1006">These examples demonstrate some common operations with the Streams API. Keep in mind that streams can be parallelized, providing performance benefits for large datasets.</p></section></section></section><section class="chapter"><h2 id="2-creating-a-stream" data-toc="2-creating-a-stream"   >2. Creating a Stream</h2><p id="acd78e21_1007">Creating a stream in Java can be done in various ways. Streams can be created from collections, arrays, or directly using the <code class="code" id="acd78e21_1008">Stream.of()</code> method. Here are examples illustrating different ways to create streams:</p><section class="chapter"><h3 id="1-from-a-collection" data-toc="1-from-a-collection"   >1. From a Collection:</h3><div class="code-block" data-lang="java"         >
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class StreamCreationExample {
+
+    public static void main(String[] args) {
+        List&lt;String&gt; strings = Arrays.asList(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;);
+
+        // Creating a stream from a collection
+        Stream&lt;String&gt; streamFromList = strings.stream();
+
+        // Performing operations on the stream (e.g., filtering)
+        streamFromList.filter(s -&gt; s.startsWith(&quot;S&quot;))
+                      .forEach(System.out::println);
+    }
+}
+</div><p id="acd78e21_1010">In this example, we create a stream (<code class="code" id="acd78e21_1011">streamFromList</code>) from a <code class="code" id="acd78e21_1012">List&lt;String&gt;</code> using the <code class="code" id="acd78e21_1013">stream()</code> method. We then perform an operation on the stream by filtering elements that start with the letter &quot;S&quot; and printing the result.</p></section><section class="chapter"><h3 id="2-directly-from-values" data-toc="2-directly-from-values"   >2. Directly from Values:</h3><div class="code-block" data-lang="java"         >
+import java.util.stream.Stream;
+
+public class StreamCreationExample {
+
+    public static void main(String[] args) {
+        // Creating a stream directly
+        Stream&lt;String&gt; streamDirectly = Stream.of(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;);
+
+        // Performing operations on the stream
+        streamDirectly.map(String::toUpperCase)
+                      .forEach(System.out::println);
+    }
+}
+</div><p id="acd78e21_1015">Here, we create a stream (<code class="code" id="acd78e21_1016">streamDirectly</code>) directly using the <code class="code" id="acd78e21_1017">Stream.of()</code> method. We then perform an operation on the stream by converting each string to uppercase and printing the result.</p></section><section class="chapter"><h3 id="3-empty-stream" data-toc="3-empty-stream"   >3. Empty Stream:</h3><div class="code-block" data-lang="java"         >
+import java.util.stream.Stream;
+
+public class StreamCreationExample {
+
+    public static void main(String[] args) {
+        // Creating an empty stream
+        Stream&lt;String&gt; emptyStream = Stream.empty();
+
+        // Performing operations on the empty stream
+        emptyStream.forEach(System.out::println);
+    }
+}
+</div><p id="acd78e21_1019">This example demonstrates creating an empty stream (<code class="code" id="acd78e21_1020">emptyStream</code>). While an empty stream doesn't contain elements, you can still perform operations on it if needed.</p><p id="acd78e21_1021">These are some basic examples of creating streams in Java. Depending on your use case, you can choose the appropriate method for creating a stream from different data sources.</p></section></section><section class="chapter"><h2 id="3-filtering-elements" data-toc="3-filtering-elements"   >3. Filtering Elements</h2><p id="acd78e21_1022">Filtering elements in Java using the Streams API involves selecting elements from a collection based on a specified condition. The <code class="code" id="acd78e21_1023">filter</code> operation is an intermediate operation that takes a Predicate as an argument, and it returns a new stream containing only the elements that satisfy the given condition.</p><p id="acd78e21_1024">Here's an example to illustrate filtering elements in Java:</p><div class="code-block" data-lang="java"         >
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class FilterExample {
+    public static void main(String[] args) {
+        // Sample list of strings
+        List&lt;String&gt; strings = Arrays.asList(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;);
+
+        // Filtering elements based on a condition
+        List&lt;String&gt; filteredList = strings.stream()
+                                           .filter(s -&gt; s.startsWith(&quot;S&quot;))
+                                           .collect(Collectors.toList());
+
+        // Displaying the result
+        System.out.println(&quot;Original List: &quot; + strings);
+        System.out.println(&quot;Filtered List: &quot; + filteredList);
+    }
+}
+</div><p id="acd78e21_1026">In this example, the <code class="code" id="acd78e21_1027">filter</code> operation is used to create a new stream that only includes elements starting with the letter &quot;S.&quot; The resulting <code class="code" id="acd78e21_1028">filteredList</code> contains only the elements that satisfy this condition.</p><p id="acd78e21_1029">Output:</p><div class="code-block" data-lang="none"         >
+Original List: [Java, Stream, API, Example]
+Filtered List: [Stream]
+</div><p id="acd78e21_1031">Here's a breakdown of the key parts of the code:</p><ol class="list _decimal" id="acd78e21_1032" type="1"><li class="list__item" id="acd78e21_1033"><p id="acd78e21_1034"><span class="control" id="acd78e21_1035">List Creation:</span></p><div class="code-block" data-lang="java"         >
+List&lt;String&gt; strings = Arrays.asList(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;);
+</div><p id="acd78e21_1037">Creates a list of strings.</p></li><li class="list__item" id="acd78e21_1038"><p id="acd78e21_1039"><span class="control" id="acd78e21_1040">Filtering Operation:</span></p><div class="code-block" data-lang="java"         >
+List&lt;String&gt; filteredList = strings.stream()
+                                   .filter(s -&gt; s.startsWith(&quot;S&quot;))
+                                   .collect(Collectors.toList());
+</div><ul class="list _ul" id="acd78e21_1042"><li class="list__item" id="acd78e21_1043"><p><code class="code" id="acd78e21_1044">strings.stream()</code>: Converts the list into a stream.</p></li><li class="list__item" id="acd78e21_1045"><p><code class="code" id="acd78e21_1046">.filter(s -&gt; s.startsWith(&quot;S&quot;))</code>: Filters elements based on the condition that the string must start with &quot;S.&quot;</p></li><li class="list__item" id="acd78e21_1047"><p><code class="code" id="acd78e21_1048">.collect(Collectors.toList())</code>: Collects the filtered elements into a new list.</p></li></ul></li><li class="list__item" id="acd78e21_1049"><p id="acd78e21_1050"><span class="control" id="acd78e21_1051">Output:</span></p><div class="code-block" data-lang="java"         >
+System.out.println(&quot;Original List: &quot; + strings);
+System.out.println(&quot;Filtered List: &quot; + filteredList);
+</div><p id="acd78e21_1053">Displays the original list and the filtered list.</p></li></ol><p id="acd78e21_1054">This is just one example, and the <code class="code" id="acd78e21_1055">filter</code> operation can be customized with different conditions based on your specific requirements.</p></section><section class="chapter"><h2 id="4-mapping-elements" data-toc="4-mapping-elements"   >4. Mapping Elements</h2><p id="acd78e21_1056">In Java's Streams API, mapping elements involves transforming each element of a stream based on a provided function. The <code class="code" id="acd78e21_1057">map</code> operation is commonly used for this purpose. It takes a Function as an argument, and the function is applied to each element of the stream, producing a new stream of the transformed elements.</p><p id="acd78e21_1058">Here's an explanation of mapping elements with examples:</p><section class="chapter"><h3 id="example-1-mapping-to-uppercase" data-toc="example-1-mapping-to-uppercase"   >Example 1: Mapping to Uppercase</h3><div class="code-block" data-lang="java"         >
+List&lt;String&gt; words = Arrays.asList(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);
+
+List&lt;String&gt; uppercasedWords = words.stream()
+                                   .map(String::toUpperCase)
+                                   .collect(Collectors.toList());
+
+// Result: [&quot;APPLE&quot;, &quot;BANANA&quot;, &quot;CHERRY&quot;]
+</div><p id="acd78e21_1060">In this example, the <code class="code" id="acd78e21_1061">map</code> operation is used to convert each string element to uppercase using the <code class="code" id="acd78e21_1062">toUpperCase</code> method reference.</p></section><section class="chapter"><h3 id="example-2-mapping-to-length" data-toc="example-2-mapping-to-length"   >Example 2: Mapping to Length</h3><div class="code-block" data-lang="java"         >
+List&lt;String&gt; words = Arrays.asList(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);
+
+List&lt;Integer&gt; wordLengths = words.stream()
+                                .map(String::length)
+                                .collect(Collectors.toList());
+
+// Result: [5, 6, 6]
+</div><p id="acd78e21_1064">Here, the <code class="code" id="acd78e21_1065">map</code> operation is applied to get the length of each string in the list. The result is a new stream containing the lengths of the original strings.</p></section><section class="chapter"><h3 id="example-3-mapping-to-objects" data-toc="example-3-mapping-to-objects"   >Example 3: Mapping to Objects</h3><div class="code-block" data-lang="java"         >
+List&lt;String&gt; words = Arrays.asList(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);
+
+List&lt;WordInfo&gt; wordInfoList = words.stream()
+                                  .map(word -&gt; new WordInfo(word, word.length()))
+                                  .collect(Collectors.toList());
+
+// Result: [WordInfo{word='apple', length=5}, WordInfo{word='banana', length=6}, WordInfo{word='cherry', length=6}]
+</div><p id="acd78e21_1067">In this example, the <code class="code" id="acd78e21_1068">map</code> operation is used to transform each string into a custom object <code class="code" id="acd78e21_1069">WordInfo</code>, which holds both the original word and its length.</p></section><section class="chapter"><h3 id="example-4-mapping-with-nested-lists" data-toc="example-4-mapping-with-nested-lists"   >Example 4: Mapping with Nested Lists</h3><div class="code-block" data-lang="java"         >
+List&lt;List&lt;Integer&gt;&gt; numbers = Arrays.asList(
+        Arrays.asList(1, 2, 3),
+        Arrays.asList(4, 5, 6),
+        Arrays.asList(7, 8, 9)
+);
+
+List&lt;Integer&gt; flattenedList = numbers.stream()
+                                    .flatMap(List::stream)
+                                    .collect(Collectors.toList());
+
+// Result: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+</div><p id="acd78e21_1071">The <code class="code" id="acd78e21_1072">flatMap</code> operation is often used in combination with <code class="code" id="acd78e21_1073">map</code> to handle scenarios where the mapping function returns a stream of values. In this case, the nested lists are flattened into a single list of integers.</p><p id="acd78e21_1074">Mapping elements using the <code class="code" id="acd78e21_1075">map</code> operation provides a powerful way to transform data within a stream according to specific requirements. It's a key component of functional programming and declarative style in Java.</p></section></section><section class="chapter"><h2 id="5-sorting-elements" data-toc="5-sorting-elements"   >5. Sorting Elements</h2><p id="acd78e21_1076">In Java, sorting elements can be done using the <code class="code" id="acd78e21_1077">sorted</code> method provided by the Streams API or by using the traditional <code class="code" id="acd78e21_1078">Collections.sort</code> method for collections. Here, I'll provide examples for both approaches:</p><section class="chapter"><h3 id="using-streams-api" data-toc="using-streams-api"   >Using Streams API:</h3><div class="code-block" data-lang="java"         >
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class StreamSortingExample {
+    public static void main(String[] args) {
+        List&lt;String&gt; strings = Arrays.asList(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;);
+
+        // Sorting elements using Streams API
+        List&lt;String&gt; sortedList = strings.stream()
+                                        .sorted()
+                                        .collect(Collectors.toList());
+
+        System.out.println(sortedList);
+    }
+}
+</div><p id="acd78e21_1080">In this example, the <code class="code" id="acd78e21_1081">sorted</code> method is called on the stream, and it returns a new stream with elements sorted in their natural order (lexicographical order for strings). The result is then collected into a list.</p></section><section class="chapter"><h3 id="using-collections-sort" data-toc="using-collections-sort"   >Using Collections.sort:</h3><div class="code-block" data-lang="java"         >
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class CollectionsSortExample {
+    public static void main(String[] args) {
+        List&lt;String&gt; strings = Arrays.asList(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;);
+
+        // Sorting elements using Collections.sort
+        Collections.sort(strings);
+
+        System.out.println(strings);
+    }
+}
+</div><p id="acd78e21_1083">In this example, the <code class="code" id="acd78e21_1084">Collections.sort</code> method is used directly on the list. This method modifies the existing list to be in sorted order.</p></section><section class="chapter"><h3 id="sorting-with-custom-comparator" data-toc="sorting-with-custom-comparator"   >Sorting with Custom Comparator:</h3><p id="acd78e21_1085">If you want to sort elements in a specific order or based on a custom criteria, you can provide a custom comparator.</p><div class="code-block" data-lang="java"         >
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class CustomComparatorExample {
+    public static void main(String[] args) {
+        List&lt;String&gt; strings = Arrays.asList(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;);
+
+        // Sorting elements with a custom comparator using Streams API
+        List&lt;String&gt; sortedList = strings.stream()
+                                        .sorted(Comparator.reverseOrder())
+                                        .collect(Collectors.toList());
+
+        System.out.println(sortedList);
+    }
+}
+</div><p id="acd78e21_1087">In this example, the <code class="code" id="acd78e21_1088">Comparator.reverseOrder()</code> is used to sort the elements in reverse order.</p><p id="acd78e21_1089">These examples demonstrate various ways to sort elements in Java. Choose the approach that best fits your use case and requirements.</p></section></section><section class="chapter"><h2 id="6-collecting-elements" data-toc="6-collecting-elements"   >6. Collecting Elements</h2><p id="acd78e21_1090">In Java's Streams API, collecting elements refers to the process of transforming the elements of a stream into a different form, such as a List, Set, Map, or a single value, using the <code class="code" id="acd78e21_1091">collect</code> method. The <code class="code" id="acd78e21_1092">collect</code> method is a terminal operation that takes a <code class="code" id="acd78e21_1093">Collector</code> as an argument, and various utility methods in the <code class="code" id="acd78e21_1094">Collectors</code> class provide predefined collectors for common use cases.</p><p id="acd78e21_1095">Here are examples of collecting elements using the <code class="code" id="acd78e21_1096">collect</code> method:</p><section class="chapter"><h3 id="1-collecting-to-list" data-toc="1-collecting-to-list"   >1. Collecting to List:</h3><div class="code-block" data-lang="java"         >
+List&lt;String&gt; stringList = Stream.of(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;)
+                                .collect(Collectors.toList());
+// Result: [&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;]
+</div></section><section class="chapter"><h3 id="2-collecting-to-set" data-toc="2-collecting-to-set"   >2. Collecting to Set:</h3><div class="code-block" data-lang="java"         >
+Set&lt;String&gt; stringSet = Stream.of(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;)
+                              .collect(Collectors.toSet());
+// Result: {&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;}
+</div></section><section class="chapter"><h3 id="3-collecting-to-map" data-toc="3-collecting-to-map"   >3. Collecting to Map:</h3><div class="code-block" data-lang="java"         >
+Map&lt;Integer, String&gt; lengthToWordMap = Stream.of(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;)
+                                            .collect(Collectors.toMap(String::length, Function.identity()));
+// Result: {3=&quot;API&quot;, 5=&quot;Java&quot;, 6=&quot;Stream&quot;, 7=&quot;Example&quot;}
+</div></section><section class="chapter"><h3 id="4-joining-elements" data-toc="4-joining-elements"   >4. Joining Elements:</h3><div class="code-block" data-lang="java"         >
+String concatenated = Stream.of(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;)
+                           .collect(Collectors.joining(&quot;, &quot;));
+// Result: &quot;Java, Stream, API, Example&quot;
+</div></section><section class="chapter"><h3 id="5-grouping-elements" data-toc="5-grouping-elements"   >5. Grouping Elements:</h3><div class="code-block" data-lang="java"         >
+Map&lt;Integer, List&lt;String&gt;&gt; groupedByLength = Stream.of(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;)
+                                                  .collect(Collectors.groupingBy(String::length));
+// Result: {3=[&quot;API&quot;], 5=[&quot;Java&quot;], 6=[&quot;Stream&quot;], 7=[&quot;Example&quot;]}
+</div></section><section class="chapter"><h3 id="6-partitioning-elements" data-toc="6-partitioning-elements"   >6. Partitioning Elements:</h3><div class="code-block" data-lang="java"         >
+Map&lt;Boolean, List&lt;String&gt;&gt; partitioned = Stream.of(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;)
+                                              .collect(Collectors.partitioningBy(s -&gt; s.length() &gt; 3));
+// Result: {false=[&quot;Java&quot;, &quot;API&quot;], true=[&quot;Stream&quot;, &quot;Example&quot;]}
+</div></section><section class="chapter"><h3 id="7-collecting-to-a-custom-collection" data-toc="7-collecting-to-a-custom-collection"   >7. Collecting to a Custom Collection:</h3><div class="code-block" data-lang="java"         >
+Deque&lt;String&gt; stringDeque = Stream.of(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;)
+                                 .collect(Collectors.toCollection(ArrayDeque::new));
+// Result: [&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;] in a deque
+</div></section><section class="chapter"><h3 id="8-collecting-and-reducing" data-toc="8-collecting-and-reducing"   >8. Collecting and Reducing:</h3><div class="code-block" data-lang="java"         >
+String concatenated = Stream.of(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;)
+                           .collect(Collectors.reducing((s1, s2) -&gt; s1 + &quot;, &quot; + s2))
+                           .orElse(&quot;&quot;);
+// Result: &quot;Java, Stream, API, Example&quot;
+</div><p id="acd78e21_1105">These examples showcase various ways to collect elements from a stream using the <code class="code" id="acd78e21_1106">collect</code> method and the collectors provided by the <code class="code" id="acd78e21_1107">Collectors</code> utility class. Depending on your use case, you can choose the appropriate collector to transform the stream elements into the desired form.</p></section></section><section class="chapter"><h2 id="7-reducing-elements" data-toc="7-reducing-elements"   >7. Reducing Elements</h2><p id="acd78e21_1108">In the context of the Streams API in Java, reducing elements involves combining the elements of a stream into a single result. The <code class="code" id="acd78e21_1109">reduce</code> operation in the Streams API is a terminal operation that takes a binary operator and combines elements in a stream to produce a single result. Here's an explanation with examples:</p><section class="chapter"><h3 id="syntax-of-reduce" data-toc="syntax-of-reduce"   >Syntax of reduce:</h3><div class="code-block" data-lang="java"         >
+Optional&lt;T&gt; reduce(BinaryOperator&lt;T&gt; accumulator)
+</div><ul class="list _ul" id="acd78e21_1111"><li class="list__item" id="acd78e21_1112"><p><code class="code" id="acd78e21_1113">BinaryOperator&lt;T&gt;</code> is a functional interface representing a binary operator that takes two operands of type T and produces a result of type T.</p></li><li class="list__item" id="acd78e21_1114"><p>The <code class="code" id="acd78e21_1115">reduce</code> operation applies the binary operator to the elements of the stream in an associative and accumulative way.</p></li></ul></section><section class="chapter"><h3 id="example-1-concatenating-strings" data-toc="example-1-concatenating-strings"   >Example 1: Concatenating Strings</h3><div class="code-block" data-lang="java"         >
+List&lt;String&gt; strings = Arrays.asList(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Example&quot;);
+
+Optional&lt;String&gt; concatenated = strings.stream()
+                                      .reduce((s1, s2) -&gt; s1 + &quot;, &quot; + s2);
+
+concatenated.ifPresent(System.out::println);
+// Result: &quot;Java, Stream, API, Example&quot;
+</div><p id="acd78e21_1117">In this example, the <code class="code" id="acd78e21_1118">reduce</code> operation concatenates all the strings in the stream using the binary operator <code class="code" id="acd78e21_1119">(s1, s2) -&gt; s1 + &quot;, &quot; + s2</code>.</p></section><section class="chapter"><h3 id="example-2-finding-the-maximum-value" data-toc="example-2-finding-the-maximum-value"   >Example 2: Finding the Maximum Value</h3><div class="code-block" data-lang="java"         >
+List&lt;Integer&gt; numbers = Arrays.asList(5, 2, 8, 1, 3);
+
+Optional&lt;Integer&gt; max = numbers.stream()
+                               .reduce(Integer::max);
+
+max.ifPresent(System.out::println);
+// Result: 8
+</div><p id="acd78e21_1121">Here, the <code class="code" id="acd78e21_1122">reduce</code> operation uses the <code class="code" id="acd78e21_1123">Integer::max</code> method reference as the binary operator to find the maximum value in the stream.</p></section><section class="chapter"><h3 id="example-3-summing-up-numbers" data-toc="example-3-summing-up-numbers"   >Example 3: Summing Up Numbers</h3><div class="code-block" data-lang="java"         >
+List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+int sum = numbers.stream()
+                 .reduce(0, (a, b) -&gt; a + b);
+
+System.out.println(&quot;Sum: &quot; + sum);
+// Result: Sum: 15
+</div><p id="acd78e21_1125">In this case, the <code class="code" id="acd78e21_1126">reduce</code> operation takes an identity value (<code class="code" id="acd78e21_1127">0</code>) and a binary operator <code class="code" id="acd78e21_1128">(a, b) -&gt; a + b</code> to sum up all the elements in the stream.</p></section><section class="chapter"><h3 id="example-4-product-of-numbers" data-toc="example-4-product-of-numbers"   >Example 4: Product of Numbers</h3><div class="code-block" data-lang="java"         >
+List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+Optional&lt;Integer&gt; product = numbers.stream()
+                                   .reduce((a, b) -&gt; a * b);
+
+product.ifPresent(System.out::println);
+// Result: 120
+</div><p id="acd78e21_1130">Here, the <code class="code" id="acd78e21_1131">reduce</code> operation uses the binary operator <code class="code" id="acd78e21_1132">(a, b) -&gt; a * b</code> to calculate the product of all the numbers in the stream.</p><p id="acd78e21_1133">In summary, the <code class="code" id="acd78e21_1134">reduce</code> operation is versatile and can be used to perform various types of aggregations on the elements of a stream. The key is to provide a proper binary operator that defines how elements should be combined. The result is wrapped in an <code class="code" id="acd78e21_1135">Optional</code> to handle the case where the stream is empty.</p></section></section><section class="chapter"><h2 id="8-foreach" data-toc="8-foreach"   >8. forEach</h2><p id="acd78e21_1136">The <code class="code" id="acd78e21_1137">forEach</code> method in Java is a terminal operation in the Streams API. It is used to iterate over the elements of a stream and perform an action for each element. The <code class="code" id="acd78e21_1138">forEach</code> method takes a single argument, which is a <code class="code" id="acd78e21_1139">Consumer</code> functional interface representing the action to be performed on each element.</p><p id="acd78e21_1140">Here's an example to illustrate the usage of <code class="code" id="acd78e21_1141">forEach</code>:</p><div class="code-block" data-lang="java"         >
+import java.util.Arrays;
+import java.util.List;
+
+public class ForEachExample {
+    public static void main(String[] args) {
+        List&lt;String&gt; languages = Arrays.asList(&quot;Java&quot;, &quot;Python&quot;, &quot;C++&quot;, &quot;JavaScript&quot;);
+
+        // Using forEach to print each element in the list
+        languages.stream().forEach(language -&gt; System.out.println(language));
+        
+        // Alternatively, you can use a method reference
+        languages.stream().forEach(System.out::println);
+    }
+}
+</div><p id="acd78e21_1143">In this example, we have a list of programming languages, and we use the <code class="code" id="acd78e21_1144">forEach</code> method to print each language to the console. The lambda expression <code class="code" id="acd78e21_1145">language -&gt; System.out.println(language)</code> is the action to be performed on each element. Alternatively, we can use a method reference <code class="code" id="acd78e21_1146">System.out::println</code>.</p><p id="acd78e21_1147">Keep in mind that <code class="code" id="acd78e21_1148">forEach</code> is a terminal operation, meaning that it consumes the elements of the stream and doesn't return a new stream. It's mainly used for performing side-effects, such as printing, logging, or updating external state.</p><p id="acd78e21_1149">It's important to note that the order of elements processed by <code class="code" id="acd78e21_1150">forEach</code> is deterministic for sequential streams but may not be guaranteed for parallel streams. If order is crucial, use <code class="code" id="acd78e21_1151">forEachOrdered</code> instead of <code class="code" id="acd78e21_1152">forEach</code> to ensure the elements are processed in the encounter order of the stream.</p></section><section class="chapter"><h2 id="9-parallel-streams" data-toc="9-parallel-streams"   >9. Parallel Streams</h2><p id="acd78e21_1153">In Java, parallel streams are a feature of the Streams API introduced in Java 8, allowing developers to perform parallel processing on collections of data. Parallel streams leverage the Fork/Join framework to split the data into smaller chunks and process them concurrently on multiple threads. This can lead to improved performance, especially when working with large datasets.</p><p id="acd78e21_1154">Here's an overview of using parallel streams in Java with examples:</p><section class="chapter"><h3 id="basic-example" data-toc="basic-example"   >Basic Example:</h3><div class="code-block" data-lang="java"         >
+List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+// Sequential stream
+long sequentialSum = numbers.stream()
+                           .reduce(0, Integer::sum);
+
+// Parallel stream
+long parallelSum = numbers.parallelStream()
+                         .reduce(0, Integer::sum);
+</div><p id="acd78e21_1156">In this example, the parallel stream allows the framework to distribute the work across multiple threads, potentially providing faster execution for large datasets. Keep in mind that not all operations benefit from parallel processing, and it's important to consider the characteristics of the operations being performed.</p></section><section class="chapter"><h3 id="parallel-streams-with-operations" data-toc="parallel-streams-with-operations"   >Parallel Streams with Operations:</h3><div class="code-block" data-lang="java"         >
+List&lt;String&gt; words = Arrays.asList(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Parallel&quot;, &quot;Example&quot;);
+
+// Sequential operation
+List&lt;String&gt; uppercasedSequential = words.stream()
+                                        .map(String::toUpperCase)
+                                        .collect(Collectors.toList());
+
+// Parallel operation
+List&lt;String&gt; uppercasedParallel = words.parallelStream()
+                                      .map(String::toUpperCase)
+                                      .collect(Collectors.toList());
+</div><p id="acd78e21_1158">In this example, the <code class="code" id="acd78e21_1159">map</code> operation is applied to each element of the stream to convert the words to uppercase. The parallel stream performs this operation concurrently on multiple threads, potentially providing better performance for a large list of words.</p></section><section class="chapter"><h3 id="combining-parallel-streams" data-toc="combining-parallel-streams"   >Combining Parallel Streams:</h3><div class="code-block" data-lang="java"         >
+List&lt;String&gt; list1 = Arrays.asList(&quot;Java&quot;, &quot;Stream&quot;);
+List&lt;String&gt; list2 = Arrays.asList(&quot;API&quot;, &quot;Parallel&quot;, &quot;Example&quot;);
+
+List&lt;String&gt; combinedList = Stream.concat(list1.stream(), list2.stream())
+                                .parallel()
+                                .collect(Collectors.toList());
+</div><p id="acd78e21_1161">Here, the <code class="code" id="acd78e21_1162">concat</code> operation is used to combine two lists into a single stream. The <code class="code" id="acd78e21_1163">parallel</code> method is then called to make the subsequent operations parallel. This can be useful when dealing with multiple data sources.</p></section><section class="chapter"><h3 id="custom-parallel-processing" data-toc="custom-parallel-processing"   >Custom Parallel Processing:</h3><p id="acd78e21_1164">You can also use the <code class="code" id="acd78e21_1165">parallel</code> method to convert a sequential stream into a parallel one:</p><div class="code-block" data-lang="java"         >
+List&lt;String&gt; words = Arrays.asList(&quot;Java&quot;, &quot;Stream&quot;, &quot;API&quot;, &quot;Parallel&quot;, &quot;Example&quot;);
+
+// Sequential stream
+List&lt;String&gt; uppercasedSequential = words.stream()
+                                        .map(String::toUpperCase)
+                                        .collect(Collectors.toList());
+
+// Convert to parallel stream
+List&lt;String&gt; uppercasedParallel = words.stream()
+                                      .parallel()
+                                      .map(String::toUpperCase)
+                                      .collect(Collectors.toList());
+</div><p id="acd78e21_1167">It's essential to note that parallel processing may not always provide better performance, and the overhead of managing multiple threads can sometimes outweigh the benefits. Therefore, it's advisable to measure the performance of both sequential and parallel versions and choose the appropriate approach based on the specific use case.</p></section></section><div class="last-modified"> Last modified: 23 January 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom">  <a class="navigation-links__prev" href="threading-in-java.html">Threading in Java</a>   <a class="navigation-links__next" href="collection-framework.html">Java Collection Framework</a>  </div></article><div id="disqus_thread"></div></div></section></main></div>  <script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>
