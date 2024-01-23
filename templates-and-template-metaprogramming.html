@@ -1,0 +1,177 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat"><html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex">  <meta name="built-on" content="2024-01-23T10:56:54.0356832"><meta name="build-number" content="${buildNumber}">       <title>Templates and Template Metaprogramming | Language Learning Path</title><script id="virtual-toc-data" type="application/json">[{"id":"1-introduction","level":0,"title":"1. Introduction","anchor":"#1-introduction"}]</script><script id="topic-shortcuts" type="application/json"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet">   <link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="https://jetbrains.com/site.webmanifest"><link rel="mask-icon" href="https://jetbrains.com/safari-pinned-tab.svg" color="#000000"><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"/><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"/><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"/><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"/><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"/>  <meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Templates and Template Metaprogramming | Language Learning Path"/><meta property="og:description" content=""/><meta property="og:image" content=""/><meta property="og:site_name" content="Language Learning Path Help"/><meta property="og:type" content="website"/><meta property="og:locale" content="en_US"/><meta property="og:url" content="templates-and-template-metaprogramming.html"/><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Templates and Template Metaprogramming | Language Learning Path"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json"> { "@context": "http://schema.org", "@type": "WebPage", "@id": "templates-and-template-metaprogramming.html#webpage", "url": "templates-and-template-metaprogramming.html", "name": "Templates and Template Metaprogramming | Language Learning Path", "description": "", "image": "", "inLanguage":"en-US" }</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json"> { "@type": "WebSite", "@id": "/#website", "url": "/", "name": "Language Learning Path Help" }</script><!-- End Schema.org --></head>      <body data-id="Templates-and-Template-Metaprogramming" data-main-title="Templates and Template Metaprogramming" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}"  data-template="article"  data-breadcrumbs="Cpp-Language.md|Cpp Language"  >   <div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Language Learning Path  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Templates-and-Template-Metaprogramming"   id="Templates-and-Template-Metaprogramming.md">Templates and Template Metaprogramming</h1>  <section class="chapter"><h2 id="1-introduction" data-toc="1-introduction"   >1. Introduction</h2><p id="595f6b5c_784">Templates and template metaprogramming (TMP) are powerful features in C++ that allow you to write generic and flexible code. They enable you to create functions and classes that work with different types without sacrificing type safety. Template metaprogramming takes templates to the next level by allowing you to perform computations and generate code at compile time.</p><section class="chapter"><h3 id="templates" data-toc="templates"   >Templates:</h3><ol class="list _decimal" id="595f6b5c_785" type="1"><li class="list__item" id="595f6b5c_786"><p id="595f6b5c_787"><span class="control" id="595f6b5c_788">Function Templates:</span></p><ul class="list _ul" id="595f6b5c_789"><li class="list__item" id="595f6b5c_790"><p><span class="control" id="595f6b5c_791">Definition:</span> Function templates allow you to define a generic function that can work with multiple types.</p></li></ul><div class="code-block" data-lang="cpp"         >
+template &lt;typename T&gt;
+T add(T a, T b) {
+    return a + b;
+}
+</div></li><li class="list__item" id="595f6b5c_793"><p id="595f6b5c_794"><span class="control" id="595f6b5c_795">Class Templates:</span></p><ul class="list _ul" id="595f6b5c_796"><li class="list__item" id="595f6b5c_797"><p><span class="control" id="595f6b5c_798">Definition:</span> Class templates enable you to define a generic class that can work with various types.</p></li></ul><div class="code-block" data-lang="cpp"         >
+template &lt;typename T&gt;
+class Pair {
+private:
+    T first;
+    T second;
+public:
+    Pair(T f, T s) : first(f), second(s) {}
+    // ...
+};
+</div></li><li class="list__item" id="595f6b5c_800"><p id="595f6b5c_801"><span class="control" id="595f6b5c_802">Template Specialization:</span></p><ul class="list _ul" id="595f6b5c_803"><li class="list__item" id="595f6b5c_804"><p><span class="control" id="595f6b5c_805">Definition:</span> Template specialization allows you to provide a specific implementation for a particular type or set of types.</p></li></ul><div class="code-block" data-lang="cpp"         >
+template &lt;&gt;
+class Pair&lt;int&gt; {
+private:
+    int first;
+    int second;
+public:
+    Pair(int f, int s) : first(f), second(s) {}
+    // ...
+};
+</div></li></ol></section><section class="chapter"><h3 id="template-metaprogramming-tmp" data-toc="template-metaprogramming-tmp"   >Template Metaprogramming (TMP):</h3><ol class="list _decimal" id="595f6b5c_807" type="1"><li class="list__item" id="595f6b5c_808"><p id="595f6b5c_809"><span class="control" id="595f6b5c_810">Compile-Time Constants:</span></p><ul class="list _ul" id="595f6b5c_811"><li class="list__item" id="595f6b5c_812"><p><span class="control" id="595f6b5c_813">Example:</span> Using templates to calculate values at compile time.</p></li></ul><div class="code-block" data-lang="cpp"         >
+template &lt;int N&gt;
+struct Factorial {
+    static const int value = N * Factorial&lt;N - 1&gt;::value;
+};
+
+template &lt;&gt;
+struct Factorial&lt;0&gt; {
+    static const int value = 1;
+};
+
+int result = Factorial&lt;5&gt;::value;  // Result is 120 (5!)
+</div></li><li class="list__item" id="595f6b5c_815"><p id="595f6b5c_816"><span class="control" id="595f6b5c_817">Type Traits:</span></p><ul class="list _ul" id="595f6b5c_818"><li class="list__item" id="595f6b5c_819"><p><span class="control" id="595f6b5c_820">Definition:</span> Type traits provide information about types at compile time, allowing you to write code that adapts to different types.</p></li></ul><div class="code-block" data-lang="cpp"         >
+template &lt;typename T&gt;
+struct is_pointer {
+    static const bool value = false;
+};
+
+template &lt;typename T&gt;
+struct is_pointer&lt;T*&gt; {
+    static const bool value = true;
+};
+
+bool result = is_pointer&lt;int&gt;::value;    // Result is false
+bool result_ptr = is_pointer&lt;int*&gt;::value; // Result is true
+</div></li><li class="list__item" id="595f6b5c_822"><p id="595f6b5c_823"><span class="control" id="595f6b5c_824">Template Template Parameters:</span></p><ul class="list _ul" id="595f6b5c_825"><li class="list__item" id="595f6b5c_826"><p><span class="control" id="595f6b5c_827">Definition:</span> Allows templates to take other templates as parameters, providing greater flexibility.</p></li></ul><div class="code-block" data-lang="cpp"         >
+template &lt;template &lt;typename&gt; class Container, typename T&gt;
+class Wrapper {
+private:
+    Container&lt;T&gt; data;
+public:
+    // ...
+};
+
+Wrapper&lt;std::vector, int&gt; intWrapper;  // Example with std::vector
+</div></li><li class="list__item" id="595f6b5c_829"><p id="595f6b5c_830"><span class="control" id="595f6b5c_831">Recursive Template Instantiation:</span></p><ul class="list _ul" id="595f6b5c_832"><li class="list__item" id="595f6b5c_833"><p><span class="control" id="595f6b5c_834">Example:</span> Using recursive instantiation to iterate over elements of a container at compile time.</p></li></ul><div class="code-block" data-lang="cpp"         >
+template &lt;typename T, size_t Index&gt;
+void printElement(const T&amp; container) {
+    std::cout &lt;&lt; container[Index] &lt;&lt; std::endl;
+    printElement&lt;T, Index - 1&gt;(container);
+}
+
+template &lt;typename T&gt;
+void printElements(const T&amp; container) {
+    printElement&lt;T, std::tuple_size&lt;T&gt;::value - 1&gt;(container);
+}
+</div></li><li class="list__item" id="595f6b5c_836"><p id="595f6b5c_837"><span class="control" id="595f6b5c_838">SFINAE (Substitution Failure Is Not An Error):</span></p><ul class="list _ul" id="595f6b5c_839"><li class="list__item" id="595f6b5c_840"><p><span class="control" id="595f6b5c_841">Definition:</span> Leveraging template substitution failure to conditionally enable or disable template specializations.</p></li></ul><div class="code-block" data-lang="cpp"         >
+template &lt;typename T, typename = decltype(std::declval&lt;T&gt;().size())&gt;
+std::true_type has_size_helper(const T&amp;);
+
+std::false_type has_size_helper(...);
+
+template &lt;typename T&gt;
+using has_size = decltype(has_size_helper(std::declval&lt;T&gt;()));
+</div></li></ol><p id="595f6b5c_843">Template metaprogramming can be quite complex, and it requires a deep understanding of C++'s template system. It is often used in libraries and frameworks where performance and flexibility are critical, as it allows for optimizations and customization at compile time.</p><p id="595f6b5c_844">Certainly! Let's delve deeper into a few specific examples of template metaprogramming (TMP) concepts in C++:</p></section><section class="chapter"><h3 id="1-compile-time-fibonacci-sequence" data-toc="1-compile-time-fibonacci-sequence"   >1. Compile-Time Fibonacci Sequence:</h3><div class="code-block" data-lang="cpp"         >
+template &lt;int N&gt;
+struct Fibonacci {
+    static const int value = Fibonacci&lt;N - 1&gt;::value + Fibonacci&lt;N - 2&gt;::value;
+};
+
+template &lt;&gt;
+struct Fibonacci&lt;0&gt; {
+    static const int value = 0;
+};
+
+template &lt;&gt;
+struct Fibonacci&lt;1&gt; {
+    static const int value = 1;
+};
+
+int main() {
+    constexpr int result = Fibonacci&lt;6&gt;::value;  // Result is 8 (0, 1, 1, 2, 3, 5, 8)
+    return 0;
+}
+</div><p id="595f6b5c_846">In this example, we use template specialization to calculate the Fibonacci sequence at compile time. The <code class="code" id="595f6b5c_847">Fibonacci</code> struct has a static constant member <code class="code" id="595f6b5c_848">value</code> that holds the calculated value for a given index <code class="code" id="595f6b5c_849">N</code>.</p></section><section class="chapter"><h3 id="2-compile-time-factorial-with-std-enable-if" data-toc="2-compile-time-factorial-with-std-enable-if"   >2. Compile-Time Factorial with std::enable_if:</h3><div class="code-block" data-lang="cpp"         >
+#include &lt;type_traits&gt;
+
+template &lt;int N, typename = std::enable_if_t&lt;(N &gt;= 0)&gt;&gt;
+struct Factorial {
+    static const int value = N * Factorial&lt;N - 1&gt;::value;
+};
+
+template &lt;&gt;
+struct Factorial&lt;0&gt; {
+    static const int value = 1;
+};
+
+int main() {
+    constexpr int result = Factorial&lt;5&gt;::value;  // Result is 120 (5!)
+    return 0;
+}
+</div><p id="595f6b5c_851">Here, we use <code class="code" id="595f6b5c_852">std::enable_if</code> to restrict the template instantiation only for non-negative integers. This helps avoid issues with negative factorials.</p></section><section class="chapter"><h3 id="3-type-traits-for-detecting-pointers" data-toc="3-type-traits-for-detecting-pointers"   >3. Type Traits for Detecting Pointers:</h3><div class="code-block" data-lang="cpp"         >
+#include &lt;iostream&gt;
+
+template &lt;typename T&gt;
+struct is_pointer {
+    static const bool value = false;
+};
+
+template &lt;typename T&gt;
+struct is_pointer&lt;T*&gt; {
+    static const bool value = true;
+};
+
+int main() {
+    bool result = is_pointer&lt;int&gt;::value;       // Result is false
+    bool result_ptr = is_pointer&lt;int*&gt;::value;   // Result is true
+    return 0;
+}
+</div><p id="595f6b5c_854">This example demonstrates a simple type trait to determine whether a given type is a pointer. The specialization for <code class="code" id="595f6b5c_855">T*</code> sets <code class="code" id="595f6b5c_856">value</code> to <code class="code" id="595f6b5c_857">true</code>, while the default case assumes the type is not a pointer.</p></section><section class="chapter"><h3 id="4-template-template-parameters" data-toc="4-template-template-parameters"   >4. Template Template Parameters:</h3><div class="code-block" data-lang="cpp"         >
+#include &lt;vector&gt;
+
+template &lt;template &lt;typename&gt; class Container, typename T&gt;
+class Wrapper {
+private:
+    Container&lt;T&gt; data;
+public:
+    // ...
+};
+
+int main() {
+    Wrapper&lt;std::vector, int&gt; intWrapper;  // Example with std::vector
+    return 0;
+}
+</div><p id="595f6b5c_859">Here, we define a template class <code class="code" id="595f6b5c_860">Wrapper</code> that takes a template template parameter (<code class="code" id="595f6b5c_861">Container</code>). This allows the user to instantiate <code class="code" id="595f6b5c_862">Wrapper</code> with different container types (e.g., <code class="code" id="595f6b5c_863">std::vector</code>, <code class="code" id="595f6b5c_864">std::list</code>).</p></section><section class="chapter"><h3 id="5-compile-time-type-selection-using-sfinae" data-toc="5-compile-time-type-selection-using-sfinae"   >5. Compile-Time Type Selection using SFINAE:</h3><div class="code-block" data-lang="cpp"         >
+#include &lt;iostream&gt;
+#include &lt;type_traits&gt;
+
+template &lt;typename T, typename = decltype(std::declval&lt;T&gt;().size())&gt;
+std::true_type has_size_helper(const T&amp;);
+
+std::false_type has_size_helper(...);
+
+template &lt;typename T&gt;
+using has_size = decltype(has_size_helper(std::declval&lt;T&gt;()));
+
+template &lt;typename T&gt;
+void printSize(const T&amp; container) {
+    if constexpr (has_size&lt;T&gt;::value) {
+        std::cout &lt;&lt; &quot;Size: &quot; &lt;&lt; container.size() &lt;&lt; std::endl;
+    } else {
+        std::cout &lt;&lt; &quot;Size information not available.&quot; &lt;&lt; std::endl;
+    }
+}
+
+int main() {
+    std::vector&lt;int&gt; vec = {1, 2, 3, 4, 5};
+    printSize(vec);  // Output: Size: 5
+    printSize(42);   // Output: Size information not available.
+    return 0;
+}
+</div><p id="595f6b5c_866">In this example, the <code class="code" id="595f6b5c_867">has_size</code> type trait uses SFINAE to check if the provided type <code class="code" id="595f6b5c_868">T</code> has a member function <code class="code" id="595f6b5c_869">size()</code>. The <code class="code" id="595f6b5c_870">printSize</code> function conditionally prints the size of the container if the size member function is available.</p><p id="595f6b5c_871">These examples illustrate the versatility and power of template metaprogramming in C++. They showcase how templates can be used not only for generic programming but also for performing complex computations and making decisions at compile time.</p></section></section><div class="last-modified"> Last modified: 23 January 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom">  <a class="navigation-links__prev" href="cpp-language.html">Cpp Language</a>   <a class="navigation-links__next" href="stl-algorithms-and-data-structures.html">STL Algorithms and Data Structures</a>  </div></article><div id="disqus_thread"></div></div></section></main></div>  <script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>
